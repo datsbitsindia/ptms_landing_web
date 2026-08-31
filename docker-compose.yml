@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  ptms-landing:
+    build: .
+    container_name: ptms-landing-web
+    ports:
+      - "8090:8090"
+    restart: always
