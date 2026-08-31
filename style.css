@@ -301,26 +301,42 @@ a {
     flex-wrap: wrap;
 }
 
-/* DUAL SIDE-BY-SIDE APP SHOWCASE LAYOUT (Desktop + Mobile together) */
+/* DUAL SIDE-BY-SIDE APP SHOWCASE LAYOUT (Equal Height Desktop + Mobile) */
 .dual-app-showcase {
     display: grid;
-    grid-template-columns: 1.8fr 1fr;
+    grid-template-columns: 1.7fr 1fr;
     gap: 24px;
-    align-items: flex-end;
+    align-items: stretch; /* EQUAL HEIGHT FOR BOTH MOCKUPS */
     max-width: 1260px;
     margin: 0 auto;
     position: relative;
+}
+
+/* GLOBAL SCROLLBAR REMOVAL ACROSS ALL MOCKUPS */
+.dual-app-showcase *,
+.dual-app-showcase *::-webkit-scrollbar,
+.mockup-app-layout::-webkit-scrollbar,
+.app-mock-main::-webkit-scrollbar,
+.mobile-app-body::-webkit-scrollbar {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
 }
 
 /* 1. Desktop Window Frame */
 .hero-mockup-wrap {
     position: relative;
     width: 100%;
+    height: 590px; /* EXACT EQUAL HEIGHT */
     border-radius: var(--radius-lg);
     padding: 8px;
     background: #ffffff;
     border: 1px solid #cbd5e1;
     box-shadow: 0 25px 60px -15px rgba(37, 99, 235, 0.15), 0 10px 30px rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
 }
 
 .mockup-window-bar {
@@ -357,20 +373,8 @@ a {
     background: #f4f8ff;
     border-radius: 0 0 16px 16px;
     display: flex;
-    min-height: 560px;
-    max-height: 600px;
+    flex: 1;
     overflow: hidden;
-}
-
-/* Hide scrollbars across mockups */
-.mockup-app-layout, .app-mock-main, .mobile-app-body {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-}
-.mockup-app-layout::-webkit-scrollbar, .app-mock-main::-webkit-scrollbar, .mobile-app-body::-webkit-scrollbar {
-    display: none !important;
-    width: 0 !important;
-    height: 0 !important;
 }
 
 /* Desktop Left Sidebar */
@@ -610,17 +614,20 @@ a {
 }
 .priority-pill-sm.high { background: #fee2e2; color: #b91c1c; }
 
-/* 2. STATIC MOBILE PHONE DISPLAY FRAME (No Scrollbars, 100% Clean) */
+/* 2. MOBILE PHONE DISPLAY FRAME (EQUAL HEIGHT 590px, ZERO SCROLLBARS) */
 .mobile-frame-wrap {
     width: 100%;
     max-width: 380px;
+    height: 590px; /* EXACT EQUAL HEIGHT MATCHING DESKTOP */
     margin: 0 auto;
     background: #ffffff;
     border-radius: 36px;
-    padding: 10px;
+    padding: 8px;
     border: 6px solid #0f172a;
     box-shadow: 0 25px 50px rgba(37, 99, 235, 0.22), 0 10px 30px rgba(15, 23, 42, 0.12);
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .mobile-notch-bar {
@@ -641,15 +648,15 @@ a {
 
 .mobile-app-body {
     background: #f4f8ff;
-    padding: 12px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
     border-radius: 0 0 26px 26px;
     position: relative;
-    height: 530px;
+    flex: 1;
     overflow: hidden; /* Static without scrollbars */
-    padding-bottom: 60px; /* Space for fixed bottom nav */
+    padding-bottom: 50px; /* Space for fixed bottom nav */
 }
 
 /* Image 1 Bottom Mobile Navigation Bar */
@@ -693,17 +700,17 @@ a {
 /* Image 1 Floating Action Wand Button */
 .mobile-fab-btn {
     position: absolute;
-    bottom: 55px;
+    bottom: 52px;
     right: 14px;
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background: var(--primary-gradient);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 16px;
+    font-size: 15px;
     box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
     z-index: 22;
     cursor: pointer;
@@ -1098,8 +1105,8 @@ a {
         grid-template-columns: 1fr;
         gap: 40px;
     }
-    .mobile-frame-wrap {
-        max-width: 400px;
+    .mobile-frame-wrap, .hero-mockup-wrap {
+        height: 560px;
     }
 }
 
