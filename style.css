@@ -268,7 +268,7 @@ a {
 
 .hero-content {
     max-width: 860px;
-    margin: 0 auto 50px;
+    margin: 0 auto 40px;
 }
 
 .hero-title {
@@ -301,7 +301,43 @@ a {
     flex-wrap: wrap;
 }
 
-/* Hero Mockup Display (Exact replica of Image 2 light theme layout) */
+/* Mode Switcher Toggle Pill for Desktop vs Mobile Display */
+.preview-mode-switcher {
+    display: inline-flex;
+    align-items: center;
+    background: #e2e8f0;
+    padding: 6px;
+    border-radius: 99px;
+    margin-bottom: 30px;
+    box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.06);
+}
+
+.preview-tab-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 24px;
+    border-radius: 99px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #475569;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.preview-tab-btn.active {
+    background: #ffffff;
+    color: #2563eb;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.18);
+}
+
+/* Hero Mockup Display (Desktop vs Mobile Containers) */
+.preview-container-box {
+    width: 100%;
+}
+
 .hero-mockup-wrap {
     position: relative;
     max-width: 1140px;
@@ -351,7 +387,7 @@ a {
     overflow: hidden;
 }
 
-/* Left Sidebar (Image 2 style) */
+/* Desktop Left Sidebar (Image 2 style) */
 .app-mock-sidebar {
     width: 210px;
     background: #ffffff;
@@ -429,7 +465,7 @@ a {
     gap: 10px;
 }
 
-/* Image 2 KPI Cards Bar */
+/* KPI Cards Bar */
 .mock-kpi-bar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -521,7 +557,7 @@ a {
     color: #0f172a;
 }
 
-/* Sanitized Task Card List (Exact Replica of Image 2) */
+/* Sanitized Task Card List */
 .mock-task-card {
     background: #ffffff;
     border: 1px solid #bfdbfe;
@@ -587,6 +623,104 @@ a {
     color: #475569;
 }
 .priority-pill-sm.high { background: #fee2e2; color: #b91c1c; }
+
+/* MOBILE DISPLAY FRAME (Exact replica of Image 1) */
+.mobile-frame-wrap {
+    max-width: 440px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 36px;
+    padding: 12px;
+    border: 8px solid #0f172a;
+    box-shadow: 0 25px 60px rgba(37, 99, 235, 0.2), 0 10px 30px rgba(15, 23, 42, 0.12);
+    position: relative;
+}
+
+.mobile-notch-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+    background: #f8fafc;
+    border-radius: 26px 26px 0 0;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.mobile-notch-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.mobile-app-body {
+    background: #f4f8ff;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border-radius: 0 0 26px 26px;
+    position: relative;
+    padding-bottom: 80px; /* space for bottom nav */
+    max-height: 650px;
+    overflow-y: auto;
+}
+
+/* Image 1 Bottom Mobile Navigation Bar */
+.mobile-bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    border-radius: 0 0 26px 26px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 -4px 15px rgba(15, 23, 42, 0.05);
+    z-index: 10;
+}
+
+.mobile-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: #64748b;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 12px;
+}
+
+.mobile-nav-item.active {
+    background: #dbeafe;
+    color: #2563eb;
+}
+
+.mobile-nav-item i {
+    font-size: 15px;
+}
+
+/* Image 1 Floating Action Wand Button */
+.mobile-fab-btn {
+    position: absolute;
+    bottom: 65px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
+    z-index: 12;
+    cursor: pointer;
+}
 
 /* Stats Counter Section */
 .stats-section {
