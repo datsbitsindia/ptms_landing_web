@@ -362,6 +362,17 @@ a {
     overflow: hidden;
 }
 
+/* Hide scrollbars across mockups */
+.mockup-app-layout, .app-mock-main, .mobile-app-body {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+.mockup-app-layout::-webkit-scrollbar, .app-mock-main::-webkit-scrollbar, .mobile-app-body::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+}
+
 /* Desktop Left Sidebar */
 .app-mock-sidebar {
     width: 180px;
@@ -599,7 +610,7 @@ a {
 }
 .priority-pill-sm.high { background: #fee2e2; color: #b91c1c; }
 
-/* 2. MOBILE PHONE DISPLAY FRAME (Pixel-perfect replica of Image 1) */
+/* 2. STATIC MOBILE PHONE DISPLAY FRAME (No Scrollbars, 100% Clean) */
 .mobile-frame-wrap {
     width: 100%;
     max-width: 380px;
@@ -637,7 +648,7 @@ a {
     border-radius: 0 0 26px 26px;
     position: relative;
     height: 530px;
-    overflow-y: auto;
+    overflow: hidden; /* Static without scrollbars */
     padding-bottom: 60px; /* Space for fixed bottom nav */
 }
 
