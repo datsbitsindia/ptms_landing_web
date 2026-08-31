@@ -485,11 +485,18 @@ a {
     cursor: pointer;
 }
 
-/* Desktop Left Sidebar (kept for reference, hidden in new layout) */
+/* Desktop Left Sidebar (Photo 3 style) */
 .app-mock-sidebar {
-    display: none;
+    width: 150px;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+    padding: 12px 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-align: left;
+    flex-shrink: 0;
 }
-
 
 
 .mock-sidebar-brand {
