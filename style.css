@@ -94,7 +94,7 @@ a {
 
 /* Container */
 .container {
-    max-width: 1240px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -260,7 +260,7 @@ a {
 
 /* Hero Section */
 .hero {
-    padding-top: 160px;
+    padding-top: 150px;
     padding-bottom: 90px;
     text-align: center;
     position: relative;
@@ -301,47 +301,21 @@ a {
     flex-wrap: wrap;
 }
 
-/* Mode Switcher Toggle Pill for Desktop vs Mobile Display */
-.preview-mode-switcher {
-    display: inline-flex;
-    align-items: center;
-    background: #e2e8f0;
-    padding: 6px;
-    border-radius: 99px;
-    margin-bottom: 30px;
-    box-shadow: inset 0 2px 4px rgba(15, 23, 42, 0.06);
+/* DUAL SIDE-BY-SIDE APP SHOWCASE LAYOUT (Desktop + Mobile together) */
+.dual-app-showcase {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 24px;
+    align-items: flex-end;
+    max-width: 1260px;
+    margin: 0 auto;
+    position: relative;
 }
 
-.preview-tab-btn {
-    border: none;
-    background: transparent;
-    padding: 10px 24px;
-    border-radius: 99px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #475569;
-    cursor: pointer;
-    transition: var(--transition);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.preview-tab-btn.active {
-    background: #ffffff;
-    color: #2563eb;
-    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.18);
-}
-
-/* Hero Mockup Display (Desktop vs Mobile Containers) */
-.preview-container-box {
-    width: 100%;
-}
-
+/* 1. Desktop Window Frame */
 .hero-mockup-wrap {
     position: relative;
-    max-width: 1140px;
-    margin: 0 auto;
+    width: 100%;
     border-radius: var(--radius-lg);
     padding: 8px;
     background: #ffffff;
@@ -383,16 +357,17 @@ a {
     background: #f4f8ff;
     border-radius: 0 0 16px 16px;
     display: flex;
-    min-height: 580px;
+    min-height: 560px;
+    max-height: 600px;
     overflow: hidden;
 }
 
-/* Desktop Left Sidebar (Image 2 style) */
+/* Desktop Left Sidebar */
 .app-mock-sidebar {
-    width: 210px;
+    width: 180px;
     background: #ffffff;
     border-right: 1px solid #e2e8f0;
-    padding: 20px 14px;
+    padding: 16px 12px;
     display: flex;
     flex-direction: column;
     gap: 6px;
@@ -405,21 +380,21 @@ a {
     align-items: center;
     gap: 10px;
     font-weight: 800;
-    font-size: 16px;
+    font-size: 15px;
     color: #0f172a;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
+    padding-bottom: 16px;
+    margin-bottom: 8px;
     border-bottom: 1px solid #f1f5f9;
 }
 
 .mock-sidebar-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 10px 14px;
+    gap: 10px;
+    padding: 9px 12px;
     border-radius: var(--radius-sm);
     color: #475569;
-    font-size: 13.5px;
+    font-size: 13px;
     font-weight: 600;
 }
 
@@ -432,12 +407,12 @@ a {
 /* App Main Body */
 .app-mock-main {
     flex: 1;
-    padding: 20px 24px;
+    padding: 16px 20px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
     text-align: left;
-    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .app-mock-topheader {
@@ -445,38 +420,38 @@ a {
     align-items: center;
     justify-content: space-between;
     background: #ffffff;
-    padding: 12px 18px;
+    padding: 10px 16px;
     border-radius: var(--radius-md);
     border: 1px solid #e2e8f0;
 }
 
 .user-profile-info b {
-    font-size: 14px;
+    font-size: 13.5px;
     color: #0f172a;
 }
 .user-profile-info small {
     display: block;
-    font-size: 11px;
+    font-size: 10.5px;
     color: #64748b;
 }
 
 .mock-header-actions {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 /* KPI Cards Bar */
 .mock-kpi-bar {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    gap: 8px;
 }
 
 .mock-kpi-card {
     background: #ffffff;
     border: 1px solid #cbd5e1;
-    border-radius: 10px;
-    padding: 12px 10px;
+    border-radius: 8px;
+    padding: 10px 6px;
     text-align: center;
 }
 
@@ -487,20 +462,20 @@ a {
 }
 
 .mock-kpi-card i {
-    font-size: 14px;
-    margin-bottom: 4px;
+    font-size: 13px;
+    margin-bottom: 2px;
     display: block;
 }
 
 .mock-kpi-card b {
-    font-size: 18px;
+    font-size: 16px;
     color: #0f172a;
     display: block;
     line-height: 1.1;
 }
 
 .mock-kpi-card span {
-    font-size: 10.5px;
+    font-size: 10px;
     color: #64748b;
     font-weight: 600;
 }
@@ -510,9 +485,9 @@ a {
     background: #fef2f2;
     border: 1px solid #fca5a5;
     color: #991b1b;
-    padding: 10px 16px;
-    border-radius: 10px;
-    font-size: 12px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 11.5px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -522,17 +497,17 @@ a {
 .mock-tabs-bar {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
 }
 
 .mock-tab-btn {
     flex: 1;
-    padding: 8px 16px;
+    padding: 7px 12px;
     border-radius: 8px;
     background: #ffffff;
     border: 1px solid #cbd5e1;
     text-align: center;
-    font-size: 12.5px;
+    font-size: 12px;
     font-weight: 600;
     color: #475569;
 }
@@ -544,7 +519,7 @@ a {
 
 .mock-search-row {
     display: flex;
-    gap: 10px;
+    gap: 8px;
 }
 
 .mock-search-input {
@@ -552,8 +527,8 @@ a {
     background: #ffffff;
     border: 1px solid #cbd5e1;
     border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 12px;
+    padding: 7px 12px;
+    font-size: 11.5px;
     color: #0f172a;
 }
 
@@ -561,11 +536,11 @@ a {
 .mock-task-card {
     background: #ffffff;
     border: 1px solid #bfdbfe;
-    border-radius: 10px;
-    padding: 12px 16px;
+    border-radius: 8px;
+    padding: 10px 14px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     box-shadow: 0 2px 6px rgba(15, 23, 42, 0.02);
 }
 
@@ -577,12 +552,12 @@ a {
 
 .mock-task-title {
     font-weight: 800;
-    font-size: 13.5px;
+    font-size: 12.5px;
     color: #0f172a;
 }
 
 .mock-task-project {
-    font-size: 11px;
+    font-size: 10.5px;
     color: #2563eb;
     font-weight: 600;
     display: flex;
@@ -593,17 +568,17 @@ a {
 .mock-task-columns {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    font-size: 10.5px;
+    gap: 8px;
+    font-size: 10px;
     color: #475569;
     border-top: 1px solid #f1f5f9;
-    padding-top: 6px;
+    padding-top: 5px;
 }
 
 .mock-task-col small {
     display: block;
     color: #94a3b8;
-    font-size: 9px;
+    font-size: 8.5px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 700;
@@ -615,7 +590,7 @@ a {
 }
 
 .priority-pill-sm {
-    font-size: 9px;
+    font-size: 8.5px;
     font-weight: 700;
     padding: 2px 6px;
     border-radius: 99px;
@@ -624,15 +599,16 @@ a {
 }
 .priority-pill-sm.high { background: #fee2e2; color: #b91c1c; }
 
-/* MOBILE DISPLAY FRAME (Exact replica of Image 1) */
+/* 2. MOBILE PHONE DISPLAY FRAME (Pixel-perfect replica of Image 1) */
 .mobile-frame-wrap {
-    max-width: 440px;
+    width: 100%;
+    max-width: 380px;
     margin: 0 auto;
     background: #ffffff;
     border-radius: 36px;
-    padding: 12px;
-    border: 8px solid #0f172a;
-    box-shadow: 0 25px 60px rgba(37, 99, 235, 0.2), 0 10px 30px rgba(15, 23, 42, 0.12);
+    padding: 10px;
+    border: 6px solid #0f172a;
+    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.22), 0 10px 30px rgba(15, 23, 42, 0.12);
     position: relative;
 }
 
@@ -640,29 +616,29 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: 6px 12px;
     background: #f8fafc;
     border-radius: 26px 26px 0 0;
     border-bottom: 1px solid #e2e8f0;
 }
 
 .mobile-notch-title {
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 700;
     color: #0f172a;
 }
 
 .mobile-app-body {
     background: #f4f8ff;
-    padding: 14px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     border-radius: 0 0 26px 26px;
     position: relative;
-    padding-bottom: 80px; /* space for bottom nav */
-    max-height: 650px;
+    height: 530px;
     overflow-y: auto;
+    padding-bottom: 60px; /* Space for fixed bottom nav */
 }
 
 /* Image 1 Bottom Mobile Navigation Bar */
@@ -672,14 +648,14 @@ a {
     left: 0;
     right: 0;
     background: #ffffff;
-    border-top: 1px solid #e2e8f0;
-    border-radius: 0 0 26px 26px;
-    padding: 8px 12px;
+    border-top: 1px solid #cbd5e1;
+    border-radius: 0 0 24px 24px;
+    padding: 6px 4px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow: 0 -4px 15px rgba(15, 23, 42, 0.05);
-    z-index: 10;
+    box-shadow: 0 -4px 15px rgba(15, 23, 42, 0.06);
+    z-index: 20;
 }
 
 .mobile-nav-item {
@@ -688,10 +664,10 @@ a {
     align-items: center;
     gap: 2px;
     color: #64748b;
-    font-size: 10px;
+    font-size: 9px;
     font-weight: 600;
-    padding: 4px 8px;
-    border-radius: 12px;
+    padding: 4px 6px;
+    border-radius: 8px;
 }
 
 .mobile-nav-item.active {
@@ -700,25 +676,25 @@ a {
 }
 
 .mobile-nav-item i {
-    font-size: 15px;
+    font-size: 13px;
 }
 
 /* Image 1 Floating Action Wand Button */
 .mobile-fab-btn {
     position: absolute;
-    bottom: 65px;
-    right: 20px;
-    width: 48px;
-    height: 48px;
+    bottom: 55px;
+    right: 14px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     background: var(--primary-gradient);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
-    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.4);
-    z-index: 12;
+    font-size: 16px;
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+    z-index: 22;
     cursor: pointer;
 }
 
@@ -1106,6 +1082,16 @@ a {
 }
 
 /* Responsive Media Queries */
+@media (max-width: 1100px) {
+    .dual-app-showcase {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .mobile-frame-wrap {
+        max-width: 400px;
+    }
+}
+
 @media (max-width: 992px) {
     .features-grid, .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1115,17 +1101,6 @@ a {
     }
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-    }
-    .mockup-app-layout {
-        flex-direction: column;
-    }
-    .app-mock-sidebar {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-    }
-    .mock-kpi-bar {
-        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -1140,10 +1115,7 @@ a {
         grid-template-columns: 1fr;
     }
     .mock-kpi-bar {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .mock-task-columns {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
     .hero-title {
         font-size: 2.2rem;
