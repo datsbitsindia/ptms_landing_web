@@ -313,16 +313,19 @@ a {
 }
 
 /* GLOBAL SCROLLBAR REMOVAL ACROSS ALL MOCKUPS */
-.dual-app-showcase *,
-.dual-app-showcase *::-webkit-scrollbar,
 .mockup-app-layout::-webkit-scrollbar,
 .app-mock-main::-webkit-scrollbar,
 .mobile-app-body::-webkit-scrollbar {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
     display: none !important;
     width: 0 !important;
     height: 0 !important;
+}
+
+.mockup-app-layout,
+.app-mock-main,
+.mobile-app-body {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
 }
 
 /* 1. Desktop Window Frame */
