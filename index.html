@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,105 +55,59 @@
             <!-- DUAL SIDE-BY-SIDE APP SHOWCASE CONTAINER (Desktop + Mobile together) -->
             <div class="container" id="preview">
                 <div class="dual-app-showcase">
-                    
-                    <!-- 1. DESKTOP DISPLAY SHOWCASE (Left) -->
+
+                    <!-- 1. DESKTOP DISPLAY (Left) - Exact Photo 2 Style (no sidebar) -->
                     <div class="hero-mockup-wrap">
                         <div class="mockup-window-bar">
-                            <div class="mockup-controls">
-                                <span class="control-dot close"></span>
+                            <div class="mockup-window-title">Tasks | Task Manager - PTMS-UNO</div>
+                            <div class="mockup-controls" style="gap:6px;">
                                 <span class="control-dot min"></span>
                                 <span class="control-dot max"></span>
+                                <span class="control-dot close"></span>
                             </div>
-                            <div class="mockup-window-title"><i class="fa-solid fa-desktop" style="color: #2563eb;"></i> Tasks | Task Manager - PTMS-UNO</div>
-                            <div style="font-size: 11px; color: #10b981; font-weight: 700;"><i class="fa-solid fa-circle"></i> Live Sync</div>
                         </div>
-
-                        <div class="mockup-app-layout">
-                            <!-- Left Sidebar -->
-                            <div class="app-mock-sidebar">
-                                <div class="mock-sidebar-brand">
-                                    <i class="fa-solid fa-layer-group" style="color: #2563eb;"></i> Task Manager
-                                </div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
-                                <div class="mock-sidebar-item active"><i class="fa-solid fa-list-check"></i> Tasks</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-user-gear"></i> Profile</div>
-                            </div>
-
-                            <!-- Desktop App Main Area -->
+                        <div class="mockup-app-layout desktop-no-sidebar">
                             <div class="app-mock-main">
-                                <!-- Top Header -->
-                                <div class="app-mock-topheader">
-                                    <div class="user-profile-info">
-                                        <b>Alex Morgan</b>
-                                        <small>Manager · Enterprise Org</small>
+                                <!-- Header -->
+                                <div class="dt-header">
+                                    <div>
+                                        <div class="dt-username">Alex Morgan</div>
+                                        <div class="dt-role">Manager &middot; Enterprise Org</div>
                                     </div>
                                     <div class="mock-header-actions">
-                                        <button class="btn btn-primary" style="padding: 5px 12px; font-size: 11px;"><i class="fa-solid fa-plus"></i> Add Task</button>
-                                        <button class="btn btn-secondary" style="padding: 5px 10px; font-size: 11px; color: #dc2626;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                        <button class="dt-btn-primary"><i class="fa-solid fa-plus"></i> Add Task</button>
+                                        <button class="dt-btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
                                     </div>
                                 </div>
-
-                                <!-- 5 KPI Metric Cards -->
-                                <div class="mock-kpi-bar">
-                                    <div class="mock-kpi-card">
-                                        <i class="fa-solid fa-triangle-exclamation" style="color: #dc2626;"></i>
-                                        <b>4</b>
-                                        <span>Overdue</span>
-                                    </div>
-                                    <div class="mock-kpi-card active-kpi">
-                                        <i class="fa-regular fa-clock" style="color: #d97706;"></i>
-                                        <b>8</b>
-                                        <span>Pending</span>
-                                    </div>
-                                    <div class="mock-kpi-card">
-                                        <i class="fa-solid fa-spinner" style="color: #2563eb;"></i>
-                                        <b>0</b>
-                                        <span>In Progress</span>
-                                    </div>
-                                    <div class="mock-kpi-card">
-                                        <i class="fa-regular fa-circle-check" style="color: #16a34a;"></i>
-                                        <b>35</b>
-                                        <span>Completed</span>
-                                    </div>
-                                    <div class="mock-kpi-card">
-                                        <i class="fa-solid fa-list-ul" style="color: #4f46e5;"></i>
-                                        <b>43</b>
-                                        <span>Total Tasks</span>
-                                    </div>
+                                <!-- 5 KPI Cards -->
+                                <div class="mock-kpi-bar dt-kpi-bar">
+                                    <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>4</b><span>Overdue</span></div>
+                                    <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>8</b><span>Pending</span></div>
+                                    <div class="mock-kpi-card"><i class="fa-solid fa-spinner" style="color:#2563eb;"></i><b>0</b><span>In Progress</span></div>
+                                    <div class="mock-kpi-card"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>35</b><span>Completed</span></div>
+                                    <div class="mock-kpi-card"><i class="fa-solid fa-list-ul" style="color:#4f46e5;"></i><b>43</b><span>Total Tasks</span></div>
                                 </div>
-
-                                <!-- Alert Banner -->
+                                <!-- Alert -->
                                 <div class="mock-alert-banner">
-                                    <i class="fa-solid fa-triangle-exclamation" style="font-size: 16px; color: #dc2626;"></i>
-                                    <div>
-                                        <b>4 overdue tasks</b>
-                                        <span style="display: block; font-size: 10.5px;">Team tasks are overdue. Please follow up.</span>
-                                    </div>
+                                    <i class="fa-solid fa-triangle-exclamation" style="font-size:14px;color:#dc2626;"></i>
+                                    <div><b>4 overdue tasks</b><span style="display:block;font-size:10px;">Employee tasks are overdue. Please follow up urgently.</span></div>
                                 </div>
-
                                 <!-- Tabs -->
                                 <div class="mock-tabs-bar">
                                     <div class="mock-tab-btn"><i class="fa-solid fa-briefcase"></i> To Do</div>
                                     <div class="mock-tab-btn active"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
                                 </div>
-
-                                <!-- Search Row -->
+                                <!-- Search -->
                                 <div class="mock-search-row">
                                     <input type="text" class="mock-search-input" placeholder="Search tasks...">
-                                    <select class="mock-search-input" style="width: 120px;">
-                                        <option>All Projects</option>
-                                    </select>
+                                    <select class="mock-search-input" style="width:130px;"><option>All Projects</option></select>
                                 </div>
-
-                                <!-- Sanitized Dummy Task Cards -->
-                                <div style="display: flex; flex-direction: column; gap: 8px;">
-                                    <div class="mock-task-card">
+                                <!-- Task Cards with left yellow border -->
+                                <div style="display:flex;flex-direction:column;gap:7px;">
+                                    <div class="mock-task-card dt-task">
                                         <div class="mock-task-header">
-                                            <span class="mock-task-title">#129 Financial Audit & Compliance</span>
-                                            <span class="priority-pill-sm">Medium</span>
+                                            <span class="mock-task-title">#129 Financial Audit &amp; Compliance</span>
+                                            <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
                                         </div>
                                         <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Finance Core</div>
                                         <div class="mock-task-columns">
@@ -163,11 +117,10 @@
                                             <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
                                         </div>
                                     </div>
-
-                                    <div class="mock-task-card">
+                                    <div class="mock-task-card dt-task">
                                         <div class="mock-task-header">
                                             <span class="mock-task-title">#128 Database Indexing Optimization</span>
-                                            <span class="priority-pill-sm">Medium</span>
+                                            <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
                                         </div>
                                         <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Cloud Infra</div>
                                         <div class="mock-task-columns">
@@ -177,151 +130,104 @@
                                             <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
                                         </div>
                                     </div>
-
-                                    <div class="mock-task-card">
+                                    <div class="mock-task-card dt-task">
                                         <div class="mock-task-header">
                                             <span class="mock-task-title">#116 REST API Gateway Auth Module</span>
-                                            <span class="priority-pill-sm">Medium</span>
+                                            <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
                                         </div>
                                         <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Developer API</div>
                                         <div class="mock-task-columns">
                                             <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
-                                            <div class="mock-task-col"><small>ASSIGNED TO</small><b>Marcus Vance</b></div>
+                                            <div class="mock-task-col"><small>ASSIGNED TO</small><b>Marcus Vance, K...</b></div>
                                             <div class="mock-task-col"><small>ASSIGNED ON</small><b>29 Aug 2026</b></div>
                                             <div class="mock-task-col"><small>DUE DATE</small><b>1 Sept 2026</b></div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Floating Wand Button -->
+                                <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            </div>
+                            <!-- Bottom Nav -->
+                            <div class="dt-bottom-nav">
+                                <div class="mobile-nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+                                <div class="mobile-nav-item active"><i class="fa-solid fa-circle-check"></i> Tasks</div>
+                                <div class="mobile-nav-item"><i class="fa-solid fa-users"></i> Teams</div>
+                                <div class="mobile-nav-item"><i class="fa-solid fa-bell"></i> Notifications</div>
+                                <div class="mobile-nav-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
+                                <div class="mobile-nav-item"><i class="fa-solid fa-user"></i> Profile</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- 2. MOBILE PHONE DISPLAY SHOWCASE (Right) -->
+                    <!-- 2. MOBILE PHONE DISPLAY (Right) -->
                     <div class="mobile-frame-wrap">
                         <div class="mobile-notch-bar">
-                            <div class="mockup-controls">
-                                <span class="control-dot close"></span>
-                                <span class="control-dot min"></span>
-                                <span class="control-dot max"></span>
-                            </div>
-                            <div class="mobile-notch-title"><i class="fa-solid fa-mobile-screen" style="color: #2563eb;"></i> Tasks | Task Manager</div>
-                            <div style="font-size: 10px; color: #10b981; font-weight: 700;">Live</div>
+                            <div class="mobile-notch-title"><i class="fa-solid fa-mobile-screen" style="color:#2563eb;"></i> Tasks | Task Manager</div>
+                            <div style="font-size:9px;color:#10b981;font-weight:700;">Live</div>
                         </div>
-
                         <div class="mobile-app-body">
-                            <!-- Top Header -->
-                            <div class="app-mock-topheader">
-                                <div class="user-profile-info">
-                                    <b>Alex Morgan</b>
-                                    <small>Manager · Enterprise Org</small>
+                            <!-- Header -->
+                            <div class="dt-header" style="padding:7px 9px;">
+                                <div>
+                                    <div class="dt-username" style="font-size:11px;">Alex Morgan</div>
+                                    <div class="dt-role" style="font-size:8.5px;">Manager &middot; Enterprise Org</div>
                                 </div>
                                 <div class="mock-header-actions">
-                                    <button class="btn btn-primary" style="padding: 4px 8px; font-size: 10.5px;"><i class="fa-solid fa-plus"></i> Add Task</button>
-                                    <button class="btn btn-secondary" style="padding: 4px 6px; font-size: 10.5px; color: #dc2626;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                    <button class="dt-btn-primary" style="font-size:8.5px;padding:3px 7px;"><i class="fa-solid fa-plus"></i> Add Task</button>
+                                    <button class="dt-btn-logout" style="font-size:8.5px;padding:3px 6px;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
                                 </div>
                             </div>
-
-                            <!-- 5 KPI Metric Cards Bar -->
-                            <div class="mock-kpi-bar" style="grid-template-columns: repeat(3, 1fr);">
-                                <div class="mock-kpi-card">
-                                    <i class="fa-solid fa-triangle-exclamation" style="color: #dc2626;"></i>
-                                    <b>4</b>
-                                    <span>Overdue</span>
-                                </div>
-                                <div class="mock-kpi-card active-kpi">
-                                    <i class="fa-regular fa-clock" style="color: #d97706;"></i>
-                                    <b>8</b>
-                                    <span>Pending</span>
-                                </div>
-                                <div class="mock-kpi-card">
-                                    <i class="fa-solid fa-spinner" style="color: #2563eb;"></i>
-                                    <b>0</b>
-                                    <span>In Progress</span>
-                                </div>
-                                <div class="mock-kpi-card">
-                                    <i class="fa-regular fa-circle-check" style="color: #16a34a;"></i>
-                                    <b>35</b>
-                                    <span>Completed</span>
-                                </div>
-                                <div class="mock-kpi-card">
-                                    <i class="fa-solid fa-list-ul" style="color: #4f46e5;"></i>
-                                    <b>43</b>
-                                    <span>Total Tasks</span>
-                                </div>
+                            <!-- KPI 3-col -->
+                            <div class="mock-kpi-bar" style="grid-template-columns:repeat(3,1fr);">
+                                <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>4</b><span>Overdue</span></div>
+                                <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>8</b><span>Pending</span></div>
+                                <div class="mock-kpi-card"><i class="fa-solid fa-spinner" style="color:#2563eb;"></i><b>0</b><span>In Progress</span></div>
+                                <div class="mock-kpi-card"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>35</b><span>Completed</span></div>
+                                <div class="mock-kpi-card"><i class="fa-solid fa-list-ul" style="color:#4f46e5;"></i><b>43</b><span>Total Tasks</span></div>
                             </div>
-
-                            <!-- Alert Banner -->
+                            <!-- Alert -->
                             <div class="mock-alert-banner">
-                                <i class="fa-solid fa-triangle-exclamation" style="font-size: 15px; color: #dc2626;"></i>
-                                <div>
-                                    <b>4 overdue tasks</b>
-                                    <span style="display: block; font-size: 9.5px;">Team tasks are overdue. Please follow up.</span>
-                                </div>
+                                <i class="fa-solid fa-triangle-exclamation" style="font-size:12px;color:#dc2626;"></i>
+                                <div><b style="font-size:9.5px;">4 overdue tasks</b><span style="display:block;font-size:8px;">Team tasks are overdue. Please follow up.</span></div>
                             </div>
-
                             <!-- Tabs -->
                             <div class="mock-tabs-bar">
-                                <div class="mock-tab-btn"><i class="fa-solid fa-briefcase"></i> To Do</div>
-                                <div class="mock-tab-btn active"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
+                                <div class="mock-tab-btn" style="font-size:9.5px;"><i class="fa-solid fa-briefcase"></i> To Do</div>
+                                <div class="mock-tab-btn active" style="font-size:9.5px;"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
                             </div>
-
                             <!-- Search -->
                             <div class="mock-search-row">
-                                <input type="text" class="mock-search-input" placeholder="Search tasks...">
-                                <select class="mock-search-input" style="width: 100px;">
-                                    <option>All Projects</option>
-                                </select>
+                                <input type="text" class="mock-search-input" placeholder="Search tasks..." style="font-size:9.5px;">
+                                <select class="mock-search-input" style="width:85px;font-size:9.5px;"><option>All Projects</option></select>
                             </div>
-
-                            <!-- Sanitized Task List -->
-                            <div style="display: flex; flex-direction: column; gap: 8px;">
-                                <div class="mock-task-card">
+                            <!-- Task Cards -->
+                            <div style="display:flex;flex-direction:column;gap:5px;">
+                                <div class="mock-task-card dt-task">
                                     <div class="mock-task-header">
-                                        <span class="mock-task-title">#129 Financial Audit & Compliance</span>
-                                        <span class="priority-pill-sm">Medium</span>
+                                        <span class="mock-task-title" style="font-size:9.5px;">#129 Financial Audit &amp; Compliance</span>
+                                        <span class="priority-pill-sm" style="font-size:7.5px;"><i class="fa-solid fa-flag"></i> Medium</span>
                                     </div>
-                                    <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Finance Core</div>
-                                    <div class="mock-task-columns" style="grid-template-columns: repeat(2, 1fr);">
+                                    <div class="mock-task-project" style="font-size:8.5px;"><i class="fa-solid fa-folder"></i> Finance Core</div>
+                                    <div class="mock-task-columns" style="grid-template-columns:repeat(2,1fr);">
                                         <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
                                         <div class="mock-task-col"><small>ASSIGNED TO</small><b>Sarah Connor</b></div>
-                                        <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
-                                        <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
                                     </div>
                                 </div>
-
-                                <div class="mock-task-card">
+                                <div class="mock-task-card dt-task">
                                     <div class="mock-task-header">
-                                        <span class="mock-task-title">#128 Database Indexing Optimization</span>
-                                        <span class="priority-pill-sm">Medium</span>
+                                        <span class="mock-task-title" style="font-size:9.5px;">#128 Database Indexing</span>
+                                        <span class="priority-pill-sm" style="font-size:7.5px;"><i class="fa-solid fa-flag"></i> Medium</span>
                                     </div>
-                                    <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Cloud Infra</div>
-                                    <div class="mock-task-columns" style="grid-template-columns: repeat(2, 1fr);">
+                                    <div class="mock-task-project" style="font-size:8.5px;"><i class="fa-solid fa-folder"></i> Cloud Infra</div>
+                                    <div class="mock-task-columns" style="grid-template-columns:repeat(2,1fr);">
                                         <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
                                         <div class="mock-task-col"><small>ASSIGNED TO</small><b>Alex Rivera</b></div>
-                                        <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
-                                        <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
-                                    </div>
-                                </div>
-
-                                <div class="mock-task-card">
-                                    <div class="mock-task-header">
-                                        <span class="mock-task-title">#116 REST API Gateway Auth</span>
-                                        <span class="priority-pill-sm">Medium</span>
-                                    </div>
-                                    <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Developer API</div>
-                                    <div class="mock-task-columns" style="grid-template-columns: repeat(2, 1fr);">
-                                        <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
-                                        <div class="mock-task-col"><small>ASSIGNED TO</small><b>Marcus Vance</b></div>
-                                        <div class="mock-task-col"><small>ASSIGNED ON</small><b>29 Aug 2026</b></div>
-                                        <div class="mock-task-col"><small>DUE DATE</small><b>1 Sept 2026</b></div>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Image 1 Floating Action Magic Wand Button -->
+                            <!-- FAB -->
                             <div class="mobile-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-
-                            <!-- Image 1 Bottom Mobile Navigation Bar -->
+                            <!-- Bottom Nav -->
                             <div class="mobile-bottom-nav">
                                 <div class="mobile-nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
                                 <div class="mobile-nav-item active"><i class="fa-solid fa-circle-check"></i> Tasks</div>
@@ -335,7 +241,7 @@
 
                 </div>
             </div>
-        </section>
+                </section>
 
         <!-- Stats Bar -->
         <section class="stats-section">
@@ -422,7 +328,7 @@
                             <div class="platform-icon"><i class="fa-brands fa-windows"></i></div>
                             <div class="platform-info">
                                 <h4>Windows Desktop App</h4>
-                                <span>Version 2.4.0 • 64-bit Installer (.EXE)</span>
+                                <span>Version 2.4.0 â€¢ 64-bit Installer (.EXE)</span>
                             </div>
                             <button onclick="triggerDownloadModal('exe')" class="btn btn-primary" style="width: 100%;">
                                 <i class="fa-solid fa-download"></i> Download for Windows (.EXE)
@@ -434,7 +340,7 @@
                             <div class="platform-icon"><i class="fa-brands fa-android"></i></div>
                             <div class="platform-info">
                                 <h4>Android Mobile App</h4>
-                                <span>Version 2.4.0 • Android Package (.APK)</span>
+                                <span>Version 2.4.0 â€¢ Android Package (.APK)</span>
                             </div>
                             <button onclick="triggerDownloadModal('apk')" class="btn btn-green" style="width: 100%;">
                                 <i class="fa-solid fa-download"></i> Download for Android (.APK)
@@ -612,3 +518,4 @@
     <script src="script.js"></script>
 </body>
 </html>
+

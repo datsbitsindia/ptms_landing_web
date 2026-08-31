@@ -380,18 +380,117 @@ a {
     overflow: hidden;
 }
 
-/* Desktop Left Sidebar */
-.app-mock-sidebar {
-    width: 180px;
-    background: #ffffff;
-    border-right: 1px solid #e2e8f0;
-    padding: 16px 12px;
-    display: flex;
+/* Desktop mockup - no sidebar, full width */
+.desktop-no-sidebar {
     flex-direction: column;
-    gap: 6px;
-    text-align: left;
-    flex-shrink: 0;
+    position: relative;
+    padding-bottom: 42px; /* space for bottom nav */
 }
+
+/* Desktop Header (Photo 2 style) */
+.dt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 10px 16px;
+    border-radius: var(--radius-md);
+    border: 1px solid #e2e8f0;
+}
+
+.dt-username {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+    font-family: 'Outfit', sans-serif;
+}
+
+.dt-role {
+    font-size: 11px;
+    color: #64748b;
+    margin-top: 1px;
+}
+
+.dt-btn-primary {
+    background: var(--primary-gradient);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 3px 10px rgba(37,99,235,0.25);
+}
+
+.dt-btn-logout {
+    background: #ffffff;
+    color: #dc2626;
+    border: 1px solid #fca5a5;
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Desktop KPI bar — 5 equal columns */
+.dt-kpi-bar {
+    grid-template-columns: repeat(5, 1fr) !important;
+}
+
+/* Task cards with left yellow border (Photo 2 style) */
+.dt-task {
+    border-left: 3px solid #f59e0b !important;
+    border-radius: 6px !important;
+}
+
+/* Desktop bottom nav bar */
+.dt-bottom-nav {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #cbd5e1;
+    padding: 6px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    z-index: 20;
+}
+
+/* Desktop floating action button */
+.dt-fab-btn {
+    position: absolute;
+    bottom: 50px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 6px 16px rgba(37,99,235,0.4);
+    z-index: 22;
+    cursor: pointer;
+}
+
+/* Desktop Left Sidebar (kept for reference, hidden in new layout) */
+.app-mock-sidebar {
+    display: none;
+}
+
+
 
 .mock-sidebar-brand {
     display: flex;
