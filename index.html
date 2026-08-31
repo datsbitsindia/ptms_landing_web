@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PTMS UNO - Next-Gen Project & Task Management SaaS</title>
+    <meta name="description" content="Streamline multi-tenant organizations, daily recurring routines, task forwarding, and real-time project KPIs with PTMS UNO. Available on Web, Windows (.EXE), and Android (.APK).">
+    
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="navbar">
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-layer-group"></i></div>
+                <span>PTMS UNO</span>
+                <span class="logo-tag">SaaS v2.4</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#preview">App Preview</a></li>
+                <li><a href="#downloads">Downloads (.EXE / .APK)</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" class="btn btn-secondary"><i class="fa-solid fa-right-to-bracket"></i> Live Sign In</a>
+                <button onclick="triggerDownloadModal('exe')" class="btn btn-primary"><i class="fa-solid fa-download"></i> Get Desktop App</button>
+                <button class="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <div class="badge"><i class="fa-solid fa-bolt"></i> Ultimate Work Orchestration Platform</div>
+                <h1 class="hero-title">Streamline Projects, Automate Routines & <span>Empower Teams</span></h1>
+                <p class="hero-subtitle">PTMS UNO gives your organization complete control over complex projects, daily recurring routines, automated task forwarding, and real-time performance analytics.</p>
+                
+                <div class="hero-cta">
+                    <a href="#" class="btn btn-primary" style="padding: 16px 36px; font-size: 16px;"><i class="fa-solid fa-rocket"></i> Launch Web Platform</a>
+                    <button onclick="triggerDownloadModal('exe')" class="btn btn-secondary" style="padding: 16px 32px; font-size: 16px;"><i class="fa-brands fa-windows"></i> Windows (.EXE)</button>
+                    <button onclick="triggerDownloadModal('apk')" class="btn btn-secondary" style="padding: 16px 32px; font-size: 16px;"><i class="fa-brands fa-android"></i> Android (.APK)</button>
+                </div>
+            </div>
+
+            <!-- Hero Mockup Display (Exact Layout of Image 2 in White & Light Blue Theme) -->
+            <div class="container" id="preview">
+                <div class="hero-mockup-wrap">
+                    <div class="mockup-window-bar">
+                        <div class="mockup-controls">
+                            <span class="control-dot close"></span>
+                            <span class="control-dot min"></span>
+                            <span class="control-dot max"></span>
+                        </div>
+                        <div class="mockup-window-title"><i class="fa-solid fa-desktop" style="color: #2563eb;"></i> Tasks | Task Manager - PTMS-UNO</div>
+                        <div style="font-size: 11px; color: #10b981; font-weight: 700;"><i class="fa-solid fa-circle"></i> Live Sync</div>
+                    </div>
+
+                    <div class="mockup-app-layout">
+                        <!-- Left Sidebar (Matching Image 2) -->
+                        <div class="app-mock-sidebar">
+                            <div class="mock-sidebar-brand">
+                                <i class="fa-solid fa-layer-group" style="color: #2563eb;"></i> Task Manager
+                            </div>
+                            <div class="mock-sidebar-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+                            <div class="mock-sidebar-item active"><i class="fa-solid fa-list-check"></i> Tasks</div>
+                            <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
+                            <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
+                            <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
+                            <div class="mock-sidebar-item"><i class="fa-solid fa-user-gear"></i> Profile</div>
+                        </div>
+
+                        <!-- App Main Area (Matching Image 2) -->
+                        <div class="app-mock-main">
+                            <!-- Top Header -->
+                            <div class="app-mock-topheader">
+                                <div class="user-profile-info">
+                                    <b>Alex Morgan</b>
+                                    <small>Manager · Enterprise Org</small>
+                                </div>
+                                <div class="mock-header-actions">
+                                    <button class="btn btn-primary" style="padding: 6px 14px; font-size: 12px;"><i class="fa-solid fa-plus"></i> Add Task</button>
+                                    <button class="btn btn-secondary" style="padding: 6px 12px; font-size: 12px; color: #dc2626;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                </div>
+                            </div>
+
+                            <!-- 5 KPI Metric Cards (Matching Image 2) -->
+                            <div class="mock-kpi-bar">
+                                <div class="mock-kpi-card">
+                                    <i class="fa-solid fa-triangle-exclamation" style="color: #dc2626;"></i>
+                                    <b>4</b>
+                                    <span>Overdue</span>
+                                </div>
+                                <div class="mock-kpi-card active-kpi">
+                                    <i class="fa-regular fa-clock" style="color: #d97706;"></i>
+                                    <b>8</b>
+                                    <span>Pending</span>
+                                </div>
+                                <div class="mock-kpi-card">
+                                    <i class="fa-solid fa-spinner" style="color: #2563eb;"></i>
+                                    <b>0</b>
+                                    <span>In Progress</span>
+                                </div>
+                                <div class="mock-kpi-card">
+                                    <i class="fa-regular fa-circle-check" style="color: #16a34a;"></i>
+                                    <b>35</b>
+                                    <span>Completed</span>
+                                </div>
+                                <div class="mock-kpi-card">
+                                    <i class="fa-solid fa-list-ul" style="color: #4f46e5;"></i>
+                                    <b>43</b>
+                                    <span>Total Tasks</span>
+                                </div>
+                            </div>
+
+                            <!-- Overdue Alert Banner -->
+                            <div class="mock-alert-banner">
+                                <i class="fa-solid fa-triangle-exclamation" style="font-size: 18px; color: #dc2626;"></i>
+                                <div>
+                                    <b>4 overdue tasks</b>
+                                    <span style="display: block; font-size: 11px;">Team tasks are overdue. Please follow up urgently.</span>
+                                </div>
+                            </div>
+
+                            <!-- Tab Toggle Bar (To Do vs Assigned) -->
+                            <div class="mock-tabs-bar">
+                                <div class="mock-tab-btn"><i class="fa-solid fa-briefcase"></i> To Do</div>
+                                <div class="mock-tab-btn active"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
+                            </div>
+
+                            <!-- Search Row -->
+                            <div class="mock-search-row">
+                                <input type="text" class="mock-search-input" value="" placeholder="Search tasks...">
+                                <select class="mock-search-input" style="width: 140px;">
+                                    <option>All Projects</option>
+                                </select>
+                            </div>
+
+                            <!-- Sanitized Task Cards List (Matching Image 2 Column Layout with Demo Data) -->
+                            <div style="display: flex; flex-direction: column; gap: 10px;">
+                                <!-- Task Item 1 -->
+                                <div class="mock-task-card">
+                                    <div class="mock-task-header">
+                                        <span class="mock-task-title">#129 Financial Audit & Compliance Mark</span>
+                                        <span class="priority-pill-sm">Medium</span>
+                                    </div>
+                                    <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Finance Core</div>
+                                    <div class="mock-task-columns">
+                                        <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED TO</small><b>Sarah Connor</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
+                                        <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
+                                    </div>
+                                </div>
+
+                                <!-- Task Item 2 -->
+                                <div class="mock-task-card">
+                                    <div class="mock-task-header">
+                                        <span class="mock-task-title">#128 Database Indexing Optimization</span>
+                                        <span class="priority-pill-sm">Medium</span>
+                                    </div>
+                                    <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Cloud Infra</div>
+                                    <div class="mock-task-columns">
+                                        <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED TO</small><b>Alex Rivera</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
+                                        <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
+                                    </div>
+                                </div>
+
+                                <!-- Task Item 3 -->
+                                <div class="mock-task-card">
+                                    <div class="mock-task-header">
+                                        <span class="mock-task-title">#116 REST API Gateway Auth Module</span>
+                                        <span class="priority-pill-sm">Medium</span>
+                                    </div>
+                                    <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Developer API</div>
+                                    <div class="mock-task-columns">
+                                        <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED TO</small><b>Marcus Vance, David M.</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED ON</small><b>29 Aug 2026</b></div>
+                                        <div class="mock-task-col"><small>DUE DATE</small><b>1 Sept 2026</b></div>
+                                    </div>
+                                </div>
+
+                                <!-- Task Item 4 -->
+                                <div class="mock-task-card">
+                                    <div class="mock-task-header">
+                                        <span class="mock-task-title">#112 Multi-Tenant Storage Backup Engine</span>
+                                        <span class="priority-pill-sm high">High</span>
+                                    </div>
+                                    <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Enterprise Suite</div>
+                                    <div class="mock-task-columns">
+                                        <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED TO</small><b>Sarah Connor</b></div>
+                                        <div class="mock-task-col"><small>ASSIGNED ON</small><b>29 Aug 2026</b></div>
+                                        <div class="mock-task-col"><small>DUE DATE</small><b>29 Aug 2026</b></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-section">
+            <div class="container stats-grid">
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>Uptime & Real-time Sync</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10x</h3>
+                    <p>Faster Task Assignment</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>Multi-Tenant Isolation</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Automated Routine Tracking</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge"><i class="fa-solid fa-cube"></i> Powerhouse Features</div>
+                    <h2 class="section-title">Everything Your Organization Needs to Scale</h2>
+                    <p class="section-desc">Designed from the ground up to support high-velocity teams, managers, and enterprise organizations.</p>
+                </div>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-sitemap"></i></div>
+                        <h3>Multi-Tenant Architecture</h3>
+                        <p>Complete data isolation for each organization with custom table prefixes, task counters, and strict permission scoping.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                        <h3>Daily Recurring Routines</h3>
+                        <p>Automatically generate daily tasks based on schedules, week days, and estimated hours so no routine operational task is ever missed.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                        <h3>Smart Task Forwarding</h3>
+                        <p>Forward tasks seamlessly to colleagues with reason logs, keeping complete history of task handovers and updates.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-chart-pie"></i></div>
+                        <h3>Real-time KPI Analytics</h3>
+                        <p>Instant status filtering across Planned, In Progress, Completed, and Overdue projects with live polling updates.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-user-gear"></i></div>
+                        <h3>Multi-Assignee Management</h3>
+                        <p>Assign tasks and projects to multiple managers and team members simultaneously with dynamic chips and strict validation.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h3>Cross-Platform Native Apps</h3>
+                        <p>Access via Cloud Web, Windows Desktop (`.EXE`), or Android Mobile (`.APK`) for seamless productivity anywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Center Section -->
+        <section id="downloads" class="download-section">
+            <div class="container">
+                <div class="download-box">
+                    <div class="badge"><i class="fa-solid fa-download"></i> Multi-Platform Ecosystem</div>
+                    <h2 class="section-title">Download PTMS UNO Apps</h2>
+                    <p class="section-desc" style="max-width: 600px; margin: 0 auto;">Install native applications for your preferred platform or use our cloud-hosted web version instantly.</p>
+
+                    <div class="download-cards">
+                        <!-- Windows Desktop Card -->
+                        <div class="platform-card">
+                            <div class="platform-icon"><i class="fa-brands fa-windows"></i></div>
+                            <div class="platform-info">
+                                <h4>Windows Desktop App</h4>
+                                <span>Version 2.4.0 • 64-bit Installer (.EXE)</span>
+                            </div>
+                            <button onclick="triggerDownloadModal('exe')" class="btn btn-primary" style="width: 100%;">
+                                <i class="fa-solid fa-download"></i> Download for Windows (.EXE)
+                            </button>
+                        </div>
+
+                        <!-- Android APK Card -->
+                        <div class="platform-card android">
+                            <div class="platform-icon"><i class="fa-brands fa-android"></i></div>
+                            <div class="platform-info">
+                                <h4>Android Mobile App</h4>
+                                <span>Version 2.4.0 • Android Package (.APK)</span>
+                            </div>
+                            <button onclick="triggerDownloadModal('apk')" class="btn btn-green" style="width: 100%;">
+                                <i class="fa-solid fa-download"></i> Download for Android (.APK)
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge"><i class="fa-solid fa-tags"></i> Transparent Pricing</div>
+                    <h2 class="section-title">Flexible Plans for Teams of Any Size</h2>
+                    <p class="section-desc">Choose the plan that fits your organizational goals.</p>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Starter Plan -->
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3>Starter</h3>
+                            <p style="font-size: 13px; color: var(--text-muted);">Ideal for small teams and startups.</p>
+                        </div>
+                        <div class="price-amount">$29 <span>/ month</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Up to 10 Active Users</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Unlimited Projects & Tasks</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Daily Routine Automation</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Cloud Web Access</li>
+                        </ul>
+                        <button onclick="triggerDownloadModal('web')" class="btn btn-secondary" style="margin-top: auto;">Get Started</button>
+                    </div>
+
+                    <!-- Professional Plan -->
+                    <div class="price-card popular">
+                        <div class="popular-tag">Most Popular</div>
+                        <div class="price-header">
+                            <h3>Professional</h3>
+                            <p style="font-size: 13px; color: var(--text-muted);">For growing companies needing advanced control.</p>
+                        </div>
+                        <div class="price-amount">$79 <span>/ month</span></div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Up to 50 Active Users</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Multi-Assignee Manager Scoping</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Windows (.EXE) & Android (.APK) Apps</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Smart Task Forwarding Logs</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Priority Email Support</li>
+                        </ul>
+                        <button onclick="triggerDownloadModal('exe')" class="btn btn-primary" style="margin-top: auto;">Start 14-Day Free Trial</button>
+                    </div>
+
+                    <!-- Enterprise Plan -->
+                    <div class="price-card">
+                        <div class="price-header">
+                            <h3>Enterprise</h3>
+                            <p style="font-size: 13px; color: var(--text-muted);">Unlimited scale, custom deployment & SLA.</p>
+                        </div>
+                        <div class="price-amount">Custom</div>
+                        <ul class="price-features">
+                            <li><i class="fa-solid fa-circle-check"></i> Unlimited Users & Organizations</li>
+                            <li><i class="fa-solid fa-circle-check"></i> On-Premise / Self-Hosted Dedicated MySQL</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Full Audit Trail & Security Scoping</li>
+                            <li><i class="fa-solid fa-circle-check"></i> 24/7 Dedicated Account Manager</li>
+                        </ul>
+                        <a href="mailto:support@ptms-uno.com" class="btn btn-secondary" style="margin-top: auto;">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge"><i class="fa-solid fa-circle-question"></i> Help Center</div>
+                    <h2 class="section-title">Frequently Asked Questions</h2>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>How does PTMS UNO handle multi-tenant organization security?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Every organization created in PTMS UNO is bound to a unique organization ID and strict database query scoping. Users can only access projects, tasks, and routines linked to their organization.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I download native desktop (.EXE) and mobile (.APK) apps?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! PTMS UNO provides native Windows Desktop (.EXE) installers and Android Mobile (.APK) packages. Simply click the download buttons in the Download section above.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What happens if I try to assign a project without selecting a manager?</span>
+                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                        </div>
+                        <div class="faq-answer">
+                            PTMS UNO includes strict validation. If a user attempts to submit a project form without assigning a manager, the system immediately blocks submission and displays a clear alert modal requesting manager selection.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon"><i class="fa-solid fa-layer-group"></i></div>
+                        <span>PTMS UNO</span>
+                    </a>
+                    <p>Next-generation SaaS platform for project management, daily routine automation, and enterprise team orchestration.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#downloads">Download .EXE</a></li>
+                        <li><a href="#downloads">Download .APK</a></li>
+                        <li><a href="#pricing">Pricing Plans</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ & Docs</a></li>
+                        <li><a href="#">Live Web App</a></li>
+                        <li><a href="#">Release Notes</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:support@ptms-uno.com"><i class="fa-solid fa-envelope"></i> support@ptms-uno.com</a></li>
+                        <li><a href="#"><i class="fa-solid fa-shield-halved"></i> Privacy Policy</a></li>
+                        <li><a href="#"><i class="fa-solid fa-file-contract"></i> Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 PTMS UNO SaaS Platform. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Trigger Modal -->
+    <div class="modal-overlay" id="download-modal">
+        <div class="modal-content">
+            <button class="modal-close">&times;</button>
+            <div style="font-size: 40px; margin-bottom: 12px; color: #2563eb;"><i class="fa-solid fa-box-open"></i></div>
+            <h3 id="modal-platform-title" style="margin-bottom: 8px;">PTMS UNO Installer</h3>
+            <p id="modal-platform-desc" style="font-size: 14px; color: #64748b; margin-bottom: 24px;">Preparing package for download...</p>
+            <button id="confirm-download-btn" class="btn btn-primary" style="width: 100%;">
+                <i class="fa-solid fa-download"></i> Start Download
+            </button>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
