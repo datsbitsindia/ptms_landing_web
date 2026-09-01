@@ -1732,3 +1732,76 @@ a {
 @media (max-width: 640px) {
     .preview-guide-grid { grid-template-columns: 1fr; }
 }
+
+/* Floating Arrow Pointer Tags on Mockup UI */
+.hero-mockup-wrap {
+    position: relative;
+    overflow: visible !important;
+}
+
+.mockup-pointer-tag {
+    position: absolute;
+    z-index: 90;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #0f172a;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 99px;
+    font-size: 11px;
+    font-weight: 600;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.6);
+    white-space: nowrap;
+    transition: var(--transition);
+    animation: pointerPulse 3s ease-in-out infinite alternate;
+}
+
+.pointer-badge {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #ffffff;
+    padding: 2px 7px;
+    border-radius: 99px;
+    font-size: 9.5px;
+    font-weight: 800;
+}
+
+.mockup-pointer-tag i {
+    color: #38bdf8;
+    font-size: 12px;
+}
+
+@keyframes pointerPulse {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-4px); }
+}
+
+/* Position Pointers for 5 UI Elements */
+.pointer-add-task {
+    top: 10px;
+    right: 70px;
+}
+
+.pointer-notifications {
+    top: 155px;
+    left: -20px;
+}
+
+.pointer-todo {
+    top: 200px;
+    left: 170px;
+}
+
+.pointer-task-card {
+    top: 295px;
+    right: 25px;
+}
+
+.pointer-ai-fab {
+    bottom: 12px;
+    right: 55px;
+}
+
+@media (max-width: 1100px) {
+    .mockup-pointer-tag { display: none; }
+}
