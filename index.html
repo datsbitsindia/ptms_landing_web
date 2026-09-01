@@ -354,34 +354,89 @@
                             </ul>
                         </div>
 
-                        <!-- Screen Frame Right (Task Discussion Modal Mockup) -->
+                        <!-- Screen Frame Right (Full Desktop Task Detail Page Mockup matching Photo 2) -->
                         <div class="showcase-screen-wrap">
-                            <div style="background:#f8fafc;border:1px solid #cbd5e1;border-radius:14px;padding:20px;">
-                                <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cbd5e1;padding-bottom:12px;margin-bottom:14px;">
-                                    <div>
-                                        <span style="font-size:11px;font-weight:800;color:#2563eb;background:#dbeafe;padding:2px 8px;border-radius:99px;">#129 TASK DISCUSSION</span>
-                                        <h4 style="font-size:15px;color:#0f172a;margin-top:4px;">Financial Audit &amp; Compliance</h4>
+                            <div class="hero-mockup-wrap" style="box-shadow:none;">
+                                <div class="mockup-window-bar">
+                                    <div style="display:flex;align-items:center;gap:8px;">
+                                        <i class="fa-solid fa-note-sticky" style="color:#2563eb;font-size:13px;"></i>
+                                        <span class="mockup-window-title">REST API Gateway Auth Module - Update | Task Manager - PTMS-UNO</span>
                                     </div>
-                                    <div style="font-size:11px;color:#10b981;font-weight:700;"><i class="fa-solid fa-users"></i> 4 Members in Chat</div>
-                                </div>
-                                <!-- Member Chips -->
-                                <div style="display:flex;gap:6px;margin-bottom:12px;">
-                                    <span style="font-size:9.5px;background:#e2e8f0;color:#334155;padding:2px 8px;border-radius:99px;">Alex Morgan (Manager)</span>
-                                    <span style="font-size:9.5px;background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:99px;">Sarah Connor</span>
-                                    <span style="font-size:9.5px;background:#dbeafe;color:#1e40af;padding:2px 8px;border-radius:99px;">Marcus Vance</span>
-                                </div>
-                                <div style="display:flex;flex-direction:column;gap:10px;">
-                                    <div style="background:#ffffff;border:1px solid #e2e8f0;padding:10px 14px;border-radius:10px;font-size:12.5px;">
-                                        <div style="display:flex;justify-content:space-between;color:#64748b;font-size:11px;margin-bottom:4px;">
-                                            <b>Alex Morgan (Manager)</b><span>10:30 AM</span>
-                                        </div>
-                                        <div>Audit documents uploaded for Review #4. Please verify.</div>
+                                    <div class="mockup-controls" style="gap:6px;">
+                                        <span class="control-dot min"></span><span class="control-dot max"></span><span class="control-dot close"></span>
                                     </div>
-                                    <div style="background:#eff6ff;border:1px solid #bfdbfe;padding:10px 14px;border-radius:10px;font-size:12.5px;align-self:flex-end;width:90%;">
-                                        <div style="display:flex;justify-content:space-between;color:#2563eb;font-size:11px;margin-bottom:4px;">
-                                            <b>Sarah Connor (Assignee)</b><span>10:32 AM</span>
+                                </div>
+                                <div class="mockup-app-layout">
+                                    <div class="app-mock-sidebar" style="display:flex;">
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+                                        <div class="mock-sidebar-item active"><i class="fa-solid fa-list-check"></i> Tasks</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-user"></i> Profile</div>
+                                    </div>
+                                    <div class="app-mock-main" style="padding-bottom:34px;position:relative;">
+                                        
+                                        <!-- Header & Back Button -->
+                                        <div style="margin-bottom:8px;">
+                                            <a style="font-size:9.5px;color:#2563eb;text-decoration:none;font-weight:700;"><i class="fa-solid fa-arrow-left"></i> Back to Tasks</a>
+                                            <h4 style="margin:2px 0 0 0;font-size:13px;color:#0f172a;">REST API Gateway Auth Module - Update</h4>
+                                            <small style="font-size:9px;color:#64748b;"><i class="fa-solid fa-folder"></i> Developer API</small>
                                         </div>
-                                        <div>Verification complete! Progress updated to 80%. Attached compliance_v4.pdf.</div>
+
+                                        <!-- Action Buttons Row -->
+                                        <div style="display:flex;gap:4px;margin-bottom:8px;">
+                                            <button style="background:#dbeafe;color:#1e40af;border:none;padding:3px 8px;border-radius:5px;font-size:9px;font-weight:700;"><i class="fa-solid fa-share"></i> Re-assign / Forward Task</button>
+                                            <button style="background:#e2e8f0;color:#334155;border:none;padding:3px 8px;border-radius:5px;font-size:9px;font-weight:700;"><i class="fa-solid fa-pen"></i> Edit Task</button>
+                                            <button style="background:#fee2e2;color:#991b1b;border:none;padding:3px 8px;border-radius:5px;font-size:9px;font-weight:700;"><i class="fa-solid fa-trash"></i> Delete</button>
+                                        </div>
+
+                                        <!-- TASK DESCRIPTION Box -->
+                                        <div style="background:#fafafa;border:1px solid #e2e8f0;padding:8px 10px;border-radius:8px;margin-bottom:8px;">
+                                            <small style="display:block;font-size:8px;font-weight:800;color:#64748b;letter-spacing:0.04em;">TASK DESCRIPTION</small>
+                                            <div style="font-size:9.5px;color:#334155;margin:2px 0 6px 0;">Unable to download authentication log files during gateway test. (Need to update Auth handler).</div>
+                                            <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:4px;border-top:1px solid #f1f5f9;padding-top:4px;font-size:8.5px;">
+                                                <div><small style="display:block;color:#94a3b8;">ASSIGNED BY</small><b>Priya Soni</b></div>
+                                                <div><small style="display:block;color:#94a3b8;">ASSIGNED TO</small><b>Alex Morgan, Marcus Vance</b></div>
+                                                <div><small style="display:block;color:#94a3b8;">DUE DATE</small><b>7 Sept 2026</b></div>
+                                                <div><small style="display:block;color:#94a3b8;">PRIORITY</small><span style="background:#dbeafe;color:#1e40af;padding:1px 4px;border-radius:3px;font-weight:700;">MEDIUM</span></div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Assigned Team Members & Individual Status Box -->
+                                        <div style="background:#fafafa;border:1px solid #e2e8f0;padding:8px 10px;border-radius:8px;margin-bottom:8px;">
+                                            <small style="display:block;font-size:8px;font-weight:800;color:#64748b;margin-bottom:4px;">Assigned Team Members (2) &amp; Individual Status</small>
+                                            <div style="display:flex;gap:6px;">
+                                                <span style="background:#ffffff;border:1px solid #cbd5e1;padding:2px 8px;border-radius:99px;font-size:9px;color:#334155;"><i class="fa-solid fa-user"></i> Marcus Vance <span style="background:#fef3c7;color:#b45309;padding:1px 4px;border-radius:99px;font-size:8px;font-weight:700;">Pending</span></span>
+                                                <span style="background:#ffffff;border:1px solid #cbd5e1;padding:2px 8px;border-radius:99px;font-size:9px;color:#334155;"><i class="fa-solid fa-user"></i> Alex Morgan <span style="background:#fef3c7;color:#b45309;padding:1px 4px;border-radius:99px;font-size:8px;font-weight:700;">Pending</span></span>
+                                            </div>
+                                        </div>
+
+                                        <!-- Change My Status Row -->
+                                        <div style="display:flex;align-items:center;justify-content:space-between;background:#fafafa;border:1px solid #e2e8f0;padding:6px 10px;border-radius:8px;margin-bottom:8px;">
+                                            <div>
+                                                <small style="display:block;font-size:8px;font-weight:800;color:#64748b;">CHANGE MY STATUS</small>
+                                                <select style="font-size:9px;padding:2px 6px;border-radius:4px;border:1px solid #cbd5e1;margin-top:2px;"><option>Pending</option><option>In Progress</option><option>Completed</option></select>
+                                            </div>
+                                            <button style="background:#2563eb;color:#ffffff;border:none;padding:4px 10px;border-radius:6px;font-size:9px;font-weight:700;"><i class="fa-solid fa-check"></i> Update My Status</button>
+                                        </div>
+
+                                        <!-- Updates & Discussion Feed -->
+                                        <div style="background:#ffffff;border:1px solid #cbd5e1;padding:8px 10px;border-radius:8px;">
+                                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+                                                <b style="font-size:10px;color:#0f172a;"><i class="fa-solid fa-comments" style="color:#2563eb;"></i> Updates &amp; Discussion</b>
+                                                <span style="font-size:8.5px;color:#64748b;">0 updates</span>
+                                            </div>
+                                            <div style="background:#fffbe0;border:1px solid #fef08a;padding:8px;border-radius:6px;text-align:center;font-size:9px;color:#854d0e;margin-bottom:6px;">
+                                                No updates posted yet. Be the first to post an update!
+                                            </div>
+                                            <div style="display:flex;gap:4px;">
+                                                <input type="text" placeholder="Write an update..." style="flex:1;font-size:9px;padding:4px 8px;border:1px solid #cbd5e1;border-radius:6px;">
+                                                <button style="background:#2563eb;color:#fff;border:none;padding:4px 8px;border-radius:6px;font-size:9px;"><i class="fa-solid fa-paper-plane"></i></button>
+                                            </div>
+                                        </div>
+
+                                        <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                                     </div>
                                 </div>
                             </div>
