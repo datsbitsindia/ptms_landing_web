@@ -549,34 +549,64 @@
                     <h2 class="section-title">Frequently Asked Questions</h2>
                 </div>
 
-                <div class="faq-container">
-                    <div class="faq-item active">
-                        <div class="faq-question">
-                            <span>How does PTMS UNO handle multi-tenant organization security?</span>
-                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                <div class="faq-grid">
+                    <!-- Column 1 -->
+                    <div class="faq-col">
+                        <div class="faq-item active">
+                            <div class="faq-question"><span>How does PTMS UNO handle multi-tenant organization security?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Every organization is bound to a unique <strong>organization_id</strong>. All MySQL queries are scoped to that ID — users can only see their own org's projects, tasks, employees, and routines. Switching organizations via the org-switcher API is also fully guarded with session validation.</div>
                         </div>
-                        <div class="faq-answer">
-                            Every organization created in PTMS UNO is bound to a unique organization ID and strict database query scoping. Users can only access projects, tasks, and routines linked to their organization.
+                        <div class="faq-item">
+                            <div class="faq-question"><span>Can I download native Windows (.EXE) and Android (.APK) apps?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Yes! PTMS UNO offers a native <strong>Windows Desktop (.EXE)</strong> installer and an <strong>Android (.APK)</strong> package. Both connect to the same cloud MySQL database. Download links are available in the Downloads section. The web app also supports <strong>PWA install</strong> — tap "Add to Home Screen" in Chrome.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question"><span>What are the three user roles and what can each do?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer"><strong>Admin</strong> — Full access: creates users, projects, all tasks, views audit logs and reports.<br><strong>Manager</strong> — Manages assigned projects, creates &amp; forwards tasks, views team performance reports, manages daily routines.<br><strong>Employee</strong> — Views and updates assigned tasks, forwards tasks, adds comments and file attachments, completes daily routines.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question"><span>How does Task Forwarding work?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Any user can forward a task to another employee or manager with a reason. Every forward is logged in <strong>task_forward_logs</strong> — creating a complete chain of custody. This means you always know who handled a task, when, and why it was forwarded. Managers can reassign tasks between employees as well.</div>
                         </div>
                     </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>Can I download native desktop (.EXE) and mobile (.APK) apps?</span>
-                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <!-- Column 2 -->
+                    <div class="faq-col">
+                        <div class="faq-item">
+                            <div class="faq-question"><span>What is Daily Routine Automation and how does it work?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Managers can create <strong>recurring routines</strong> linked to projects. The system auto-generates a new daily log entry every day (or on configured weekdays) for each assigned employee. Employees mark their daily routine as complete, and managers can track completion rate across all employees — no manual task creation needed.</div>
                         </div>
-                        <div class="faq-answer">
-                            Yes! PTMS UNO provides native Windows Desktop (.EXE) installers and Android Mobile (.APK) packages. Simply click the download buttons in the Download section above.
+                        <div class="faq-item">
+                            <div class="faq-question"><span>How does the AI Assistant create and manage tasks?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">The AI uses <strong>Google Gemini + Groq + OpenRouter</strong> models in cascade. It connects to a <strong>Python FastMCP</strong> server that directly queries your MySQL database. You can say "Create a High priority task for Alex — API bug fix, due Friday" and the AI validates your active projects and team members from the DB, then creates the task — no hallucination possible.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question"><span>Can I attach files and add comments to tasks?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Yes. Every task supports <strong>file attachments</strong> (PDF, images, Word docs) via Multer upload middleware. Files are stored securely and downloadable from the task detail page. Any user assigned to the task can also <strong>post comments</strong> with timestamps, creating a full conversation thread per task.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question"><span>What reports and analytics does PTMS UNO provide?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Managers get a live <strong>Reports dashboard</strong> with: task breakdown by status, <strong>per-employee completion rates</strong>, project-wise task counts, overdue task alerts, and tasks due in the next 3 days. All data is filtered to the manager's own organization and projects — no data leakage across tenants.</div>
                         </div>
                     </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            <span>What happens if I try to assign a project without selecting a manager?</span>
-                            <i class="fa-solid fa-chevron-down faq-icon"></i>
+                    <!-- Column 3 -->
+                    <div class="faq-col">
+                        <div class="faq-item">
+                            <div class="faq-question"><span>How does Live Sync work across devices?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">PTMS UNO runs a background <strong>/api/live-check</strong> polling interval. When a new task is assigned, a routine is updated, or a notification is sent, the UI silently refreshes the relevant section — no full page reload needed. This keeps the dashboard always current, whether you're on web, Windows, or Android.</div>
                         </div>
-                        <div class="faq-answer">
-                            PTMS UNO includes strict validation. If a user attempts to submit a project form without assigning a manager, the system immediately blocks submission and displays a clear alert modal requesting manager selection.
+                        <div class="faq-item">
+                            <div class="faq-question"><span>How secure is the authentication system?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">PTMS UNO uses <strong>express-session</strong> with a strong secret and <strong>bcrypt (12 rounds)</strong> for password hashing. Every route is protected by role-based middleware (requireAuth, requireAdmin, requireManager). All critical actions are logged to an <strong>audit_events</strong> table via MySQL triggers for a complete tamper-proof trail.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question"><span>Can employees and managers use voice commands in the AI?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Yes! The built-in AI chat supports <strong>voice input via Groq Whisper Large v3 Turbo</strong> — the world's fastest speech-to-text. Speak in Hindi, English, or Hinglish. The AI auto-corrects team member names and project names from your live database. Responses are also read aloud in <strong>Indian accent English (en-IN)</strong> for hands-free use.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question"><span>Does the database auto-setup on first run?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
+                            <div class="faq-answer">Yes. On first start, PTMS UNO's <strong>database/init.js</strong> automatically creates all tables, indexes, MySQL views, triggers, and seed data. No manual SQL import needed. Just configure your <code>.env</code> file with MySQL credentials and run <code>npm start</code> — the system handles the rest.</div>
                         </div>
                     </div>
                 </div>
@@ -648,6 +678,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
