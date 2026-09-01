@@ -25,14 +25,16 @@ async function getDbPool() {
         process.env.DB_HOST,
         'host.docker.internal',
         '172.17.0.1',
-        '127.0.0.1'
+        '127.0.0.1',
+        'localhost'
     ].filter(Boolean);
 
     const uniqueHosts = [...new Set(candidateHosts)];
-    let lastErr = null;
+    const attemptLogs = [];
 
     for (const host of uniqueHosts) {
         try {
+            console.log(`[DB CONNECT ATTEMPT] Trying host="${host}", user="${DB_USER}", port=${DB_PORT}, db="${DB_NAME}"...`);
             const testPool = mysql.createPool({
                 host: host,
                 port: DB_PORT,
@@ -45,20 +47,21 @@ async function getDbPool() {
                 connectTimeout: 4000
             });
 
-            // Test ping connection
             const connection = await testPool.getConnection();
             connection.release();
 
-            console.log(`[DATABASE] Successfully connected to MySQL on host "${host}" [Database: ${DB_NAME}]!`);
+            console.log(`[DATABASE SUCCESS] Connected to MySQL on host "${host}" [Database: ${DB_NAME}]!`);
             dbPool = testPool;
             return dbPool;
         } catch (err) {
-            lastErr = err;
-            console.warn(`[DATABASE] Host connection attempt "${host}" failed:`, err.message);
+            const msg = `[Host "${host}": ${err.code || 'ERR'} - ${err.message}]`;
+            attemptLogs.push(msg);
+            console.error(`[DATABASE ATTEMPT FAILED] ${msg}`);
         }
     }
 
-    throw lastErr || new Error(`Could not connect to MySQL database "${DB_NAME}" on any host.`);
+    const fullErrorMsg = attemptLogs.join(' | ');
+    throw new Error(`MySQL Connection Failed on all hosts: ${fullErrorMsg}`);
 }
 
 // Table name resolver helper
@@ -255,11 +258,13 @@ const server = http.createServer(async (req, res) => {
                 }));
 
             } catch (err) {
-                console.error('Register Org DB Exception:', err);
+                console.error('[REGISTER ORG DB ERROR]:', err);
+                const officialErrorDetails = `Code: ${err.code || 'ERR'} | Message: ${err.message || String(err)}`;
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 return res.end(JSON.stringify({
                     success: false,
-                    error: `Database Connection Error: ${err.message || 'Could not connect to database.'}`
+                    error: `Database Connection Error: ${err.message || String(err)}`,
+                    officialDetails: officialErrorDetails
                 }));
             }
         });
