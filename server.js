@@ -8,30 +8,58 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 8090;
 
-const DB_HOST = process.env.DB_HOST || 'localhost';
+const DB_HOST = process.env.DB_HOST || '127.0.0.1';
 const DB_PORT = Number(process.env.DB_PORT) || 3306;
 const DB_USER = process.env.DB_USER || 'root';
 const DB_PASSWORD = process.env.DB_PASSWORD || '';
 const DB_NAME = process.env.DB_NAME || 'taskmanager';
 const TABLE_PREFIX = process.env.TABLE_PREFIX || 'uno_';
 
-// MySQL Connection Pool
+// MySQL Connection Pool with Multi-Host Fallback (Docker + Local)
 let dbPool = null;
 
-function getDbPool() {
-    if (!dbPool) {
-        dbPool = mysql.createPool({
-            host: DB_HOST,
-            port: DB_PORT,
-            user: DB_USER,
-            password: DB_PASSWORD,
-            database: DB_NAME,
-            waitForConnections: true,
-            connectionLimit: 10,
-            timezone: '+05:30'
-        });
+async function getDbPool() {
+    if (dbPool) return dbPool;
+
+    const candidateHosts = [
+        process.env.DB_HOST,
+        '127.0.0.1',
+        'host.docker.internal',
+        '172.17.0.1',
+        'localhost'
+    ].filter(Boolean);
+
+    const uniqueHosts = [...new Set(candidateHosts)];
+    let lastErr = null;
+
+    for (const host of uniqueHosts) {
+        try {
+            const testPool = mysql.createPool({
+                host: host,
+                port: DB_PORT,
+                user: DB_USER,
+                password: DB_PASSWORD,
+                database: DB_NAME,
+                waitForConnections: true,
+                connectionLimit: 10,
+                timezone: '+05:30',
+                connectTimeout: 4000
+            });
+
+            // Test ping connection
+            const connection = await testPool.getConnection();
+            connection.release();
+
+            console.log(`[DATABASE] Successfully connected to MySQL on host "${host}"!`);
+            dbPool = testPool;
+            return dbPool;
+        } catch (err) {
+            lastErr = err;
+            console.warn(`[DATABASE] Host connection attempt "${host}" failed:`, err.message);
+        }
     }
-    return dbPool;
+
+    throw lastErr || new Error('Could not connect to MySQL database on any host.');
 }
 
 // Table name resolver helper
@@ -79,7 +107,7 @@ const server = http.createServer(async (req, res) => {
         const adminId = (parsedUrl.query.adminId || '').trim();
 
         try {
-            const pool = getDbPool();
+            const pool = await getDbPool();
             const usersTbl = await getTableName(pool, 'users');
             const orgsTbl = await getTableName(pool, 'organizations');
 
@@ -138,7 +166,7 @@ const server = http.createServer(async (req, res) => {
                     return res.end(JSON.stringify({ success: false, error: 'Please provide Organization Name, Admin ID, and Password.' }));
                 }
 
-                const pool = getDbPool();
+                const pool = await getDbPool();
                 const usersTbl = await getTableName(pool, 'users');
                 const orgsTbl = await getTableName(pool, 'organizations');
                 const userOrgsTbl = await getTableName(pool, 'user_organizations');

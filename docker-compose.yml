@@ -6,4 +6,13 @@ services:
     container_name: ptms-landing-web
     ports:
       - "8090:8090"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      - DB_HOST=host.docker.internal
+      - DB_PORT=3306
+      - DB_USER=root
+      - DB_PASSWORD=
+      - DB_NAME=taskmanager
+      - TABLE_PREFIX=uno_
     restart: always
