@@ -156,11 +156,11 @@ const server = http.createServer(async (req, res) => {
         }
     }
 
-    // --- API ROUTE 2: Register Organization & Admin ---
     if (pathname === '/api/register-org' && req.method === 'POST') {
         let bodyStr = '';
         req.on('data', chunk => { bodyStr += chunk.toString(); });
         req.on('end', async () => {
+            let connection = null;
             try {
                 const data = JSON.parse(bodyStr || '{}');
                 const fname = (data.fname || '').trim();
@@ -185,7 +185,7 @@ const server = http.createServer(async (req, res) => {
                 const countersTbl = await getTableName(pool, 'organization_task_counters');
                 const projectsTbl = await getTableName(pool, 'projects');
 
-                // 1. Check if Admin ID / Email already exists in Database
+                // --- Validation (before transaction) ---
                 const [adminCheck] = await pool.query(
                     `SELECT id FROM \`${usersTbl}\` WHERE LOWER(TRIM(email)) = LOWER(?)`,
                     [adminId]
@@ -194,11 +194,10 @@ const server = http.createServer(async (req, res) => {
                     res.writeHead(200, { 'Content-Type': 'application/json' });
                     return res.end(JSON.stringify({
                         success: false,
-                        error: `The Admin ID / Email "${adminId}" is ALREADY REGISTERED in the database. Please choose a different Admin ID.`
+                        error: `The Admin ID / Email "${adminId}" is already registered. Please choose a different Admin ID.`
                     }));
                 }
 
-                // 2. Check if Organization Name already exists in Database
                 const [orgCheck] = await pool.query(
                     `SELECT id FROM \`${orgsTbl}\` WHERE LOWER(TRIM(name)) = LOWER(?)`,
                     [orgName]
@@ -207,73 +206,86 @@ const server = http.createServer(async (req, res) => {
                     res.writeHead(200, { 'Content-Type': 'application/json' });
                     return res.end(JSON.stringify({
                         success: false,
-                        error: `The Organization Name "${orgName}" is ALREADY REGISTERED in the database. Please choose a different unique Organization Name.`
+                        error: `The Organization Name "${orgName}" is already registered. Please choose a different name.`
                     }));
                 }
 
-                // 3. Create Organization in Database
-                const [orgResult] = await pool.query(
+                // Hash password before transaction
+                const passwordHash = await bcrypt.hash(password, 12);
+
+                // --- BEGIN TRANSACTION ---
+                connection = await pool.getConnection();
+                await connection.beginTransaction();
+                console.log(`[TRANSACTION BEGIN] Registering org "${orgName}", admin "${adminId}"...`);
+
+                // Step 1: Insert Organization
+                const [orgResult] = await connection.query(
                     `INSERT INTO \`${orgsTbl}\` (name) VALUES (?)`,
                     [orgName]
                 );
                 const newOrgId = orgResult.insertId;
+                console.log(`[TRANSACTION] Step 1 OK - Org inserted, ID: ${newOrgId}`);
 
-                // 4. Initialize Task Counter for Organization
-                try {
-                    await pool.query(
-                        `INSERT INTO \`${countersTbl}\` (organization_id, last_task_number) VALUES (?, 0) ON DUPLICATE KEY UPDATE organization_id=organization_id`,
-                        [newOrgId]
-                    );
-                } catch (e) {
-                    console.warn('Counter init warning:', e.message);
-                }
-
-                // 5. Hash Password & Create Admin User in Database
-                const passwordHash = await bcrypt.hash(password, 12);
-                const [userResult] = await pool.query(
+                // Step 2: Insert Admin User
+                const [userResult] = await connection.query(
                     `INSERT INTO \`${usersTbl}\` (role, name, email, password, phone, department, designation, organization_id, created_by) VALUES ('admin', ?, ?, ?, ?, 'Management', ?, ?, 1)`,
                     [fullName, adminId, passwordHash, phone, designation, newOrgId]
                 );
                 const newAdminUserId = userResult.insertId;
+                console.log(`[TRANSACTION] Step 2 OK - Admin User inserted, ID: ${newAdminUserId}`);
 
-                // 6. Link User to User Organizations table
-                try {
-                    await pool.query(
-                        `INSERT IGNORE INTO \`${userOrgsTbl}\` (user_id, organization_id, role) VALUES (?, ?, 'admin')`,
-                        [newAdminUserId, newOrgId]
-                    );
-                } catch (e) {
-                    console.warn('User Orgs link warning:', e.message);
-                }
+                // Step 3: Link User to Organization
+                await connection.query(
+                    `INSERT IGNORE INTO \`${userOrgsTbl}\` (user_id, organization_id, role) VALUES (?, ?, 'admin')`,
+                    [newAdminUserId, newOrgId]
+                );
+                console.log(`[TRANSACTION] Step 3 OK - User-Org link created`);
 
-                // 7. Create Default System Project ("Self Task")
-                try {
-                    await pool.query(
-                        `INSERT INTO \`${projectsTbl}\` (name, description, start_date, end_date, status, created_by, manager_id, organization_id) VALUES ('Self Task', 'System project for self-assigned tasks', CURDATE(), '2099-12-31', 'Planned', ?, ?, ?)`,
-                        [newAdminUserId, String(newAdminUserId), newOrgId]
-                    );
-                } catch (e) {
-                    console.warn('Default project init warning:', e.message);
-                }
+                // Step 4: Initialize Task Counter
+                await connection.query(
+                    `INSERT INTO \`${countersTbl}\` (organization_id, last_task_number) VALUES (?, 0) ON DUPLICATE KEY UPDATE organization_id=organization_id`,
+                    [newOrgId]
+                );
+                console.log(`[TRANSACTION] Step 4 OK - Task counter initialized`);
 
-                console.log(`[SUCCESS] Organization Created in Database: ID #${newOrgId} ("${orgName}"), Admin ID: "${adminId}"`);
+                // Step 5: Create Default "Self Task" Project
+                await connection.query(
+                    `INSERT INTO \`${projectsTbl}\` (name, description, start_date, end_date, status, created_by, manager_id, organization_id) VALUES ('Self Task', 'System project for self-assigned tasks', CURDATE(), '2099-12-31', 'Planned', ?, ?, ?)`,
+                    [newAdminUserId, String(newAdminUserId), newOrgId]
+                );
+                console.log(`[TRANSACTION] Step 5 OK - Default project created`);
+
+                // --- COMMIT ---
+                await connection.commit();
+                connection.release();
+                console.log(`[TRANSACTION COMMITTED] Org #${newOrgId} "${orgName}", Admin "${adminId}" saved successfully!`);
 
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 return res.end(JSON.stringify({
                     success: true,
-                    message: 'Organization & Admin Account created successfully in database!',
+                    message: 'Organization & Admin Account created successfully!',
                     orgId: newOrgId,
                     orgName: orgName,
                     adminId: adminId
                 }));
 
             } catch (err) {
+                // --- ROLLBACK on any error ---
+                if (connection) {
+                    try {
+                        await connection.rollback();
+                        console.warn('[TRANSACTION ROLLED BACK] All changes reverted due to error.');
+                    } catch (rbErr) {
+                        console.error('[ROLLBACK ERROR]:', rbErr.message);
+                    }
+                    connection.release();
+                }
                 console.error('[REGISTER ORG DB ERROR]:', err);
                 const officialErrorDetails = `Code: ${err.code || 'ERR'} | Message: ${err.message || String(err)}`;
                 res.writeHead(200, { 'Content-Type': 'application/json' });
                 return res.end(JSON.stringify({
                     success: false,
-                    error: `Database Connection Error: ${err.message || String(err)}`,
+                    error: `Database Error: ${err.message || String(err)}`,
                     officialDetails: officialErrorDetails
                 }));
             }

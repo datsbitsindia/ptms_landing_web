@@ -209,6 +209,9 @@ window.handleOrgRegisterSubmit = async function(event) {
     }
 
     try {
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 30000);
+
         const response = await fetch('/api/register-org', {
             method: 'POST',
             headers: {
@@ -223,9 +226,11 @@ window.handleOrgRegisterSubmit = async function(event) {
                 orgName,
                 adminId,
                 password
-            })
+            }),
+            signal: controller.signal
         });
 
+        clearTimeout(timeoutId);
         const data = await response.json();
 
         if (submitBtn) {
@@ -258,7 +263,13 @@ window.handleOrgRegisterSubmit = async function(event) {
             submitBtn.innerHTML = originalBtnText;
         }
         console.error('Registration API Error:', err);
-        showCustomAlert('⚠️ Connection Error', 'Could not connect to the database server. Please check your network or try again.', true);
+        if (err.name === 'AbortError') {
+            // Request took too long - but organization may have been created
+            // Check if it was actually created by trying to login
+            showCustomAlert('⚠️ Request Timeout', 'The request took too long to respond. Please check if your organization was created and try logging in, or try registering again.', true);
+        } else {
+            showCustomAlert('⚠️ Connection Error', `Could not reach the server: ${err.message || 'Network Error'}. Please check your connection and try again.`, true);
+        }
     }
 };
 
