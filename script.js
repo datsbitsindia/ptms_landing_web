@@ -1,4 +1,4 @@
-// PTMS UNO SaaS Landing Page Script
+﻿// PTMS UNO SaaS Landing Page Script
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Sticky Navbar Scroll Effect
@@ -11,27 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 2. Desktop vs Mobile Display Switcher
-    window.switchPreviewMode = function(mode) {
-        const desktopView = document.getElementById('preview-desktop-view');
-        const mobileView = document.getElementById('preview-mobile-view');
-        const btnDesktop = document.getElementById('btn-desktop-view');
-        const btnMobile = document.getElementById('btn-mobile-view');
-
-        if (mode === 'desktop') {
-            if (desktopView) desktopView.style.display = 'block';
-            if (mobileView) mobileView.style.display = 'none';
-            if (btnDesktop) btnDesktop.classList.add('active');
-            if (btnMobile) btnMobile.classList.remove('active');
-        } else if (mode === 'mobile') {
-            if (desktopView) desktopView.style.display = 'none';
-            if (mobileView) mobileView.style.display = 'block';
-            if (btnDesktop) btnDesktop.classList.remove('active');
-            if (btnMobile) btnMobile.classList.add('active');
-        }
-    };
-
-    // 3. Mobile Menu Toggle
+    // 2. Mobile Menu Toggle
     const mobileToggle = document.querySelector('.mobile-toggle');
     const navLinks = document.querySelector('.nav-links');
     if (mobileToggle && navLinks) {
@@ -51,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 4. FAQ Accordion Handler
+    // 3. FAQ Accordion Handler
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
@@ -64,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 5. Download Modal Trigger Handler
+    // 4. Download Modal Trigger Handler
     const downloadModal = document.getElementById('download-modal');
     const modalTitle = document.getElementById('modal-platform-title');
     const modalDesc = document.getElementById('modal-platform-desc');
@@ -110,8 +90,188 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (confirmDownloadBtn) {
         confirmDownloadBtn.addEventListener('click', () => {
-            alert(`Starting download for ${currentPlatform.toUpperCase()} package...`);
+            showCustomAlert('Download Started', `Starting download for ${currentPlatform.toUpperCase()} package...`, false);
             downloadModal.classList.remove('open');
         });
     }
 });
+
+// =========================================
+// ORGANIZATION REGISTRATION MODAL LOGIC
+// =========================================
+
+// Track registered orgs/admins to perform real-time duplicate check
+const existingOrgs = ['dataevol', 'unotag', 'enterprise', 'acme', 'demo'];
+const existingAdmins = ['admin@dataevol', 'admin@unotag', 'chetan@gmail.com', 'admin@enterprise'];
+
+window.openOrgRegisterModal = function() {
+    const modal = document.getElementById('org-register-modal');
+    if (modal) {
+        modal.classList.add('open');
+        goToStep(1);
+    }
+};
+
+window.closeOrgRegisterModal = function() {
+    const modal = document.getElementById('org-register-modal');
+    if (modal) {
+        modal.classList.remove('open');
+    }
+};
+
+window.goToStep = function(stepNum) {
+    const section1 = document.getElementById('form-section-1');
+    const section2 = document.getElementById('form-section-2');
+    const indicator1 = document.getElementById('step-indicator-1');
+    const indicator2 = document.getElementById('step-indicator-2');
+    const line1 = document.getElementById('step-line-1');
+
+    if (stepNum === 2) {
+        // Validate Section 1 Fields First
+        const fname = document.getElementById('reg-fname').value.trim();
+        const lname = document.getElementById('reg-lname').value.trim();
+        const email = document.getElementById('reg-email').value.trim();
+        const phone = document.getElementById('reg-phone').value.trim();
+        const designation = document.getElementById('reg-designation').value.trim();
+
+        if (!fname || !lname || !email || !phone || !designation) {
+            showCustomAlert('⚠️ Missing Personal Information', 'Please complete all required fields in Section 1 before proceeding to Organization Details.', true);
+            return;
+        }
+
+        if (!email.includes('@') || !email.includes('.')) {
+            showCustomAlert('⚠️ Invalid Work Email', 'Please enter a valid work email address (e.g. rahul@company.com).', true);
+            return;
+        }
+
+        section1.classList.remove('active');
+        section2.classList.add('active');
+        indicator1.classList.remove('active');
+        indicator1.classList.add('completed');
+        indicator2.classList.add('active');
+        line1.classList.add('active');
+    } else {
+        section2.classList.remove('active');
+        section1.classList.add('active');
+        indicator2.classList.remove('active');
+        indicator1.classList.remove('completed');
+        indicator1.classList.add('active');
+        line1.classList.remove('active');
+    }
+};
+
+window.updateAdminSuggestion = function() {
+    const orgInput = document.getElementById('reg-orgname').value.trim();
+    const adminInput = document.getElementById('reg-adminid');
+    const suggestedFormat = document.getElementById('suggested-format');
+
+    if (!orgInput) {
+        suggestedFormat.textContent = 'admin@company';
+        return;
+    }
+
+    const cleanOrg = orgInput.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const suggestion = `admin@${cleanOrg}`;
+    suggestedFormat.textContent = suggestion;
+
+    if (!adminInput.value || adminInput.value.startsWith('admin@')) {
+        adminInput.value = suggestion;
+    }
+};
+
+window.handleOrgRegisterSubmit = function(event) {
+    event.preventDefault();
+
+    const fname = document.getElementById('reg-fname').value.trim();
+    const lname = document.getElementById('reg-lname').value.trim();
+    const email = document.getElementById('reg-email').value.trim();
+    const phone = document.getElementById('reg-phone').value.trim();
+    const designation = document.getElementById('reg-designation').value.trim();
+    const orgName = document.getElementById('reg-orgname').value.trim();
+    const adminId = document.getElementById('reg-adminid').value.trim().toLowerCase();
+    const password = document.getElementById('reg-password').value;
+    const cpassword = document.getElementById('reg-cpassword').value;
+
+    // 1. Password Match Validation
+    if (password !== cpassword) {
+        showCustomAlert('⚠️ Password Mismatch', 'The Admin Account Password and Confirm Password do not match. Please re-enter passwords carefully.', true);
+        return;
+    }
+
+    if (password.length < 4) {
+        showCustomAlert('⚠️ Weak Password', 'Admin Password must be at least 4 characters long.', true);
+        return;
+    }
+
+    // 2. Duplicate Organization Name Check
+    const cleanOrg = orgName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (existingOrgs.includes(cleanOrg)) {
+        showCustomAlert('⚠️ Organization Name Unavailable', `The Organization Name "${orgName}" is already registered in PTMS UNO. Please choose a different unique Organization Name.`, true);
+        return;
+    }
+
+    // 3. Duplicate Admin ID Check
+    if (existingAdmins.includes(adminId) || existingAdmins.includes(email.toLowerCase())) {
+        showCustomAlert('⚠️ Admin ID Unavailable', `The Admin ID / Email "${adminId}" is already in use by another organization admin. Please choose a unique Admin ID (e.g. ${adminId}123).`, true);
+        return;
+    }
+
+    // Register successfully & Save to memory list
+    existingOrgs.push(cleanOrg);
+    existingAdmins.push(adminId);
+
+    // Show Success Modal
+    closeOrgRegisterModal();
+
+    document.getElementById('succ-org-name').textContent = orgName;
+    document.getElementById('succ-admin-id').textContent = adminId;
+
+    const successModal = document.getElementById('org-success-modal');
+    if (successModal) {
+        successModal.classList.add('open');
+    }
+
+    // Reset Form
+    document.getElementById('org-register-form').reset();
+};
+
+window.closeOrgSuccessModal = function() {
+    const successModal = document.getElementById('org-success-modal');
+    if (successModal) {
+        successModal.classList.remove('open');
+    }
+};
+
+// =========================================
+// CUSTOM POPUP ALERT SYSTEM
+// =========================================
+window.showCustomAlert = function(title, message, isError = false) {
+    const modal = document.getElementById('custom-alert-modal');
+    const alertTitle = document.getElementById('alert-title');
+    const alertMessage = document.getElementById('alert-message');
+    const alertIcon = document.getElementById('alert-icon');
+
+    if (alertTitle) alertTitle.textContent = title;
+    if (alertMessage) alertMessage.textContent = message;
+
+    if (alertIcon) {
+        if (isError) {
+            alertIcon.style.color = '#ef4444';
+            alertIcon.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i>';
+        } else {
+            alertIcon.style.color = '#10b981';
+            alertIcon.innerHTML = '<i class="fa-solid fa-circle-check"></i>';
+        }
+    }
+
+    if (modal) {
+        modal.classList.add('open');
+    }
+};
+
+window.closeCustomAlert = function() {
+    const modal = document.getElementById('custom-alert-modal');
+    if (modal) {
+        modal.classList.remove('open');
+    }
+};

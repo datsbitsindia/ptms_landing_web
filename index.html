@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,6 +22,7 @@
             </a>
 
             <ul class="nav-links">
+                <li><a href="#how-it-works" style="color:#2563eb;font-weight:700;"><i class="fa-solid fa-route"></i> Workflow</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#preview">App Preview</a></li>
                 <li><a href="#ai" style="color:#6366f1;font-weight:700;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Assistant</a></li>
@@ -31,8 +32,8 @@
             </ul>
 
             <div class="nav-actions">
-                <a href="#" class="btn btn-secondary" style="padding:9px 16px;font-size:13px;white-space:nowrap;"><i class="fa-solid fa-right-to-bracket"></i> Live Sign In</a>
-                <button onclick="triggerDownloadModal('exe')" class="btn btn-primary" style="padding:9px 16px;font-size:13px;white-space:nowrap;"><i class="fa-solid fa-download"></i> Get Desktop App</button>
+                <a href="http://43.205.188.68:3000/login" target="_blank" class="btn btn-secondary" style="padding:9px 16px;font-size:13px;white-space:nowrap;"><i class="fa-solid fa-right-to-bracket"></i> Sign In</a>
+                <button onclick="openOrgRegisterModal()" class="btn btn-primary" style="padding:9px 16px;font-size:13px;white-space:nowrap;"><i class="fa-solid fa-building-user"></i> Get Your Organization</button>
                 <button class="mobile-toggle"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
@@ -47,9 +48,10 @@
                 <p class="hero-subtitle">PTMS UNO gives your organization complete control over complex projects, daily recurring routines, automated task forwarding, and real-time performance analytics.</p>
                 
                 <div class="hero-cta">
-                    <a href="#" class="btn btn-primary" style="padding: 16px 36px; font-size: 16px;"><i class="fa-solid fa-rocket"></i> Launch Web Platform</a>
-                    <button onclick="triggerDownloadModal('exe')" class="btn btn-secondary" style="padding: 16px 32px; font-size: 16px;"><i class="fa-brands fa-windows"></i> Windows (.EXE)</button>
-                    <button onclick="triggerDownloadModal('apk')" class="btn btn-secondary" style="padding: 16px 32px; font-size: 16px;"><i class="fa-brands fa-android"></i> Android (.APK)</button>
+                    <button onclick="openOrgRegisterModal()" class="btn btn-primary" style="padding: 16px 32px; font-size: 16px;"><i class="fa-solid fa-building-user"></i> Get Your Own Organization</button>
+                    <a href="http://43.205.188.68:3000/login" target="_blank" class="btn btn-secondary" style="padding: 16px 28px; font-size: 16px;"><i class="fa-solid fa-right-to-bracket"></i> Live Sign In</a>
+                    <button onclick="triggerDownloadModal('exe')" class="btn btn-secondary" style="padding: 16px 24px; font-size: 16px;"><i class="fa-brands fa-windows"></i> Windows (.EXE)</button>
+                    <button onclick="triggerDownloadModal('apk')" class="btn btn-secondary" style="padding: 16px 24px; font-size: 16px;"><i class="fa-brands fa-android"></i> Android (.APK)</button>
                 </div>
             </div>
 
@@ -57,7 +59,7 @@
             <div class="container" id="preview">
                 <div class="dual-app-showcase">
 
-                    <!-- 1. DESKTOP FRAME (Left) — Photo 3: Windows App with Sidebar -->
+                    <!-- 1. DESKTOP FRAME (Left) â€” Photo 3: Windows App with Sidebar -->
                     <div class="hero-mockup-wrap">
                         <!-- Windows Title Bar -->
                         <div class="mockup-window-bar">
@@ -177,7 +179,7 @@
                         </div>
                     </div>
 
-                    <!-- 2. MOBILE FRAME (Right) — Photo 2: Mobile App with bottom nav -->
+                    <!-- 2. MOBILE FRAME (Right) â€” Photo 2: Mobile App with bottom nav -->
                     <div class="mobile-frame-wrap">
                         <div class="mobile-notch-bar">
                             <div class="mobile-notch-title"><i class="fa-solid fa-mobile-screen" style="color:#2563eb;"></i> Tasks | Task Manager</div>
@@ -339,6 +341,53 @@
             </div>
         </section>
 
+
+        <!-- ONBOARDING WORKFLOW SECTION -->
+        <section id="how-it-works" class="workflow-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge" style="background:#dbeafe;color:#1d4ed8;border-color:#93c5fd;"><i class="fa-solid fa-diagram-project"></i> Simple 3-Step Setup</div>
+                    <h2 class="section-title">How To Register &amp; Start Working</h2>
+                    <p class="section-desc">No manual database setup required anymore. Register your organization in seconds and start orchestrating your team across Web, Windows, and Mobile apps.</p>
+                </div>
+
+                <div class="workflow-grid">
+                    <!-- Step 1 -->
+                    <div class="workflow-card">
+                        <div class="workflow-step-num">Step 01</div>
+                        <div class="workflow-icon" style="background: linear-gradient(135deg, #2563eb, #3b82f6);"><i class="fa-solid fa-user-plus"></i></div>
+                        <h3>1. Register Organization</h3>
+                        <p>Click <strong>"Get Your Own Organization"</strong> and provide your personal details (Name, Email, Phone) and company info (Org Name, Admin ID, Password).</p>
+                        <div class="workflow-tag"><i class="fa-solid fa-circle-check"></i> Live Admin ID Suggestion</div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="workflow-card">
+                        <div class="workflow-step-num">Step 02</div>
+                        <div class="workflow-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"><i class="fa-solid fa-database"></i></div>
+                        <h3>2. Automated Setup</h3>
+                        <p>The system auto-generates your dedicated Organization ID, MySQL data tables, default system projects, task counters, and hashed admin credentials.</p>
+                        <div class="workflow-tag"><i class="fa-solid fa-shield-halved"></i> 100% Isolated Data Tenant</div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="workflow-card">
+                        <div class="workflow-step-num">Step 03</div>
+                        <div class="workflow-icon" style="background: linear-gradient(135deg, #10b981, #059669);"><i class="fa-solid fa-rocket"></i></div>
+                        <h3>3. Launch &amp; Work Anywhere</h3>
+                        <p>Log in immediately! Work from your Web browser, native <strong>Windows (.EXE)</strong> desktop app, or <strong>Android (.APK)</strong> mobile app with real-time sync.</p>
+                        <div class="workflow-tag"><i class="fa-solid fa-globe"></i> Web + Windows + Mobile</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <button onclick="openOrgRegisterModal()" class="btn btn-primary" style="padding: 16px 36px; font-size: 16px;">
+                        <i class="fa-solid fa-building-circle-check"></i> Get Started — Register Your Organization Now
+                    </button>
+                </div>
+            </div>
+        </section>
+
         <!-- Download Center Section -->
         <section id="downloads" class="download-section">
             <div class="container">
@@ -353,7 +402,7 @@
                             <div class="platform-icon"><i class="fa-brands fa-windows"></i></div>
                             <div class="platform-info">
                                 <h4>Windows Desktop App</h4>
-                                <span>Version 2.4.0 â€¢ 64-bit Installer (.EXE)</span>
+                                <span>Version 2.4.0 Ã¢â‚¬Â¢ 64-bit Installer (.EXE)</span>
                             </div>
                             <button onclick="triggerDownloadModal('exe')" class="btn btn-primary" style="width: 100%;">
                                 <i class="fa-solid fa-download"></i> Download for Windows (.EXE)
@@ -365,7 +414,7 @@
                             <div class="platform-icon"><i class="fa-brands fa-android"></i></div>
                             <div class="platform-info">
                                 <h4>Android Mobile App</h4>
-                                <span>Version 2.4.0 â€¢ Android Package (.APK)</span>
+                                <span>Version 2.4.0 Ã¢â‚¬Â¢ Android Package (.APK)</span>
                             </div>
                             <button onclick="triggerDownloadModal('apk')" class="btn btn-green" style="width: 100%;">
                                 <i class="fa-solid fa-download"></i> Download for Android (.APK)
@@ -380,7 +429,7 @@
         <section id="ai" class="ai-section">
             <div class="container">
                 <div class="section-header">
-                    <div class="badge ai-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Gemini · Groq · OpenRouter · Whisper AI</div>
+                    <div class="badge ai-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Gemini Â· Groq Â· OpenRouter Â· Whisper AI</div>
                     <h2 class="section-title">Meet Your <span class="ai-gradient-text">AI Task Assistant</span></h2>
                     <p class="section-desc">PTMS UNO has a built-in AI that reads your live database, creates tasks, reassigns work, and delivers real-time productivity reports. All with a single voice command or text message.</p>
                 </div>
@@ -390,7 +439,7 @@
                     <div class="ai-flow-step">
                         <div class="ai-flow-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);"><i class="fa-solid fa-microphone-lines"></i></div>
                         <h4>You Speak or Type</h4>
-                        <p>Hindi / English voice input or text. E.g. "Create task for Alex — Financial Audit, due Friday, High priority"</p>
+                        <p>Hindi / English voice input or text. E.g. "Create task for Alex â€” Financial Audit, due Friday, High priority"</p>
                     </div>
                     <div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     <div class="ai-flow-step">
@@ -402,7 +451,7 @@
                     <div class="ai-flow-step">
                         <div class="ai-flow-icon" style="background:linear-gradient(135deg,#0ea5e9,#2563eb);"><i class="fa-solid fa-plug-circle-bolt"></i></div>
                         <h4>MCP Tool Executes</h4>
-                        <p>AI calls Python FastMCP server which directly queries your MySQL database — no hallucination, only real data actions.</p>
+                        <p>AI calls Python FastMCP server which directly queries your MySQL database â€” no hallucination, only real data actions.</p>
                     </div>
                     <div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     <div class="ai-flow-step">
@@ -416,38 +465,38 @@
                 <div class="ai-caps-grid">
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fa-solid fa-microphone"></i></div>
-                        <h3>Voice Input — Hindi + English</h3>
-                        <p>Powered by <strong>Groq Whisper Large v3 Turbo</strong> — world's fastest speech-to-text. Speak in Hinglish naturally. AI auto-corrects team member names and project names from your live database.</p>
-                        <div class="ai-example-chip"><i class="fa-solid fa-quote-left"></i> "Bhavin ko ek task do — API bug fix, urgent"</div>
+                        <h3>Voice Input â€” Hindi + English</h3>
+                        <p>Powered by <strong>Groq Whisper Large v3 Turbo</strong> â€” world's fastest speech-to-text. Speak in Hinglish naturally. AI auto-corrects team member names and project names from your live database.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-quote-left"></i> "Bhavin ko ek task do â€” API bug fix, urgent"</div>
                     </div>
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#dbeafe;color:#1d4ed8;"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
-                        <h3>Auto Task Lookup — No IDs Needed</h3>
-                        <p>Never ask for database IDs. AI fetches tasks by title automatically. Say "Forward Database Indexing to Marcus" — AI finds it, then reassigns in one shot.</p>
+                        <h3>Auto Task Lookup â€” No IDs Needed</h3>
+                        <p>Never ask for database IDs. AI fetches tasks by title automatically. Say "Forward Database Indexing to Marcus" â€” AI finds it, then reassigns in one shot.</p>
                         <div class="ai-example-chip"><i class="fa-solid fa-quote-left"></i> "Mark Financial Audit as completed"</div>
                     </div>
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#fef9c3;color:#b45309;"><i class="fa-solid fa-server"></i></div>
                         <h3>Triple AI Model Failover</h3>
-                        <p>PTMS uses <strong>OpenRouter → Groq → Google Gemini</strong> in cascade. If one model is overloaded, it auto-switches to the next in milliseconds. Zero downtime AI 24/7.</p>
-                        <div class="ai-example-chip"><i class="fa-solid fa-rotate"></i> OpenRouter → Groq → Gemini auto-fallback</div>
+                        <p>PTMS uses <strong>OpenRouter â†’ Groq â†’ Google Gemini</strong> in cascade. If one model is overloaded, it auto-switches to the next in milliseconds. Zero downtime AI 24/7.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-rotate"></i> OpenRouter â†’ Groq â†’ Gemini auto-fallback</div>
                     </div>
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#dcfce7;color:#15803d;"><i class="fa-solid fa-shield-halved"></i></div>
-                        <h3>Zero Hallucination — Live DB Context</h3>
+                        <h3>Zero Hallucination â€” Live DB Context</h3>
                         <p>AI is injected with your <strong>real active projects and team members from MySQL</strong> on every message. It cannot invent fake project names or assign tasks to non-existent users.</p>
                         <div class="ai-example-chip"><i class="fa-solid fa-database"></i> Live MySQL context injected per request</div>
                     </div>
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#fee2e2;color:#b91c1c;"><i class="fa-solid fa-chart-column"></i></div>
                         <h3>AI Productivity Reports</h3>
-                        <p>Ask "What's my team's completion rate?" and get a <strong>live report</strong>: total assigned, completed, overdue count, completion percentage and performance score — instantly from your database.</p>
+                        <p>Ask "What's my team's completion rate?" and get a <strong>live report</strong>: total assigned, completed, overdue count, completion percentage and performance score â€” instantly from your database.</p>
                         <div class="ai-example-chip"><i class="fa-solid fa-quote-left"></i> "Show me all overdue tasks this week"</div>
                     </div>
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#e0f2fe;color:#0369a1;"><i class="fa-solid fa-volume-high"></i></div>
                         <h3>Text-to-Speech AI Replies</h3>
-                        <p>AI reads every response aloud in <strong>Indian accent English (en-IN)</strong>. Hands-free operation for field managers — no need to look at the screen to hear your task updates.</p>
+                        <p>AI reads every response aloud in <strong>Indian accent English (en-IN)</strong>. Hands-free operation for field managers â€” no need to look at the screen to hear your task updates.</p>
                         <div class="ai-example-chip"><i class="fa-solid fa-headphones"></i> Speaks replies aloud in Indian English</div>
                     </div>
                 </div>
@@ -554,19 +603,19 @@
                     <div class="faq-col">
                         <div class="faq-item">
                             <div class="faq-question"><span>How does PTMS UNO handle multi-tenant organization security?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Every organization is bound to a unique <strong>organization_id</strong>. All MySQL queries are scoped to that ID — users can only see their own org's projects, tasks, employees, and routines. Switching organizations via the org-switcher API is also fully guarded with session validation.</div>
+                            <div class="faq-answer">Every organization is bound to a unique <strong>organization_id</strong>. All MySQL queries are scoped to that ID â€” users can only see their own org's projects, tasks, employees, and routines. Switching organizations via the org-switcher API is also fully guarded with session validation.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Can I download native Windows (.EXE) and Android (.APK) apps?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Yes! PTMS UNO offers a native <strong>Windows Desktop (.EXE)</strong> installer and an <strong>Android (.APK)</strong> package. Both connect to the same cloud MySQL database. Download links are available in the Downloads section. The web app also supports <strong>PWA install</strong> — tap "Add to Home Screen" in Chrome.</div>
+                            <div class="faq-answer">Yes! PTMS UNO offers a native <strong>Windows Desktop (.EXE)</strong> installer and an <strong>Android (.APK)</strong> package. Both connect to the same cloud MySQL database. Download links are available in the Downloads section. The web app also supports <strong>PWA install</strong> â€” tap "Add to Home Screen" in Chrome.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>What are the three user roles and what can each do?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer"><strong>Admin</strong> — Full access: creates users, projects, all tasks, views audit logs and reports.<br><strong>Manager</strong> — Manages assigned projects, creates &amp; forwards tasks, views team performance reports, manages daily routines.<br><strong>Employee</strong> — Views and updates assigned tasks, forwards tasks, adds comments and file attachments, completes daily routines.</div>
+                            <div class="faq-answer"><strong>Admin</strong> â€” Full access: creates users, projects, all tasks, views audit logs and reports.<br><strong>Manager</strong> â€” Manages assigned projects, creates &amp; forwards tasks, views team performance reports, manages daily routines.<br><strong>Employee</strong> â€” Views and updates assigned tasks, forwards tasks, adds comments and file attachments, completes daily routines.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>How does Task Forwarding work?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Any user can forward a task to another employee or manager with a reason. Every forward is logged in <strong>task_forward_logs</strong> — creating a complete chain of custody. This means you always know who handled a task, when, and why it was forwarded. Managers can reassign tasks between employees as well.</div>
+                            <div class="faq-answer">Any user can forward a task to another employee or manager with a reason. Every forward is logged in <strong>task_forward_logs</strong> â€” creating a complete chain of custody. This means you always know who handled a task, when, and why it was forwarded. Managers can reassign tasks between employees as well.</div>
                         </div>
                     </div>
 
@@ -574,11 +623,11 @@
                     <div class="faq-col">
                         <div class="faq-item">
                             <div class="faq-question"><span>What is Daily Routine Automation and how does it work?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Managers can create <strong>recurring routines</strong> linked to projects. The system auto-generates a new daily log entry every day (or on configured weekdays) for each assigned employee. Employees mark their daily routine as complete, and managers can track completion rate across all employees — no manual task creation needed.</div>
+                            <div class="faq-answer">Managers can create <strong>recurring routines</strong> linked to projects. The system auto-generates a new daily log entry every day (or on configured weekdays) for each assigned employee. Employees mark their daily routine as complete, and managers can track completion rate across all employees â€” no manual task creation needed.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>How does the AI Assistant create and manage tasks?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">The AI uses <strong>Google Gemini + Groq + OpenRouter</strong> models in cascade. It connects to a <strong>Python FastMCP</strong> server that directly queries your MySQL database. You can say "Create a High priority task for Alex — API bug fix, due Friday" and the AI validates your active projects and team members from the DB, then creates the task — no hallucination possible.</div>
+                            <div class="faq-answer">The AI uses <strong>Google Gemini + Groq + OpenRouter</strong> models in cascade. It connects to a <strong>Python FastMCP</strong> server that directly queries your MySQL database. You can say "Create a High priority task for Alex â€” API bug fix, due Friday" and the AI validates your active projects and team members from the DB, then creates the task â€” no hallucination possible.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Can I attach files and add comments to tasks?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
@@ -586,7 +635,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>What reports and analytics does PTMS UNO provide?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Managers get a live <strong>Reports dashboard</strong> with: task breakdown by status, <strong>per-employee completion rates</strong>, project-wise task counts, overdue task alerts, and tasks due in the next 3 days. All data is filtered to the manager's own organization and projects — no data leakage across tenants.</div>
+                            <div class="faq-answer">Managers get a live <strong>Reports dashboard</strong> with: task breakdown by status, <strong>per-employee completion rates</strong>, project-wise task counts, overdue task alerts, and tasks due in the next 3 days. All data is filtered to the manager's own organization and projects â€” no data leakage across tenants.</div>
                         </div>
                     </div>
 
@@ -594,7 +643,7 @@
                     <div class="faq-col">
                         <div class="faq-item">
                             <div class="faq-question"><span>How does Live Sync work across devices?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">PTMS UNO runs a background <strong>/api/live-check</strong> polling interval. When a new task is assigned, a routine is updated, or a notification is sent, the UI silently refreshes the relevant section — no full page reload needed. This keeps the dashboard always current, whether you're on web, Windows, or Android.</div>
+                            <div class="faq-answer">PTMS UNO runs a background <strong>/api/live-check</strong> polling interval. When a new task is assigned, a routine is updated, or a notification is sent, the UI silently refreshes the relevant section â€” no full page reload needed. This keeps the dashboard always current, whether you're on web, Windows, or Android.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>How secure is the authentication system?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
@@ -602,11 +651,11 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Can employees and managers use voice commands in the AI?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Yes! The built-in AI chat supports <strong>voice input via Groq Whisper Large v3 Turbo</strong> — the world's fastest speech-to-text. Speak in Hindi, English, or Hinglish. The AI auto-corrects team member names and project names from your live database. Responses are also read aloud in <strong>Indian accent English (en-IN)</strong> for hands-free use.</div>
+                            <div class="faq-answer">Yes! The built-in AI chat supports <strong>voice input via Groq Whisper Large v3 Turbo</strong> â€” the world's fastest speech-to-text. Speak in Hindi, English, or Hinglish. The AI auto-corrects team member names and project names from your live database. Responses are also read aloud in <strong>Indian accent English (en-IN)</strong> for hands-free use.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Does the database auto-setup on first run?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Yes. On first start, PTMS UNO's <strong>database/init.js</strong> automatically creates all tables, indexes, MySQL views, triggers, and seed data. No manual SQL import needed. Just configure your <code>.env</code> file with MySQL credentials and run <code>npm start</code> — the system handles the rest.</div>
+                            <div class="faq-answer">Yes. On first start, PTMS UNO's <strong>database/init.js</strong> automatically creates all tables, indexes, MySQL views, triggers, and seed data. No manual SQL import needed. Just configure your <code>.env</code> file with MySQL credentials and run <code>npm start</code> â€” the system handles the rest.</div>
                         </div>
                     </div>
                 </div>
@@ -674,10 +723,160 @@
         </div>
     </div>
 
+    <!-- 1. ORGANIZATION REGISTRATION MODAL (2 SECTIONS) -->
+    <div class="modal-overlay" id="org-register-modal">
+        <div class="modal-content modal-lg">
+            <button class="modal-close" onclick="closeOrgRegisterModal()">&times;</button>
+
+            <div class="modal-header-badge">
+                <i class="fa-solid fa-building-user"></i> Organization Onboarding
+            </div>
+            <h3 style="margin-bottom: 6px; font-size: 22px;">Get Your Own Organization</h3>
+            <p style="font-size: 13.5px; color: #64748b; margin-bottom: 20px;">Complete 2 simple sections to automatically provision your organization &amp; admin account.</p>
+
+            <!-- Stepper Progress Bar -->
+            <div class="form-stepper">
+                <div class="step-item active" id="step-indicator-1">
+                    <div class="step-num">1</div>
+                    <span>Personal Info</span>
+                </div>
+                <div class="step-line" id="step-line-1"></div>
+                <div class="step-item" id="step-indicator-2">
+                    <div class="step-num">2</div>
+                    <span>Organization &amp; Admin</span>
+                </div>
+            </div>
+
+            <!-- Multi-step Form -->
+            <form id="org-register-form" onsubmit="handleOrgRegisterSubmit(event)">
+                
+                <!-- SECTION 1: Personal Details -->
+                <div class="form-section active" id="form-section-1">
+                    <div class="section-title-sm"><i class="fa-solid fa-user"></i> Section 1: Administrator Personal Information</div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>First Name <span class="required">*</span></label>
+                            <input type="text" id="reg-fname" class="form-control" placeholder="e.g. Rahul" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name <span class="required">*</span></label>
+                            <input type="text" id="reg-lname" class="form-control" placeholder="e.g. Sharma" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Work Email Address <span class="required">*</span></label>
+                            <input type="email" id="reg-email" class="form-control" placeholder="rahul@company.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Mobile / Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="reg-phone" class="form-control" placeholder="+91 9876543210" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Designation / Role in Company <span class="required">*</span></label>
+                        <input type="text" id="reg-designation" class="form-control" placeholder="e.g. Managing Director / Operations Head" required>
+                    </div>
+
+                    <div class="modal-footer-btns">
+                        <button type="button" class="btn btn-secondary" onclick="closeOrgRegisterModal()">Cancel</button>
+                        <button type="button" class="btn btn-primary" onclick="goToStep(2)">
+                            Next: Organization Details <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: Organization & Admin Credentials -->
+                <div class="form-section" id="form-section-2">
+                    <div class="section-title-sm"><i class="fa-solid fa-building"></i> Section 2: Organization &amp; Admin Credentials</div>
+
+                    <div class="form-group">
+                        <label>Organization / Company Name <span class="required">*</span></label>
+                        <input type="text" id="reg-orgname" class="form-control" placeholder="e.g. DataEvol Tech" oninput="updateAdminSuggestion()" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Organization Admin ID (Email/Username) <span class="required">*</span></label>
+                        <input type="text" id="reg-adminid" class="form-control" placeholder="e.g. admin@dataevoltech" required>
+                        <div class="suggestion-hint" id="adminid-suggestion">
+                            <i class="fa-solid fa-lightbulb" style="color:#f59e0b;"></i> Suggestion: Add <strong>@companyname</strong> (e.g., <span id="suggested-format">admin@company</span>)
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Admin Account Password <span class="required">*</span></label>
+                            <input type="password" id="reg-password" class="form-control" placeholder="••••••••" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password <span class="required">*</span></label>
+                            <input type="password" id="reg-cpassword" class="form-control" placeholder="••••••••" required>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer-btns">
+                        <button type="button" class="btn btn-secondary" onclick="goToStep(1)"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                        <button type="submit" id="btn-submit-org" class="btn btn-primary">
+                            <i class="fa-solid fa-rocket"></i> Register &amp; Create Organization
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- 2. CUSTOM USER-FRIENDLY ALERT POPUP MODAL -->
+    <div class="modal-overlay" id="custom-alert-modal" style="z-index: 2000;">
+        <div class="modal-content modal-sm" style="text-align: center;">
+            <div id="alert-icon" style="font-size: 48px; margin-bottom: 12px; color: #ef4444;"><i class="fa-solid fa-circle-exclamation"></i></div>
+            <h3 id="alert-title" style="margin-bottom: 8px; font-size: 20px;">Notice</h3>
+            <p id="alert-message" style="font-size: 14px; color: #475569; margin-bottom: 24px; line-height: 1.6;">Something went wrong.</p>
+            <button class="btn btn-primary" onclick="closeCustomAlert()" style="width: 100%;">
+                <i class="fa-solid fa-check"></i> Understood
+            </button>
+        </div>
+    </div>
+
+    <!-- 3. SUCCESS CELEBRATION MODAL -->
+    <div class="modal-overlay" id="org-success-modal" style="z-index: 1900;">
+        <div class="modal-content modal-md" style="text-align: center;">
+            <div style="font-size: 56px; margin-bottom: 12px; color: #10b981;"><i class="fa-solid fa-circle-check"></i></div>
+            <h3 style="margin-bottom: 6px; font-size: 24px; color: #0f172a;">Organization Provisioned! 🎉</h3>
+            <p style="font-size: 14px; color: #64748b; margin-bottom: 20px;">Your dedicated organization tenant and admin account are ready.</p>
+
+            <div class="success-details-card">
+                <div class="succ-row"><span>Organization Name:</span> <strong id="succ-org-name">My Company</strong></div>
+                <div class="succ-row"><span>Admin ID:</span> <strong id="succ-admin-id">admin@mycompany</strong></div>
+                <div class="succ-row"><span>Status:</span> <span class="succ-badge"><i class="fa-solid fa-circle"></i> Active &amp; Ready</span></div>
+            </div>
+
+            <p style="font-size: 13px; color: #475569; margin-bottom: 20px;">Launch PTMS UNO on your preferred platform to start managing projects:</p>
+
+            <div class="success-actions-grid">
+                <a href="http://43.205.188.68:3000/login" target="_blank" class="btn btn-primary" style="padding: 12px 18px; font-size: 14px;">
+                    <i class="fa-solid fa-globe"></i> Launch Web Platform
+                </a>
+                <button onclick="triggerDownloadModal('exe')" class="btn btn-secondary" style="padding: 12px 18px; font-size: 14px;">
+                    <i class="fa-brands fa-windows"></i> Windows (.EXE)
+                </button>
+                <button onclick="triggerDownloadModal('apk')" class="btn btn-secondary" style="padding: 12px 18px; font-size: 14px;">
+                    <i class="fa-brands fa-android"></i> Android (.APK)
+                </button>
+            </div>
+
+            <button onclick="closeOrgSuccessModal()" class="btn-text-close">Close Window</button>
+        </div>
+    </div>
     <!-- Script -->
     <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
 
