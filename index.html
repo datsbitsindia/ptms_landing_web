@@ -366,7 +366,7 @@
                         <div class="workflow-step-num">Step 02</div>
                         <div class="workflow-icon" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"><i class="fa-solid fa-database"></i></div>
                         <h3>2. Automated Setup</h3>
-                        <p>The system auto-generates your dedicated Organization ID, MySQL data tables, default system projects, task counters, and hashed admin credentials.</p>
+                        <p>The system auto-generates your dedicated Organization ID, secure database tables, default system projects, task counters, and hashed admin credentials.</p>
                         <div class="workflow-tag"><i class="fa-solid fa-shield-halved"></i> 100% Isolated Data Tenant</div>
                     </div>
 
@@ -445,13 +445,13 @@
                     <div class="ai-flow-step">
                         <div class="ai-flow-icon" style="background:linear-gradient(135deg,#2563eb,#4f46e5);"><i class="fa-solid fa-brain"></i></div>
                         <h4>AI Understands Intent</h4>
-                        <p>Gemini / Groq LLM identifies the action (create / update / search / report) and validates against your real live MySQL data.</p>
+                        <p>Gemini / Groq LLM identifies the action (create / update / search / report) and validates against your real live database records.</p>
                     </div>
                     <div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     <div class="ai-flow-step">
                         <div class="ai-flow-icon" style="background:linear-gradient(135deg,#0ea5e9,#2563eb);"><i class="fa-solid fa-plug-circle-bolt"></i></div>
                         <h4>MCP Tool Executes</h4>
-                        <p>AI calls Python FastMCP server which directly queries your MySQL database â€” no hallucination, only real data actions.</p>
+                        <p>AI calls Python FastMCP server which directly queries your cloud database â€” no hallucination, only real data actions.</p>
                     </div>
                     <div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
                     <div class="ai-flow-step">
@@ -484,8 +484,8 @@
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#dcfce7;color:#15803d;"><i class="fa-solid fa-shield-halved"></i></div>
                         <h3>Zero Hallucination â€” Live DB Context</h3>
-                        <p>AI is injected with your <strong>real active projects and team members from MySQL</strong> on every message. It cannot invent fake project names or assign tasks to non-existent users.</p>
-                        <div class="ai-example-chip"><i class="fa-solid fa-database"></i> Live MySQL context injected per request</div>
+                        <p>AI is injected with your <strong>real active projects and team members from database</strong> on every message. It cannot invent fake project names or assign tasks to non-existent users.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-database"></i> Live database context injected per request</div>
                     </div>
                     <div class="ai-cap-card">
                         <div class="ai-cap-icon" style="background:#fee2e2;color:#b91c1c;"><i class="fa-solid fa-chart-column"></i></div>
@@ -580,7 +580,7 @@
                         <div class="price-amount">Custom</div>
                         <ul class="price-features">
                             <li><i class="fa-solid fa-circle-check"></i> Unlimited Users & Organizations</li>
-                            <li><i class="fa-solid fa-circle-check"></i> On-Premise / Self-Hosted Dedicated MySQL</li>
+                            <li><i class="fa-solid fa-circle-check"></i> On-Premise / Self-Hosted Dedicated Database</li>
                             <li><i class="fa-solid fa-circle-check"></i> Full Audit Trail & Security Scoping</li>
                             <li><i class="fa-solid fa-circle-check"></i> 24/7 Dedicated Account Manager</li>
                         </ul>
@@ -603,11 +603,11 @@
                     <div class="faq-col">
                         <div class="faq-item">
                             <div class="faq-question"><span>How does PTMS UNO handle multi-tenant organization security?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Every organization is bound to a unique <strong>organization_id</strong>. All MySQL queries are scoped to that ID â€” users can only see their own org's projects, tasks, employees, and routines. Switching organizations via the org-switcher API is also fully guarded with session validation.</div>
+                            <div class="faq-answer">Every organization is bound to a unique <strong>organization_id</strong>. All database queries are scoped to that ID â€” users can only see their own org's projects, tasks, employees, and routines. Switching organizations via the org-switcher API is also fully guarded with session validation.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Can I download native Windows (.EXE) and Android (.APK) apps?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Yes! PTMS UNO offers a native <strong>Windows Desktop (.EXE)</strong> installer and an <strong>Android (.APK)</strong> package. Both connect to the same cloud MySQL database. Download links are available in the Downloads section. The web app also supports <strong>PWA install</strong> â€” tap "Add to Home Screen" in Chrome.</div>
+                            <div class="faq-answer">Yes! PTMS UNO offers a native <strong>Windows Desktop (.EXE)</strong> installer and an <strong>Android (.APK)</strong> package. Both connect to the same cloud database. Download links are available in the Downloads section. The web app also supports <strong>PWA install</strong> â€” tap "Add to Home Screen" in Chrome.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>What are the three user roles and what can each do?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
@@ -627,7 +627,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>How does the AI Assistant create and manage tasks?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">The AI uses <strong>Google Gemini + Groq + OpenRouter</strong> models in cascade. It connects to a <strong>Python FastMCP</strong> server that directly queries your MySQL database. You can say "Create a High priority task for Alex â€” API bug fix, due Friday" and the AI validates your active projects and team members from the DB, then creates the task â€” no hallucination possible.</div>
+                            <div class="faq-answer">The AI uses <strong>Google Gemini + Groq + OpenRouter</strong> models in cascade. It connects to a <strong>Python FastMCP</strong> server that directly queries your cloud database. You can say "Create a High priority task for Alex â€” API bug fix, due Friday" and the AI validates your active projects and team members from the DB, then creates the task â€” no hallucination possible.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Can I attach files and add comments to tasks?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
@@ -647,7 +647,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>How secure is the authentication system?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">PTMS UNO uses <strong>express-session</strong> with a strong secret and <strong>bcrypt (12 rounds)</strong> for password hashing. Every route is protected by role-based middleware (requireAuth, requireAdmin, requireManager). All critical actions are logged to an <strong>audit_events</strong> table via MySQL triggers for a complete tamper-proof trail.</div>
+                            <div class="faq-answer">PTMS UNO uses <strong>express-session</strong> with a strong secret and <strong>bcrypt (12 rounds)</strong> for password hashing. Every route is protected by role-based middleware (requireAuth, requireAdmin, requireManager). All critical actions are logged to an <strong>audit_events</strong> table via database triggers for a complete tamper-proof trail.</div>
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Can employees and managers use voice commands in the AI?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
@@ -655,7 +655,7 @@
                         </div>
                         <div class="faq-item">
                             <div class="faq-question"><span>Does the database auto-setup on first run?</span><i class="fa-solid fa-chevron-down faq-icon"></i></div>
-                            <div class="faq-answer">Yes. On first start, PTMS UNO's <strong>database/init.js</strong> automatically creates all tables, indexes, MySQL views, triggers, and seed data. No manual SQL import needed. Just configure your <code>.env</code> file with MySQL credentials and run <code>npm start</code> â€” the system handles the rest.</div>
+                            <div class="faq-answer">Yes. On first start, PTMS UNO's <strong>database/init.js</strong> automatically creates all tables, indexes, database views, triggers, and seed data. No manual SQL import needed. Just configure your <code>.env</code> file with database credentials and run <code>npm start</code> â€” the system handles the rest.</div>
                         </div>
                     </div>
                 </div>
@@ -795,12 +795,12 @@
 
                     <div class="form-group">
                         <label>Organization / Company Name <span class="required">*</span></label>
-                        <input type="text" id="reg-orgname" class="form-control" placeholder="e.g. DataEvol Tech" oninput="updateAdminSuggestion()" required>
+                        <input type="text" id="reg-orgname" class="form-control" placeholder="e.g. Acme Tech" oninput="updateAdminSuggestion()" required>
                     </div>
 
                     <div class="form-group">
                         <label>Organization Admin ID (Email/Username) <span class="required">*</span></label>
-                        <input type="text" id="reg-adminid" class="form-control" placeholder="e.g. admin@dataevoltech" required>
+                        <input type="text" id="reg-adminid" class="form-control" placeholder="e.g. admin@acmetech" required>
                         <div class="suggestion-hint" id="adminid-suggestion">
                             <i class="fa-solid fa-lightbulb" style="color:#f59e0b;"></i> Suggestion: Add <strong>@companyname</strong> (e.g., <span id="suggested-format">admin@company</span>)
                         </div>
@@ -875,6 +875,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 

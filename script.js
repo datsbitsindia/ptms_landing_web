@@ -101,8 +101,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // =========================================
 
 // Track registered orgs/admins to perform real-time duplicate check
-const existingOrgs = ['dataevol', 'unotag', 'enterprise', 'acme', 'demo'];
-const existingAdmins = ['admin@dataevol', 'admin@unotag', 'chetan@gmail.com', 'admin@enterprise'];
+const existingOrgs = ['acme', 'unotag', 'enterprise', 'acme', 'demo'];
+const existingAdmins = ['admin@acme', 'admin@unotag', 'chetan@gmail.com', 'admin@enterprise'];
 
 window.openOrgRegisterModal = function() {
     const modal = document.getElementById('org-register-modal');
@@ -275,3 +275,4 @@ window.closeCustomAlert = function() {
         modal.classList.remove('open');
     }
 };
+
