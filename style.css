@@ -1809,17 +1809,13 @@ a {
 }
 
 .showcase-feature-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: 20px auto 1fr;
+    gap: 8px;
+    align-items: start;
     font-size: 14px;
     color: #334155;
     font-weight: 500;
-    text-align: left !important;
-}
-
-.showcase-feature-list li div {
-    flex: 1;
     text-align: left !important;
 }
 
@@ -1827,7 +1823,17 @@ a {
     color: #10b981;
     font-size: 15px;
     margin-top: 3px;
-    flex-shrink: 0;
+}
+
+.showcase-feature-list li strong {
+    color: #0f172a;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.showcase-feature-list li span {
+    color: #475569;
+    line-height: 1.5;
 }
 
 .showcase-screen-wrap {
