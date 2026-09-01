@@ -8,25 +8,24 @@ require('dotenv').config();
 
 const PORT = process.env.PORT || 8090;
 
-const DB_HOST = process.env.DB_HOST || '127.0.0.1';
+const DB_HOST = process.env.DB_HOST || 'localhost';
 const DB_PORT = Number(process.env.DB_PORT) || 3306;
 const DB_USER = process.env.DB_USER || 'root';
 const DB_PASSWORD = process.env.DB_PASSWORD || '';
 const DB_NAME = process.env.DB_NAME || 'taskmanager';
 const TABLE_PREFIX = process.env.TABLE_PREFIX || 'uno_';
 
-// MySQL Connection Pool with Multi-Host Fallback (Docker + Local)
+// MySQL Connection Pool (Same host database as PTMS_UNO)
 let dbPool = null;
 
 async function getDbPool() {
     if (dbPool) return dbPool;
 
     const candidateHosts = [
-        process.env.DB_HOST,
+        process.env.DB_HOST || 'localhost',
         '127.0.0.1',
-        'host.docker.internal',
-        '172.17.0.1',
-        'localhost'
+        'localhost',
+        'host.docker.internal'
     ].filter(Boolean);
 
     const uniqueHosts = [...new Set(candidateHosts)];
