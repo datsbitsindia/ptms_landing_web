@@ -21,15 +21,11 @@ let dbPool = null;
 async function getDbPool() {
     if (dbPool) return dbPool;
 
-    const rawHost = (process.env.DB_HOST || 'localhost').trim();
-    // Map 'localhost' to IPv4 loopback '127.0.0.1' to prevent Node 18 DNS lookup resolving 'localhost' to IPv6 ::1 (ECONNREFUSED ::1:3306)
-    const primaryHost = (rawHost === 'localhost' || !rawHost) ? '127.0.0.1' : rawHost;
-
     const candidateHosts = [
-        primaryHost,
-        '127.0.0.1',
+        process.env.DB_HOST,
         'host.docker.internal',
-        '172.17.0.1'
+        '172.17.0.1',
+        '127.0.0.1'
     ].filter(Boolean);
 
     const uniqueHosts = [...new Set(candidateHosts)];
