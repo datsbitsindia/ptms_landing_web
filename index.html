@@ -53,14 +53,125 @@
                 </div>
             </div>
 
-            <!-- 5 FULL WIDESCREEN SHOWCASE ROWS (Matching PTMS UNO 5 Core Modules) -->
+            <!-- 5 FULL WIDESCREEN SHOWCASE ROWS (Dashboard -> Tasks -> Task Details -> Teams -> Notifications) -->
             <div class="container" id="preview" style="max-width: 1380px; padding: 40px 20px;">
                 
                 <div class="feature-showcase-container">
                     
-                    <!-- ================= SHOWCASE ROW 1: TASKS PAGE ================= -->
+                    <!-- ================= ROW 1: EXECUTIVE DASHBOARD ================= -->
                     <div class="feature-showcase-row">
-                        <!-- Screen Frame Left -->
+                        <!-- Screen Frame Left (Dashboard Screen Mockup) -->
+                        <div class="showcase-screen-wrap">
+                            <div class="hero-mockup-wrap" style="box-shadow:none;">
+                                <div class="mockup-window-bar">
+                                    <div style="display:flex;align-items:center;gap:8px;">
+                                        <i class="fa-solid fa-gauge" style="color:#2563eb;font-size:13px;"></i>
+                                        <span class="mockup-window-title">Dashboard | Task Manager - PTMS-UNO</span>
+                                    </div>
+                                    <div class="mockup-controls" style="gap:6px;">
+                                        <span class="control-dot min"></span><span class="control-dot max"></span><span class="control-dot close"></span>
+                                    </div>
+                                </div>
+                                <div class="mockup-app-layout">
+                                    <div class="app-mock-sidebar" style="display:flex;">
+                                        <div class="mock-sidebar-item active"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-list-check"></i> Tasks</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-user"></i> Profile</div>
+                                    </div>
+                                    <div class="app-mock-main" style="padding-bottom:34px;position:relative;">
+                                        <div class="dt-header">
+                                            <div>
+                                                <div class="dt-username">Alex Morgan</div>
+                                                <div class="dt-role">Manager &middot; Enterprise Org</div>
+                                            </div>
+                                            <div class="mock-header-actions">
+                                                <button class="dt-btn-primary"><i class="fa-solid fa-plus"></i> Add Task</button>
+                                                <button class="dt-btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                            </div>
+                                        </div>
+                                        <!-- 8 4x2 Metric Grid Cards -->
+                                        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px;">
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-folder-open" style="color:#2563eb;"></i><b>17</b><span style="font-size:9px;">Total Projects</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-regular fa-folder" style="color:#d97706;"></i><b>17</b><span style="font-size:9px;">Pending Projects</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-list-check" style="color:#4f46e5;"></i><b>42</b><span style="font-size:9px;">Total Tasks</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>2</b><span style="font-size:9px;">Pending Tasks</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-spinner" style="color:#7c3aed;"></i><b>40</b><span style="font-size:9px;">In Progress Tasks</span></div>
+                                            <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>0</b><span style="font-size:9px;">Completed Tasks</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>40</b><span style="font-size:9px;">Overdue Tasks</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-users" style="color:#0284c7;"></i><b>5</b><span style="font-size:9px;">Employees</span></div>
+                                        </div>
+
+                                        <!-- My Projects Section -->
+                                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+                                            <b style="font-size:12.5px;color:#0f172a;">My Projects</b>
+                                            <button style="background:#2563eb;color:#ffffff;border:none;padding:4px 10px;border-radius:6px;font-size:10px;font-weight:700;"><i class="fa-solid fa-chart-column"></i> View Reports</button>
+                                        </div>
+
+                                        <!-- Project Item Cards -->
+                                        <div style="display:flex;flex-direction:column;gap:5px;">
+                                            <div style="background:#ffffff;border:1px solid #cbd5e1;padding:8px 12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+                                                <div>
+                                                    <b style="font-size:11px;color:#0f172a;">Cloud Infra Migration</b>
+                                                    <span style="font-size:9px;background:#fef3c7;color:#b45309;padding:1px 6px;border-radius:99px;margin-left:6px;">Planned</span>
+                                                    <small style="display:block;font-size:9px;color:#64748b;margin-top:2px;">Managed by Alex Morgan &middot; 4 tasks</small>
+                                                </div>
+                                                <div style="font-size:9px;color:#64748b;text-align:right;">
+                                                    <div>Start: 19 Aug 2026</div>
+                                                    <div>Due: 19 Nov 2030</div>
+                                                </div>
+                                            </div>
+                                            <div style="background:#ffffff;border:1px solid #cbd5e1;padding:8px 12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
+                                                <div>
+                                                    <b style="font-size:11px;color:#0f172a;">Developer API Gateway</b>
+                                                    <span style="font-size:9px;background:#fef3c7;color:#b45309;padding:1px 6px;border-radius:99px;margin-left:6px;">Planned</span>
+                                                    <small style="display:block;font-size:9px;color:#64748b;margin-top:2px;">Managed by Alex Morgan &middot; 4 tasks</small>
+                                                </div>
+                                                <div style="font-size:9px;color:#64748b;text-align:right;">
+                                                    <div>Start: 14 Aug 2026</div>
+                                                    <div>Due: 14 Aug 2029</div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Text Content Right -->
+                        <div class="showcase-text-content">
+                            <div class="showcase-badge"><i class="fa-solid fa-gauge"></i> Module 01 &middot; Executive Dashboard</div>
+                            <h3>High-Level Team &amp; Project Analytics</h3>
+                            <p>Get complete executive overview of your organization's health. Track projects, active workloads, and employee deliverables in real time.</p>
+                            <ul class="showcase-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>8-Card 4x2 Metric Grid:</strong> Track Total Projects, Active Tasks, Workloads &amp; Overdues.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Role-Based Views:</strong> Tailored dashboard layouts for Admin, Manager, and Employee.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Projects Directory:</strong> Complete project list with Start Date, Due Date, and Task counts.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Reports &amp; Analytics:</strong> One-click exportable PDF/Excel performance reports.</div></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- ================= ROW 2: TASKS PAGE ================= -->
+                    <div class="feature-showcase-row reverse">
+                        <!-- Text Content Left -->
+                        <div class="showcase-text-content">
+                            <div class="showcase-badge"><i class="fa-solid fa-list-check"></i> Module 02 &middot; Task Management</div>
+                            <h3>Centralized Task Hub &amp; Smart Workflows</h3>
+                            <p>Assign single or daily recurring tasks to 1, 2, 3 or more team members simultaneously. Filter instantly between self-assigned tasks and team tracking.</p>
+                            <ul class="showcase-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>To Do vs Assigned Tabs:</strong> Separate self-tasks from team-assigned tasks.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>5 KPI Metric Cards:</strong> Real-time counts for Overdue, Pending, In Progress, Completed, Total.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Multi-Assignee Support:</strong> Allocate tasks to multiple employees with priority flags.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Live Search &amp; Filters:</strong> Filter instantly by Project, Status, or Priority.</div></li>
+                            </ul>
+                        </div>
+
+                        <!-- Screen Frame Right -->
                         <div class="showcase-screen-wrap">
                             <div class="hero-mockup-wrap" style="box-shadow:none;">
                                 <div class="mockup-window-bar">
@@ -150,211 +261,11 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Text Content Right -->
-                        <div class="showcase-text-content">
-                            <div class="showcase-badge"><i class="fa-solid fa-list-check"></i> Module 01 &middot; Task Management</div>
-                            <h3>Centralized Task Hub &amp; Smart Workflows</h3>
-                            <p>Assign single or daily recurring tasks to 1, 2, 3 or more team members simultaneously. Filter instantly between self-assigned tasks and team tracking.</p>
-                            <ul class="showcase-feature-list">
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>To Do vs Assigned Tabs:</strong> Separate self-tasks from team-assigned tasks.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>5 KPI Metric Cards:</strong> Real-time counts for Overdue, Pending, In Progress, Completed, Total.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Multi-Assignee Support:</strong> Allocate tasks to multiple employees with priority flags.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Live Search &amp; Filters:</strong> Filter instantly by Project, Status, or Priority.</li>
-                            </ul>
-                        </div>
                     </div>
 
-                    <!-- ================= SHOWCASE ROW 2: NOTIFICATIONS CENTER ================= -->
-                    <div class="feature-showcase-row reverse">
-                        <!-- Text Content Left -->
-                        <div class="showcase-text-content">
-                            <div class="showcase-badge"><i class="fa-solid fa-bell"></i> Module 02 &middot; Notifications Hub</div>
-                            <h3>Real-Time Activity Feeds &amp; Instant Alerts</h3>
-                            <p>Stay informed every second. Every status change, task assignment, comment, deadline warning, or handover generates an instant notification feed.</p>
-                            <ul class="showcase-feature-list">
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Live Activity Stream:</strong> Instant status change logs (e.g. Changed status to Completed).</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Unread Counter Badge:</strong> Red unread badge counter with one-click mark as read.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Direct Navigation:</strong> Click any notification to jump directly into the target task.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Overdue &amp; Comment Warnings:</strong> Real-time alerts when deadlines pass or comments are posted.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Screen Frame Right (Notifications Screen Mockup) -->
-                        <div class="showcase-screen-wrap">
-                            <div class="hero-mockup-wrap" style="box-shadow:none;">
-                                <div class="mockup-window-bar">
-                                    <div style="display:flex;align-items:center;gap:8px;">
-                                        <i class="fa-solid fa-bell" style="color:#2563eb;font-size:13px;"></i>
-                                        <span class="mockup-window-title">Notifications | Task Manager - PTMS-UNO</span>
-                                    </div>
-                                    <div class="mockup-controls" style="gap:6px;">
-                                        <span class="control-dot min"></span><span class="control-dot max"></span><span class="control-dot close"></span>
-                                    </div>
-                                </div>
-                                <div class="mockup-app-layout">
-                                    <div class="app-mock-sidebar" style="display:flex;">
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-list-check"></i> Tasks</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
-                                        <div class="mock-sidebar-item active"><i class="fa-solid fa-bell"></i> Notifications</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-user"></i> Profile</div>
-                                    </div>
-                                    <div class="app-mock-main" style="padding-bottom:34px;position:relative;">
-                                        <div class="dt-header" style="border-bottom:1px solid #e2e8f0;padding-bottom:10px;">
-                                            <div style="display:flex;align-items:center;gap:10px;">
-                                                <h4 style="margin:0;font-size:15px;color:#0f172a;"><i class="fa-solid fa-bell" style="color:#2563eb;"></i> Notifications</h4>
-                                                <span style="background:#dc2626;color:#ffffff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:99px;">3 unread</span>
-                                            </div>
-                                            <button class="dt-btn-logout" style="font-size:10px;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-                                        </div>
-                                        <!-- Notifications Feed List -->
-                                        <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px;">
-                                            <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
-                                                <div style="width:28px;height:28px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;color:#2563eb;font-size:12px;flex-shrink:0;"><i class="fa-solid fa-check"></i></div>
-                                                <div style="flex:1;">
-                                                    <b style="font-size:11.5px;color:#0f172a;display:block;">Alex Rivera changed status of #138 Database Indexing to Completed</b>
-                                                    <small style="color:#64748b;font-size:9.5px;"><i class="fa-regular fa-clock"></i> 1 Sept 2026, 4:37 pm</small>
-                                                </div>
-                                            </div>
-                                            <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
-                                                <div style="width:28px;height:28px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;color:#2563eb;font-size:12px;flex-shrink:0;"><i class="fa-solid fa-comment"></i></div>
-                                                <div style="flex:1;">
-                                                    <b style="font-size:11.5px;color:#0f172a;display:block;">New comment on: #129 Financial Audit &amp; Compliance</b>
-                                                    <small style="color:#64748b;font-size:9.5px;"><i class="fa-regular fa-clock"></i> 1 Sept 2026, 4:33 pm</small>
-                                                </div>
-                                            </div>
-                                            <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
-                                                <div style="width:28px;height:28px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;color:#dc2626;font-size:12px;flex-shrink:0;"><i class="fa-solid fa-triangle-exclamation"></i></div>
-                                                <div style="flex:1;">
-                                                    <b style="font-size:11.5px;color:#0f172a;display:block;">Task overdue: #131 REST API Gateway Auth assigned to Marcus Vance</b>
-                                                    <small style="color:#64748b;font-size:9.5px;"><i class="fa-regular fa-clock"></i> 1 Sept 2026, 10:58 am</small>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ================= SHOWCASE ROW 3: EXECUTIVE DASHBOARD ================= -->
+                    <!-- ================= ROW 3: TASK DETAILS PAGE ================= -->
                     <div class="feature-showcase-row">
-                        <!-- Screen Frame Left (Dashboard Screen Mockup) -->
-                        <div class="showcase-screen-wrap">
-                            <div class="hero-mockup-wrap" style="box-shadow:none;">
-                                <div class="mockup-window-bar">
-                                    <div style="display:flex;align-items:center;gap:8px;">
-                                        <i class="fa-solid fa-gauge" style="color:#2563eb;font-size:13px;"></i>
-                                        <span class="mockup-window-title">Dashboard | Task Manager - PTMS-UNO</span>
-                                    </div>
-                                    <div class="mockup-controls" style="gap:6px;">
-                                        <span class="control-dot min"></span><span class="control-dot max"></span><span class="control-dot close"></span>
-                                    </div>
-                                </div>
-                                <div class="mockup-app-layout">
-                                    <div class="app-mock-sidebar" style="display:flex;">
-                                        <div class="mock-sidebar-item active"><i class="fa-solid fa-gauge"></i> Dashboard</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-list-check"></i> Tasks</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
-                                        <div class="mock-sidebar-item"><i class="fa-solid fa-user"></i> Profile</div>
-                                    </div>
-                                    <div class="app-mock-main" style="padding-bottom:34px;position:relative;">
-                                        <div class="dt-header">
-                                            <div>
-                                                <div class="dt-username">Alex Morgan</div>
-                                                <div class="dt-role">Manager &middot; Enterprise Org</div>
-                                            </div>
-                                            <div class="mock-header-actions">
-                                                <button class="dt-btn-primary"><i class="fa-solid fa-plus"></i> Add Task</button>
-                                                <button class="dt-btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-                                            </div>
-                                        </div>
-                                        <!-- 8 4x2 Metric Grid Cards -->
-                                        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px;">
-                                            <div class="mock-kpi-card"><i class="fa-solid fa-folder-open" style="color:#2563eb;"></i><b>17</b><span style="font-size:9px;">Total Projects</span></div>
-                                            <div class="mock-kpi-card"><i class="fa-regular fa-folder" style="color:#d97706;"></i><b>17</b><span style="font-size:9px;">Pending Projects</span></div>
-                                            <div class="mock-kpi-card"><i class="fa-solid fa-list-check" style="color:#4f46e5;"></i><b>42</b><span style="font-size:9px;">Total Tasks</span></div>
-                                            <div class="mock-kpi-card"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>2</b><span style="font-size:9px;">Pending Tasks</span></div>
-                                            <div class="mock-kpi-card"><i class="fa-solid fa-spinner" style="color:#7c3aed;"></i><b>40</b><span style="font-size:9px;">In Progress Tasks</span></div>
-                                            <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>0</b><span style="font-size:9px;">Completed Tasks</span></div>
-                                            <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>40</b><span style="font-size:9px;">Overdue Tasks</span></div>
-                                            <div class="mock-kpi-card"><i class="fa-solid fa-users" style="color:#0284c7;"></i><b>5</b><span style="font-size:9px;">Employees</span></div>
-                                        </div>
-
-                                        <!-- My Projects Section -->
-                                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
-                                            <b style="font-size:12.5px;color:#0f172a;">My Projects</b>
-                                            <button style="background:#2563eb;color:#ffffff;border:none;padding:4px 10px;border-radius:6px;font-size:10px;font-weight:700;"><i class="fa-solid fa-chart-column"></i> View Reports</button>
-                                        </div>
-
-                                        <!-- Project Item Cards -->
-                                        <div style="display:flex;flex-direction:column;gap:5px;">
-                                            <div style="background:#ffffff;border:1px solid #cbd5e1;padding:8px 12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-                                                <div>
-                                                    <b style="font-size:11px;color:#0f172a;">Cloud Infra Migration</b>
-                                                    <span style="font-size:9px;background:#fef3c7;color:#b45309;padding:1px 6px;border-radius:99px;margin-left:6px;">Planned</span>
-                                                    <small style="display:block;font-size:9px;color:#64748b;margin-top:2px;">Managed by Alex Morgan &middot; 4 tasks</small>
-                                                </div>
-                                                <div style="font-size:9px;color:#64748b;text-align:right;">
-                                                    <div>Start: 19 Aug 2026</div>
-                                                    <div>Due: 19 Nov 2030</div>
-                                                </div>
-                                            </div>
-                                            <div style="background:#ffffff;border:1px solid #cbd5e1;padding:8px 12px;border-radius:8px;display:flex;justify-content:space-between;align-items:center;">
-                                                <div>
-                                                    <b style="font-size:11px;color:#0f172a;">Developer API Gateway</b>
-                                                    <span style="font-size:9px;background:#fef3c7;color:#b45309;padding:1px 6px;border-radius:99px;margin-left:6px;">Planned</span>
-                                                    <small style="display:block;font-size:9px;color:#64748b;margin-top:2px;">Managed by Alex Morgan &middot; 4 tasks</small>
-                                                </div>
-                                                <div style="font-size:9px;color:#64748b;text-align:right;">
-                                                    <div>Start: 14 Aug 2026</div>
-                                                    <div>Due: 14 Aug 2029</div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Text Content Right -->
-                        <div class="showcase-text-content">
-                            <div class="showcase-badge"><i class="fa-solid fa-gauge"></i> Module 03 &middot; Executive Dashboard</div>
-                            <h3>High-Level Team &amp; Project Analytics</h3>
-                            <p>Get complete executive overview of your organization's health. Track projects, active workloads, and employee deliverables in real time.</p>
-                            <ul class="showcase-feature-list">
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>8-Card 4x2 Metric Grid:</strong> Track Total Projects, Active Tasks, Workloads &amp; Overdues.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Role-Based Views:</strong> Tailored dashboard layouts for Admin, Manager, and Employee.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Projects Directory:</strong> Complete project list with Start Date, Due Date, and Task counts.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Reports &amp; Analytics:</strong> One-click exportable PDF/Excel performance reports.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- ================= SHOWCASE ROW 4: TASK GROUP CHAT & DETAILS ================= -->
-                    <div class="feature-showcase-row reverse">
-                        <!-- Text Content Left -->
-                        <div class="showcase-text-content">
-                            <div class="showcase-badge"><i class="fa-solid fa-comments"></i> Module 04 &middot; Task Discussions</div>
-                            <h3>Dedicated Task Thread &amp; Group Chat</h3>
-                            <p>Every single task acts as a focused discussion room. Creator and all assigned members (1, 3, 4+ people) post updates, comments, and attachments directly inside the task.</p>
-                            <ul class="showcase-feature-list">
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>4-Person Task Group Chat:</strong> Discuss ideas and blockers directly inside the task modal.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Progress Percentage Logging:</strong> Live percentage updates (e.g. 80% Completed).</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>File Attachments:</strong> Upload PDF reports, screenshots, and zip files for the team.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Full Audit History:</strong> Complete chronological log of status changes and handovers.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Screen Frame Right (Full Desktop Task Detail Page Mockup matching Photo 2) -->
+                        <!-- Screen Frame Left (Task Detail Desktop Page Mockup) -->
                         <div class="showcase-screen-wrap">
                             <div class="hero-mockup-wrap" style="box-shadow:none;">
                                 <div class="mockup-window-bar">
@@ -441,11 +352,37 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Text Content Right -->
+                        <div class="showcase-text-content">
+                            <div class="showcase-badge"><i class="fa-solid fa-note-sticky"></i> Module 03 &middot; Task Details</div>
+                            <h3>Dedicated Task Thread &amp; Work Updates</h3>
+                            <p>Every single task acts as a focused discussion room. Creator and all assigned members (1, 3, 4+ people) post updates, comments, and attachments directly inside the task.</p>
+                            <ul class="showcase-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Task Group Discussion:</strong> Post updates, blockers, and comments in a shared task feed.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Individual Status Control:</strong> Each assigned member updates their own status independently.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Re-assign &amp; Forward:</strong> Easily reassign or forward tasks to other team members.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Full Audit History:</strong> Complete chronological log of status changes and handovers.</div></li>
+                            </ul>
+                        </div>
                     </div>
 
-                    <!-- ================= SHOWCASE ROW 5: TEAMS MANAGEMENT ================= -->
-                    <div class="feature-showcase-row">
-                        <!-- Screen Frame Left (Teams Screen Mockup) -->
+                    <!-- ================= ROW 4: TEAMS PAGE ================= -->
+                    <div class="feature-showcase-row reverse">
+                        <!-- Text Content Left -->
+                        <div class="showcase-text-content">
+                            <div class="showcase-badge"><i class="fa-solid fa-users"></i> Module 04 &middot; Teams Management</div>
+                            <h3>Role-Based Access, Departments &amp; Organization Control</h3>
+                            <p>Manage your entire company workforce. Admin IDP grants organization ownership to create managers and employees with department and designation mapping.</p>
+                            <ul class="showcase-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Admin Hierarchy:</strong> Admin IDP -&gt; Create Managers -&gt; Create Employees.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Department &amp; Designation Mapping:</strong> Categorize teams by Developer, Sales, Finance, Mgmt.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>One-Click Active / Inactive Toggle:</strong> Revoke or restore employee access instantly.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Smart Team Search &amp; Filter:</strong> Filter team by Department, Role, or Account Status.</div></li>
+                            </ul>
+                        </div>
+
+                        <!-- Screen Frame Right (Teams Screen Mockup) -->
                         <div class="showcase-screen-wrap">
                             <div class="hero-mockup-wrap" style="box-shadow:none;">
                                 <div class="mockup-window-bar">
@@ -527,17 +464,80 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- ================= ROW 5: NOTIFICATIONS PAGE ================= -->
+                    <div class="feature-showcase-row">
+                        <!-- Screen Frame Left (Notifications Screen Mockup) -->
+                        <div class="showcase-screen-wrap">
+                            <div class="hero-mockup-wrap" style="box-shadow:none;">
+                                <div class="mockup-window-bar">
+                                    <div style="display:flex;align-items:center;gap:8px;">
+                                        <i class="fa-solid fa-bell" style="color:#2563eb;font-size:13px;"></i>
+                                        <span class="mockup-window-title">Notifications | Task Manager - PTMS-UNO</span>
+                                    </div>
+                                    <div class="mockup-controls" style="gap:6px;">
+                                        <span class="control-dot min"></span><span class="control-dot max"></span><span class="control-dot close"></span>
+                                    </div>
+                                </div>
+                                <div class="mockup-app-layout">
+                                    <div class="app-mock-sidebar" style="display:flex;">
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-list-check"></i> Tasks</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
+                                        <div class="mock-sidebar-item active"><i class="fa-solid fa-bell"></i> Notifications</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-user"></i> Profile</div>
+                                    </div>
+                                    <div class="app-mock-main" style="padding-bottom:34px;position:relative;">
+                                        <div class="dt-header" style="border-bottom:1px solid #e2e8f0;padding-bottom:10px;">
+                                            <div style="display:flex;align-items:center;gap:10px;">
+                                                <h4 style="margin:0;font-size:15px;color:#0f172a;"><i class="fa-solid fa-bell" style="color:#2563eb;"></i> Notifications</h4>
+                                                <span style="background:#dc2626;color:#ffffff;font-size:10px;font-weight:800;padding:2px 8px;border-radius:99px;">3 unread</span>
+                                            </div>
+                                            <button class="dt-btn-logout" style="font-size:10px;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                        </div>
+                                        <!-- Notifications Feed List -->
+                                        <div style="display:flex;flex-direction:column;gap:6px;margin-top:10px;">
+                                            <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
+                                                <div style="width:28px;height:28px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;color:#2563eb;font-size:12px;flex-shrink:0;"><i class="fa-solid fa-check"></i></div>
+                                                <div style="flex:1;">
+                                                    <b style="font-size:11.5px;color:#0f172a;display:block;">Alex Rivera changed status of #138 Database Indexing to Completed</b>
+                                                    <small style="color:#64748b;font-size:9.5px;"><i class="fa-regular fa-clock"></i> 1 Sept 2026, 4:37 pm</small>
+                                                </div>
+                                            </div>
+                                            <div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
+                                                <div style="width:28px;height:28px;border-radius:50%;background:#dbeafe;display:flex;align-items:center;justify-content:center;color:#2563eb;font-size:12px;flex-shrink:0;"><i class="fa-solid fa-comment"></i></div>
+                                                <div style="flex:1;">
+                                                    <b style="font-size:11.5px;color:#0f172a;display:block;">New comment on: #129 Financial Audit &amp; Compliance</b>
+                                                    <small style="color:#64748b;font-size:9.5px;"><i class="fa-regular fa-clock"></i> 1 Sept 2026, 4:33 pm</small>
+                                                </div>
+                                            </div>
+                                            <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px;display:flex;align-items:center;gap:10px;">
+                                                <div style="width:28px;height:28px;border-radius:50%;background:#fee2e2;display:flex;align-items:center;justify-content:center;color:#dc2626;font-size:12px;flex-shrink:0;"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                                                <div style="flex:1;">
+                                                    <b style="font-size:11.5px;color:#0f172a;display:block;">Task overdue: #131 REST API Gateway Auth assigned to Marcus Vance</b>
+                                                    <small style="color:#64748b;font-size:9.5px;"><i class="fa-regular fa-clock"></i> 1 Sept 2026, 10:58 am</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                         <!-- Text Content Right -->
                         <div class="showcase-text-content">
-                            <div class="showcase-badge"><i class="fa-solid fa-users"></i> Module 05 &middot; Teams Management</div>
-                            <h3>Role-Based Access, Departments &amp; Organization Control</h3>
-                            <p>Manage your entire company workforce. Admin IDP grants organization ownership to create managers and employees with department and designation mapping.</p>
+                            <div class="showcase-badge"><i class="fa-solid fa-bell"></i> Module 05 &middot; Notifications Hub</div>
+                            <h3>Real-Time Activity Feeds &amp; Instant Alerts</h3>
+                            <p>Stay informed every second. Every status change, task assignment, comment, deadline warning, or handover generates an instant notification feed.</p>
                             <ul class="showcase-feature-list">
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Admin Hierarchy:</strong> Admin IDP -&gt; Create Managers -&gt; Create Employees.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Department &amp; Designation Mapping:</strong> Categorize teams by Developer, Sales, Finance, Mgmt.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>One-Click Active / Inactive Toggle:</strong> Revoke or restore employee access instantly.</li>
-                                <li><i class="fa-solid fa-circle-check"></i> <strong>Smart Team Search &amp; Filter:</strong> Filter team by Department, Role, or Account Status.</li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Live Activity Stream:</strong> Instant status change logs (e.g. Changed status to Completed).</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Unread Counter Badge:</strong> Red unread badge counter with one-click mark as read.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Direct Navigation:</strong> Click any notification to jump directly into the target task.</div></li>
+                                <li><i class="fa-solid fa-circle-check"></i> <div><strong>Overdue &amp; Comment Warnings:</strong> Real-time alerts when deadlines pass or comments are posted.</div></li>
                             </ul>
                         </div>
                     </div>

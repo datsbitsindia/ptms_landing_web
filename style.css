@@ -1756,6 +1756,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 14px;
+    text-align: left !important;
 }
 
 .showcase-badge {
@@ -1770,19 +1771,22 @@ a {
     padding: 4px 12px;
     border-radius: 99px;
     width: fit-content;
+    align-self: flex-start;
 }
 
 .showcase-text-content h3 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 800;
     color: #0f172a;
     line-height: 1.3;
+    text-align: left !important;
 }
 
 .showcase-text-content p {
-    font-size: 1rem;
+    font-size: 0.98rem;
     color: #475569;
     line-height: 1.65;
+    text-align: left !important;
 }
 
 .showcase-feature-list {
@@ -1791,20 +1795,24 @@ a {
     flex-direction: column;
     gap: 10px;
     margin-top: 6px;
+    text-align: left !important;
 }
 
 .showcase-feature-list li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     font-size: 14px;
     color: #334155;
-    font-weight: 600;
+    font-weight: 500;
+    text-align: left !important;
 }
 
 .showcase-feature-list li i {
     color: #10b981;
     font-size: 15px;
+    margin-top: 3px;
+    flex-shrink: 0;
 }
 
 .showcase-screen-wrap {
