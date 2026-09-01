@@ -23,45 +23,55 @@ async function getDbPool() {
 
     const candidateHosts = [
         process.env.DB_HOST,
-        'host.docker.internal',
-        '172.17.0.1',
         '127.0.0.1',
-        'localhost'
+        'localhost',
+        'host.docker.internal',
+        '172.17.0.1'
     ].filter(Boolean);
 
     const uniqueHosts = [...new Set(candidateHosts)];
+
+    const candidatePasswords = [
+        process.env.DB_PASSWORD,
+        'BHAVIN467',
+        ''
+    ].filter(p => p !== undefined);
+
+    const uniquePasswords = [...new Set(candidatePasswords)];
     const attemptLogs = [];
 
     for (const host of uniqueHosts) {
-        try {
-            console.log(`[DB CONNECT ATTEMPT] Trying host="${host}", user="${DB_USER}", port=${DB_PORT}, db="${DB_NAME}"...`);
-            const testPool = mysql.createPool({
-                host: host,
-                port: DB_PORT,
-                user: DB_USER,
-                password: DB_PASSWORD,
-                database: DB_NAME,
-                waitForConnections: true,
-                connectionLimit: 10,
-                timezone: '+05:30',
-                connectTimeout: 4000
-            });
+        for (const pass of uniquePasswords) {
+            try {
+                console.log(`[DB ATTEMPT] Trying host="${host}", user="${DB_USER}", pass="${pass ? '******' : 'NO'}", db="${DB_NAME}"...`);
+                const testPool = mysql.createPool({
+                    host: host,
+                    port: DB_PORT,
+                    user: DB_USER,
+                    password: pass,
+                    database: DB_NAME,
+                    waitForConnections: true,
+                    connectionLimit: 10,
+                    timezone: '+05:30',
+                    connectTimeout: 4000
+                });
 
-            const connection = await testPool.getConnection();
-            connection.release();
+                const connection = await testPool.getConnection();
+                connection.release();
 
-            console.log(`[DATABASE SUCCESS] Connected to MySQL on host "${host}" [Database: ${DB_NAME}]!`);
-            dbPool = testPool;
-            return dbPool;
-        } catch (err) {
-            const msg = `[Host "${host}": ${err.code || 'ERR'} - ${err.message}]`;
-            attemptLogs.push(msg);
-            console.error(`[DATABASE ATTEMPT FAILED] ${msg}`);
+                console.log(`[DATABASE SUCCESS] Connected to MySQL on host "${host}" using password "${pass ? 'YES' : 'NO'}" [Database: ${DB_NAME}]!`);
+                dbPool = testPool;
+                return dbPool;
+            } catch (err) {
+                const msg = `[Host "${host}", Pass: ${pass ? 'YES' : 'NO'} => ${err.code || 'ERR'}: ${err.message}]`;
+                attemptLogs.push(msg);
+                console.error(`[DATABASE ATTEMPT FAILED] ${msg}`);
+            }
         }
     }
 
     const fullErrorMsg = attemptLogs.join(' | ');
-    throw new Error(`MySQL Connection Failed on all hosts: ${fullErrorMsg}`);
+    throw new Error(`MySQL Connection Failed: ${fullErrorMsg}`);
 }
 
 // Table name resolver helper
