@@ -1733,117 +1733,100 @@ a {
     .preview-guide-grid { grid-template-columns: 1fr; }
 }
 
-/* Outer Annotated Layout (3 Columns: Left Callouts, Center Showcase, Right Callouts) */
-.annotated-preview-layout {
-    display: grid;
-    grid-template-columns: 260px 1fr 260px;
-    gap: 30px;
-    align-items: center;
-    position: relative;
-}
-
-.mockup-side-col {
+/* Alternating 2-Column Feature Showcase Rows (Jira/Asana Style) */
+.feature-showcase-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 70px;
+    margin-top: 40px;
 }
 
-.outside-callout-card {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 16px;
-    padding: 16px 18px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.08);
-    position: relative;
-    transition: var(--transition);
+.feature-showcase-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
 }
 
-.outside-callout-card:hover {
-    border-color: #2563eb;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+.showcase-text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
-.callout-header-badge {
+.showcase-badge {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 11px;
-    font-weight: 800;
+    font-size: 11.5px;
+    font-weight: 700;
     color: #2563eb;
     background: #eff6ff;
     border: 1px solid #bfdbfe;
-    padding: 3px 10px;
+    padding: 4px 12px;
     border-radius: 99px;
-    margin-bottom: 8px;
+    width: fit-content;
 }
 
-.outside-callout-card h4 {
-    font-size: 13.5px;
-    font-weight: 700;
+.showcase-text-content h3 {
+    font-size: 2rem;
+    font-weight: 800;
     color: #0f172a;
-    margin-bottom: 6px;
+    line-height: 1.3;
 }
 
-.outside-callout-card p {
-    font-size: 12px;
+.showcase-text-content p {
+    font-size: 1rem;
     color: #475569;
-    line-height: 1.5;
+    line-height: 1.65;
 }
 
-/* Connecting Arrow Lines */
-.connecting-arrow-line {
-    position: absolute;
+.showcase-feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.showcase-feature-list li {
     display: flex;
     align-items: center;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.arrow-to-right {
-    right: -36px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.arrow-to-right .arrow-stem {
-    width: 28px;
-    height: 2px;
-    background: #2563eb;
-}
-
-.arrow-to-right i {
-    color: #2563eb;
+    gap: 10px;
     font-size: 14px;
-    margin-left: -3px;
+    color: #334155;
+    font-weight: 600;
 }
 
-.arrow-to-left {
-    left: -36px;
-    top: 50%;
-    transform: translateY(-50%);
+.showcase-feature-list li i {
+    color: #10b981;
+    font-size: 15px;
 }
 
-.arrow-to-left .arrow-stem {
-    width: 28px;
-    height: 2px;
-    background: #2563eb;
+.showcase-screen-wrap {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 20px;
+    padding: 16px;
+    box-shadow: 0 15px 45px rgba(15, 23, 42, 0.07), 0 0 0 1px rgba(37, 99, 235, 0.04);
+    transition: var(--transition);
 }
 
-.arrow-to-left i {
-    color: #2563eb;
-    font-size: 14px;
-    margin-right: -3px;
+.showcase-screen-wrap:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 60px rgba(37, 99, 235, 0.12);
+    border-color: #93c5fd;
 }
 
-@media (max-width: 1280px) {
-    .annotated-preview-layout {
+@media (max-width: 992px) {
+    .feature-showcase-row, .feature-showcase-row.reverse {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
     }
-    .mockup-side-col {
-        grid-template-columns: repeat(2, 1fr);
-        display: grid;
+    .feature-showcase-row.reverse .showcase-text-content {
+        order: 1;
     }
-    .connecting-arrow-line { display: none; }
+    .feature-showcase-row.reverse .showcase-screen-wrap {
+        order: 2;
+    }
 }

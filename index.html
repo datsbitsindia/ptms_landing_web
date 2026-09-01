@@ -53,226 +53,167 @@
                 </div>
             </div>
 
-            <!-- DUAL SIDE-BY-SIDE APP SHOWCASE CONTAINER (Clean & Structured) -->
-            <div class="container" id="preview" style="max-width: 1200px; padding: 40px 20px;">
+            <!-- ALTERNATING 2-COLUMN SHOWCASE CONTAINER (Jira/Asana Style) -->
+            <div class="container" id="preview" style="max-width: 1240px; padding: 40px 20px;">
                 
-                <!-- 1. Side-by-Side App Mockups (Desktop + Mobile) -->
-                <div class="dual-app-showcase">
-
-                    <!-- DESKTOP FRAME (Left) -->
-                    <div class="hero-mockup-wrap">
-                        <!-- Windows Title Bar -->
-                        <div class="mockup-window-bar">
-                            <div style="display:flex;align-items:center;gap:8px;">
-                                <i class="fa-solid fa-layer-group" style="color:#2563eb;font-size:13px;"></i>
-                                <span class="mockup-window-title">Task Manager</span>
-                            </div>
-                            <div class="mockup-window-title" style="position:absolute;left:50%;transform:translateX(-50%);">Tasks | Task Manager - PTMS-UNO</div>
-                            <div class="mockup-controls" style="gap:6px;">
-                                <span class="control-dot min"></span>
-                                <span class="control-dot max"></span>
-                                <span class="control-dot close"></span>
+                <div class="feature-showcase-container">
+                    
+                    <!-- SHOWCASE ROW 1: [ Screen Left ] | [ Text Right ] -->
+                    <div class="feature-showcase-row">
+                        <!-- Screen Frame Left -->
+                        <div class="showcase-screen-wrap">
+                            <div class="hero-mockup-wrap" style="box-shadow:none;">
+                                <div class="mockup-window-bar">
+                                    <div style="display:flex;align-items:center;gap:8px;">
+                                        <i class="fa-solid fa-layer-group" style="color:#2563eb;font-size:13px;"></i>
+                                        <span class="mockup-window-title">Task Manager &middot; PTMS UNO</span>
+                                    </div>
+                                    <div class="mockup-controls" style="gap:6px;">
+                                        <span class="control-dot min"></span><span class="control-dot max"></span><span class="control-dot close"></span>
+                                    </div>
+                                </div>
+                                <div class="mockup-app-layout">
+                                    <div class="app-mock-sidebar" style="display:flex;">
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
+                                        <div class="mock-sidebar-item active"><i class="fa-solid fa-list-check"></i> Tasks</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
+                                    </div>
+                                    <div class="app-mock-main" style="padding-bottom:20px;">
+                                        <div class="dt-header">
+                                            <div>
+                                                <div class="dt-username">Alex Morgan</div>
+                                                <div class="dt-role">Manager &middot; Enterprise Org</div>
+                                            </div>
+                                            <div class="mock-header-actions">
+                                                <button class="dt-btn-primary"><i class="fa-solid fa-plus"></i> Add Task</button>
+                                            </div>
+                                        </div>
+                                        <div class="mock-kpi-bar dt-kpi-bar">
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>4</b><span>Overdue</span></div>
+                                            <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>8</b><span>Pending</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>35</b><span>Completed</span></div>
+                                        </div>
+                                        <div class="mock-tabs-bar">
+                                            <div class="mock-tab-btn"><i class="fa-solid fa-briefcase"></i> To Do</div>
+                                            <div class="mock-tab-btn active"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
+                                        </div>
+                                        <div class="mock-task-card dt-task">
+                                            <div class="mock-task-header">
+                                                <span class="mock-task-title">#129 Financial Audit &amp; Compliance</span>
+                                                <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
+                                            </div>
+                                            <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Finance Core</div>
+                                            <div class="mock-task-columns">
+                                                <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                                <div class="mock-task-col"><small>ASSIGNED TO</small><b>Sarah, Marcus, Vance</b></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- App Layout: Sidebar + Main -->
-                        <div class="mockup-app-layout" style="position:relative;">
+                        <!-- Text Content Right -->
+                        <div class="showcase-text-content">
+                            <div class="showcase-badge"><i class="fa-solid fa-users"></i> Multi-Assignee &amp; Workflows</div>
+                            <h3>Customize how your team's work flows</h3>
+                            <p>Assign single or daily recurring tasks to 1, 2, 3 or more team members simultaneously. Filter instantly between your self-assigned tasks and team tracking.</p>
+                            <ul class="showcase-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Single &amp; Multi-Assignee task allocation</li>
+                                <li><i class="fa-solid fa-circle-check"></i> To Do (Self) vs Assigned (Team) smart tabs</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Live status filters: Overdue, Pending, In Progress, Completed</li>
+                            </ul>
+                        </div>
+                    </div>
 
-                            <!-- LEFT SIDEBAR -->
-                            <div class="app-mock-sidebar" style="display:flex;">
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
-                                <div class="mock-sidebar-item active"><i class="fa-solid fa-list-check"></i> Tasks</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
-                                <div class="mock-sidebar-item"><i class="fa-solid fa-user"></i> Profile</div>
-                            </div>
+                    <!-- SHOWCASE ROW 2: [ Text Left ] | [ Screen Right ] -->
+                    <div class="feature-showcase-row reverse">
+                        <!-- Text Content Left -->
+                        <div class="showcase-text-content">
+                            <div class="showcase-badge"><i class="fa-solid fa-comments"></i> Focused Discussions</div>
+                            <h3>Task-Specific Group Chat &amp; Updates</h3>
+                            <p>Every single task acts as a focused discussion room. Creator and all assigned members (1, 3, 4+ people) post updates, comments, and attachments directly inside the task.</p>
+                            <ul class="showcase-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Dedicated 4-person Task Group Chat thread</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Real-time status &amp; progress percentage updates</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Complete audit trail of revisions and handovers</li>
+                            </ul>
+                        </div>
 
-                            <!-- MAIN CONTENT AREA -->
-                            <div class="app-mock-main" style="padding-bottom:44px;position:relative;">
-
-                                <!-- Top Header -->
-                                <div class="dt-header">
+                        <!-- Screen Frame Right (Task Discussion Modal Mockup) -->
+                        <div class="showcase-screen-wrap">
+                            <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:20px;">
+                                <div style="display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #e2e8f0;padding-bottom:12px;margin-bottom:14px;">
                                     <div>
-                                        <div class="dt-username">Alex Morgan</div>
-                                        <div class="dt-role">Manager &middot; Enterprise Org</div>
+                                        <span style="font-size:11px;font-weight:800;color:#2563eb;background:#dbeafe;padding:2px 8px;border-radius:99px;">#129 TASK DISCUSSION</span>
+                                        <h4 style="font-size:15px;color:#0f172a;margin-top:4px;">Financial Audit &amp; Compliance</h4>
                                     </div>
-                                    <div class="mock-header-actions">
-                                        <button class="dt-btn-primary"><i class="fa-solid fa-plus"></i> Add Task</button>
-                                        <button class="dt-btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
+                                    <div style="font-size:11px;color:#10b981;font-weight:700;"><i class="fa-solid fa-users"></i> 4 Members</div>
+                                </div>
+                                <div style="display:flex;flex-direction:column;gap:10px;">
+                                    <div style="background:#ffffff;border:1px solid #e2e8f0;padding:10px 14px;border-radius:10px;font-size:12.5px;">
+                                        <div style="display:flex;justify-content:space-between;color:#64748b;font-size:11px;margin-bottom:4px;">
+                                            <b>Alex Morgan (Manager)</b><span>10:30 AM</span>
+                                            </div>
+                                        <div>Audit documents uploaded for Review #4. Please verify.</div>
+                                    </div>
+                                    <div style="background:#eff6ff;border:1px solid #bfdbfe;padding:10px 14px;border-radius:10px;font-size:12.5px;align-self:flex-end;width:90%;">
+                                        <div style="display:flex;justify-content:space-between;color:#2563eb;font-size:11px;margin-bottom:4px;">
+                                            <b>Sarah Connor (Assignee)</b><span>10:32 AM</span>
+                                        </div>
+                                        <div>Verification complete! Progress updated to 80%.</div>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <!-- 5 KPI Cards -->
-                                <div class="mock-kpi-bar dt-kpi-bar">
-                                    <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>4</b><span>Overdue</span></div>
-                                    <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>8</b><span>Pending</span></div>
-                                    <div class="mock-kpi-card"><i class="fa-solid fa-spinner" style="color:#2563eb;"></i><b>0</b><span>In Progress</span></div>
-                                    <div class="mock-kpi-card"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>35</b><span>Completed</span></div>
-                                    <div class="mock-kpi-card"><i class="fa-solid fa-list-ul" style="color:#4f46e5;"></i><b>43</b><span>Total Tasks</span></div>
+                    <!-- SHOWCASE ROW 3: [ Screen Left ] | [ Text Right ] -->
+                    <div class="feature-showcase-row">
+                        <!-- Screen Frame Left (Mobile App Mockup) -->
+                        <div class="showcase-screen-wrap" style="max-width:380px;margin:0 auto;">
+                            <div class="mobile-frame-wrap" style="box-shadow:none;">
+                                <div class="mobile-notch-bar">
+                                    <div class="mobile-notch-title"><i class="fa-solid fa-mobile-screen" style="color:#2563eb;"></i> PTMS UNO Mobile</div>
+                                    <div style="font-size:9px;color:#10b981;font-weight:700;">Live Sync</div>
                                 </div>
-
-                                <!-- Alert -->
-                                <div class="mock-alert-banner">
-                                    <i class="fa-solid fa-triangle-exclamation" style="font-size:14px;color:#dc2626;"></i>
-                                    <div><b>4 overdue tasks</b><span style="display:block;font-size:10px;">Employee tasks are overdue. Please follow up urgently.</span></div>
-                                </div>
-
-                                <!-- Tabs -->
-                                <div class="mock-tabs-bar">
-                                    <div class="mock-tab-btn"><i class="fa-solid fa-briefcase"></i> To Do</div>
-                                    <div class="mock-tab-btn active"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
-                                </div>
-
-                                <!-- Search Row -->
-                                <div class="mock-search-row">
-                                    <input type="text" class="mock-search-input" placeholder="Search tasks...">
-                                    <select class="mock-search-input" style="width:120px;"><option>All Projects</option></select>
-                                </div>
-
-                                <!-- Task Cards -->
-                                <div style="display:flex;flex-direction:column;gap:6px;">
-                                    <div class="mock-task-card dt-task">
-                                        <div class="mock-task-header">
-                                            <span class="mock-task-title">#129 Financial Audit &amp; Compliance</span>
-                                            <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
+                                <div class="mobile-app-body">
+                                    <div class="dt-header" style="padding:7px 9px;">
+                                        <div>
+                                            <div class="dt-username" style="font-size:11px;">Alex Morgan</div>
+                                            <div class="dt-role" style="font-size:8.5px;">Manager &middot; Enterprise Org</div>
                                         </div>
-                                        <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Finance Core</div>
-                                        <div class="mock-task-columns">
-                                            <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
-                                            <div class="mock-task-col"><small>ASSIGNED TO</small><b>Sarah Connor</b></div>
-                                            <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
-                                            <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
-                                        </div>
+                                        <button class="dt-btn-primary" style="font-size:8.5px;padding:3px 7px;"><i class="fa-solid fa-plus"></i> Add</button>
+                                    </div>
+                                    <div class="mock-alert-banner" style="margin:8px 0;">
+                                        <i class="fa-solid fa-bell" style="font-size:12px;color:#2563eb;"></i>
+                                        <div><b style="font-size:9.5px;">New Notification</b><span style="display:block;font-size:8px;">Sarah Connor updated #129 to 80%</span></div>
                                     </div>
                                     <div class="mock-task-card dt-task">
                                         <div class="mock-task-header">
-                                            <span class="mock-task-title">#128 Database Indexing Optimization</span>
-                                            <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
+                                            <span class="mock-task-title" style="font-size:9.5px;">#129 Financial Audit</span>
+                                            <span class="priority-pill-sm" style="font-size:7.5px;"><i class="fa-solid fa-flag"></i> Medium</span>
                                         </div>
-                                        <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Cloud Infra</div>
-                                        <div class="mock-task-columns">
-                                            <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
-                                            <div class="mock-task-col"><small>ASSIGNED TO</small><b>Alex Rivera</b></div>
-                                            <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
-                                            <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- Floating Wand Button -->
-                                <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- MOBILE FRAME (Right) -->
-                    <div class="mobile-frame-wrap">
-                        <div class="mobile-notch-bar">
-                            <div class="mobile-notch-title"><i class="fa-solid fa-mobile-screen" style="color:#2563eb;"></i> Tasks | Task Manager</div>
-                            <div style="font-size:9px;color:#10b981;font-weight:700;">Live</div>
-                        </div>
-                        <div class="mobile-app-body">
-                            <!-- Header -->
-                            <div class="dt-header" style="padding:7px 9px;">
-                                <div>
-                                    <div class="dt-username" style="font-size:11px;">Alex Morgan</div>
-                                    <div class="dt-role" style="font-size:8.5px;">Manager &middot; Enterprise Org</div>
-                                </div>
-                                <div class="mock-header-actions">
-                                    <button class="dt-btn-primary" style="font-size:8.5px;padding:3px 7px;"><i class="fa-solid fa-plus"></i> Add Task</button>
-                                    <button class="dt-btn-logout" style="font-size:8.5px;padding:3px 6px;"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
-                                </div>
-                            </div>
-
-                            <!-- KPI 3-col -->
-                            <div class="mock-kpi-bar" style="grid-template-columns:repeat(3,1fr);">
-                                <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>4</b><span>Overdue</span></div>
-                                <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>8</b><span>Pending</span></div>
-                                <div class="mock-kpi-card"><i class="fa-solid fa-spinner" style="color:#2563eb;"></i><b>0</b><span>In Progress</span></div>
-                                <div class="mock-kpi-card"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>35</b><span>Completed</span></div>
-                                <div class="mock-kpi-card"><i class="fa-solid fa-list-ul" style="color:#4f46e5;"></i><b>43</b><span>Total Tasks</span></div>
-                            </div>
-
-                            <!-- Alert -->
-                            <div class="mock-alert-banner">
-                                <i class="fa-solid fa-triangle-exclamation" style="font-size:12px;color:#dc2626;"></i>
-                                <div><b style="font-size:9.5px;">4 overdue tasks</b><span style="display:block;font-size:8px;">Team tasks are overdue. Please follow up.</span></div>
-                            </div>
-
-                            <!-- Tabs -->
-                            <div class="mock-tabs-bar">
-                                <div class="mock-tab-btn" style="font-size:9.5px;padding:6px;"><i class="fa-solid fa-briefcase"></i> To Do</div>
-                                <div class="mock-tab-btn active" style="font-size:9.5px;padding:6px;"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
-                            </div>
-
-                            <!-- Search -->
-                            <div class="mock-search-row">
-                                <input type="text" class="mock-search-input" placeholder="Search tasks..." style="font-size:9.5px;">
-                                <select class="mock-search-input" style="width:85px;font-size:9.5px;"><option>All Projects</option></select>
-                            </div>
-
-                            <!-- Task Cards -->
-                            <div style="display:flex;flex-direction:column;gap:5px;">
-                                <div class="mock-task-card dt-task">
-                                    <div class="mock-task-header">
-                                        <span class="mock-task-title" style="font-size:9.5px;">#129 Financial Audit &amp; Compliance</span>
-                                        <span class="priority-pill-sm" style="font-size:7.5px;"><i class="fa-solid fa-flag"></i> Medium</span>
-                                    </div>
-                                    <div class="mock-task-project" style="font-size:8.5px;"><i class="fa-solid fa-folder"></i> Finance Core</div>
-                                    <div class="mock-task-columns" style="grid-template-columns:repeat(2,1fr);">
-                                        <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
-                                        <div class="mock-task-col"><small>ASSIGNED TO</small><b>Sarah Connor</b></div>
+                                        <div class="mock-task-project" style="font-size:8.5px;"><i class="fa-solid fa-folder"></i> Finance Core</div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Floating Wand Button -->
-                            <div class="mobile-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
-
-                            <!-- Bottom Navigation Bar -->
-                            <div class="mobile-bottom-nav">
-                                <div class="mobile-nav-item"><i class="fa-solid fa-gauge"></i> Dashboard</div>
-                                <div class="mobile-nav-item active"><i class="fa-solid fa-circle-check"></i> Tasks</div>
-                                <div class="mobile-nav-item"><i class="fa-solid fa-users"></i> Teams</div>
-                                <div class="mobile-nav-item"><i class="fa-solid fa-bell"></i> Notifications</div>
-                                <div class="mobile-nav-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
-                                <div class="mobile-nav-item"><i class="fa-solid fa-user"></i> Profile</div>
-                            </div>
+                        <!-- Text Content Right -->
+                        <div class="showcase-text-content">
+                            <div class="showcase-badge"><i class="fa-solid fa-mobile-screen"></i> Cross-Platform Native Apps</div>
+                            <h3>Stay on track — even on the move</h3>
+                            <p>Access your tasks from Web browsers, native Windows desktop app (`.EXE`), or Android mobile app (`.APK`). Real-time push notifications keep everyone connected 24/7.</p>
+                            <ul class="showcase-feature-list">
+                                <li><i class="fa-solid fa-circle-check"></i> Real-time push notifications for instant alerts</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Seamless database sync across Web, Windows &amp; Android</li>
+                                <li><i class="fa-solid fa-circle-check"></i> Built-in Voice AI Assistant with Hinglish speech recognition</li>
+                            </ul>
                         </div>
                     </div>
 
-                </div>
-
-                <!-- 2. Structured App UI Navigation Guide Grid (4 Clear Cards) -->
-                <div class="preview-guide-grid">
-                    <!-- Guide 1: Notifications -->
-                    <div class="guide-card">
-                        <div class="guide-badge"><i class="fa-solid fa-bell"></i> 01 &middot; Notifications Hub</div>
-                        <h4>Real-Time Activity Alerts</h4>
-                        <p>App ke har event (Task assignment, status changes, deadline warnings, handovers) ka instant real-time notification yahan milta hai.</p>
-                    </div>
-
-                    <!-- Guide 2: To Do vs Assigned -->
-                    <div class="guide-card">
-                        <div class="guide-badge"><i class="fa-solid fa-sliders"></i> 02 &middot; To Do vs Assigned</div>
-                        <h4>Self vs Team Task Views</h4>
-                        <p><strong>To Do:</strong> Aapko khud execute karne wale tasks.<br><strong>Assigned:</strong> Team members ko assign kiye gaye sabhi tasks tracking ke liye.</p>
-                    </div>
-
-                    <!-- Guide 3: Task Actions & Chat -->
-                    <div class="guide-card">
-                        <div class="guide-badge"><i class="fa-solid fa-comments"></i> 03 &middot; Task Actions &amp; Chat</div>
-                        <h4>Status Update &amp; Group Chat</h4>
-                        <p>Task status update karo, progress percentage log karo, aur 1, 3 ya 4 team members ek saath Task Group Chat me discuss karo.</p>
-                    </div>
-
-                    <!-- Guide 4: Voice AI Wand -->
-                    <div class="guide-card">
-                        <div class="guide-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> 04 &middot; Voice AI Wand</div>
-                        <h4>Floating AI Sparkles Assistant</h4>
-                        <p>Floating wand icon par click ya speak karke instant task create karo, reassign karo, ya live performance report ki audio suno.</p>
-                    </div>
                 </div>
 
             </div>
