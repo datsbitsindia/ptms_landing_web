@@ -1826,7 +1826,9 @@ a {
 
 .showcase-feature-list li div {
     flex: 1;
-    text-align: left;
+    text-align: justify !important;
+    text-justify: inter-word;
+    text-align-last: left;
 }
 
 .showcase-feature-list li strong {
