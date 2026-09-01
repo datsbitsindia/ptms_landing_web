@@ -250,7 +250,7 @@ const server = http.createServer(async (req, res) => {
 
                 // Step 5: Create Default "Self Task" Project
                 await connection.query(
-                    `INSERT INTO \`${projectsTbl}\` (name, description, start_date, end_date, status, created_by, manager_id, organization_id) VALUES ('Self Task', 'System project for self-assigned tasks', CURDATE(), '2099-12-31', 'Planned', ?, ?, ?)`,
+                    `INSERT INTO \`${projectsTbl}\` (name, description, start_date, end_date, status, status_id, created_by, manager_id, organization_id) VALUES ('Self Task', 'System project for self-assigned tasks', CURDATE(), '2099-12-31', 1, 1, ?, ?, ?)`,
                     [newAdminUserId, String(newAdminUserId), newOrgId]
                 );
                 console.log(`[TRANSACTION] Step 5 OK - Default project created`);
