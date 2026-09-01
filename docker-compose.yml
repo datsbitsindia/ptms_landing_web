@@ -4,10 +4,13 @@ services:
   ptms-landing:
     build: .
     container_name: ptms-landing-web
-    network_mode: "host"
+    ports:
+      - "8090:8090"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     environment:
       - PORT=8090
-      - DB_HOST=127.0.0.1
+      - DB_HOST=host.docker.internal
       - DB_PORT=3306
       - DB_USER=root
       - DB_PASSWORD=
