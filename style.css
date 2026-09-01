@@ -1733,75 +1733,117 @@ a {
     .preview-guide-grid { grid-template-columns: 1fr; }
 }
 
-/* Floating Arrow Pointer Tags on Mockup UI */
-.hero-mockup-wrap {
+/* Outer Annotated Layout (3 Columns: Left Callouts, Center Showcase, Right Callouts) */
+.annotated-preview-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr 260px;
+    gap: 30px;
+    align-items: center;
     position: relative;
-    overflow: visible !important;
 }
 
-.mockup-pointer-tag {
-    position: absolute;
-    z-index: 90;
+.mockup-side-col {
     display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.outside-callout-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 16px 18px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05), 0 0 0 1px rgba(37, 99, 235, 0.08);
+    position: relative;
+    transition: var(--transition);
+}
+
+.outside-callout-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.15);
+}
+
+.callout-header-badge {
+    display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #0f172a;
-    color: #ffffff;
-    padding: 6px 12px;
-    border-radius: 99px;
     font-size: 11px;
-    font-weight: 600;
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3), 0 0 0 2px rgba(59, 130, 246, 0.6);
-    white-space: nowrap;
-    transition: var(--transition);
-    animation: pointerPulse 3s ease-in-out infinite alternate;
-}
-
-.pointer-badge {
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
-    color: #ffffff;
-    padding: 2px 7px;
-    border-radius: 99px;
-    font-size: 9.5px;
     font-weight: 800;
+    color: #2563eb;
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    padding: 3px 10px;
+    border-radius: 99px;
+    margin-bottom: 8px;
 }
 
-.mockup-pointer-tag i {
-    color: #38bdf8;
+.outside-callout-card h4 {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+
+.outside-callout-card p {
     font-size: 12px;
+    color: #475569;
+    line-height: 1.5;
 }
 
-@keyframes pointerPulse {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-4px); }
+/* Connecting Arrow Lines */
+.connecting-arrow-line {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    z-index: 10;
 }
 
-/* Position Pointers for 5 UI Elements */
-.pointer-add-task {
-    top: 10px;
-    right: 70px;
+.arrow-to-right {
+    right: -36px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.pointer-notifications {
-    top: 155px;
-    left: -20px;
+.arrow-to-right .arrow-stem {
+    width: 28px;
+    height: 2px;
+    background: #2563eb;
 }
 
-.pointer-todo {
-    top: 200px;
-    left: 170px;
+.arrow-to-right i {
+    color: #2563eb;
+    font-size: 14px;
+    margin-left: -3px;
 }
 
-.pointer-task-card {
-    top: 295px;
-    right: 25px;
+.arrow-to-left {
+    left: -36px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-.pointer-ai-fab {
-    bottom: 12px;
-    right: 55px;
+.arrow-to-left .arrow-stem {
+    width: 28px;
+    height: 2px;
+    background: #2563eb;
 }
 
-@media (max-width: 1100px) {
-    .mockup-pointer-tag { display: none; }
+.arrow-to-left i {
+    color: #2563eb;
+    font-size: 14px;
+    margin-right: -3px;
+}
+
+@media (max-width: 1280px) {
+    .annotated-preview-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .mockup-side-col {
+        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+    }
+    .connecting-arrow-line { display: none; }
 }
