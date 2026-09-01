@@ -78,37 +78,88 @@
                                         <div class="mock-sidebar-item active"><i class="fa-solid fa-list-check"></i> Tasks</div>
                                         <div class="mock-sidebar-item"><i class="fa-solid fa-users"></i> Teams</div>
                                         <div class="mock-sidebar-item"><i class="fa-solid fa-bell"></i> Notifications</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-note-sticky"></i> Notes</div>
+                                        <div class="mock-sidebar-item"><i class="fa-solid fa-user"></i> Profile</div>
                                     </div>
-                                    <div class="app-mock-main" style="padding-bottom:20px;">
+                                    <div class="app-mock-main" style="padding-bottom:34px;position:relative;">
                                         <div class="dt-header">
                                             <div>
-                                                <div class="dt-username">Alex Morgan</div>
-                                                <div class="dt-role">Manager &middot; Enterprise Org</div>
+                                                <div class="dt-username">Hari Narayan Das</div>
+                                                <div class="dt-role">Manager &middot; Unomok</div>
                                             </div>
                                             <div class="mock-header-actions">
                                                 <button class="dt-btn-primary"><i class="fa-solid fa-plus"></i> Add Task</button>
+                                                <button class="dt-btn-logout"><i class="fa-solid fa-right-from-bracket"></i> Logout</button>
                                             </div>
                                         </div>
+                                        <!-- 5 KPI Cards in 1 Row -->
                                         <div class="mock-kpi-bar dt-kpi-bar">
-                                            <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>4</b><span>Overdue</span></div>
-                                            <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>8</b><span>Pending</span></div>
-                                            <div class="mock-kpi-card"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>35</b><span>Completed</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-triangle-exclamation" style="color:#dc2626;"></i><b>2</b><span>Overdue</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-regular fa-clock" style="color:#d97706;"></i><b>4</b><span>Pending</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-spinner" style="color:#2563eb;"></i><b>0</b><span>In Progress</span></div>
+                                            <div class="mock-kpi-card active-kpi"><i class="fa-regular fa-circle-check" style="color:#16a34a;"></i><b>40</b><span>Completed</span></div>
+                                            <div class="mock-kpi-card"><i class="fa-solid fa-list-ul" style="color:#4f46e5;"></i><b>44</b><span>Total Tasks</span></div>
                                         </div>
+                                        <!-- Alert Banner -->
+                                        <div class="mock-alert-banner">
+                                            <i class="fa-solid fa-triangle-exclamation" style="font-size:14px;color:#dc2626;"></i>
+                                            <div><b>2 overdue tasks</b><span style="display:block;font-size:10px;">Employee tasks are overdue. Please follow up urgently.</span></div>
+                                        </div>
+                                        <!-- Tabs Bar -->
                                         <div class="mock-tabs-bar">
                                             <div class="mock-tab-btn"><i class="fa-solid fa-briefcase"></i> To Do</div>
                                             <div class="mock-tab-btn active"><i class="fa-solid fa-paper-plane"></i> Assigned</div>
                                         </div>
-                                        <div class="mock-task-card dt-task">
-                                            <div class="mock-task-header">
-                                                <span class="mock-task-title">#129 Financial Audit &amp; Compliance</span>
-                                                <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
+                                        <!-- Search Row -->
+                                        <div class="mock-search-row">
+                                            <input type="text" class="mock-search-input" placeholder="Search tasks...">
+                                            <select class="mock-search-input" style="width:110px;"><option>All Projects</option></select>
+                                        </div>
+                                        <!-- Task List Cards -->
+                                        <div style="display:flex;flex-direction:column;gap:6px;">
+                                            <div class="mock-task-card dt-task">
+                                                <div class="mock-task-header">
+                                                    <span class="mock-task-title">#138 unable to redeem</span>
+                                                    <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
+                                                </div>
+                                                <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Stargate by Vinay</div>
+                                                <div class="mock-task-columns">
+                                                    <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                                    <div class="mock-task-col"><small>ASSIGNED TO</small><b>Chetan Koriya</b></div>
+                                                    <div class="mock-task-col"><small>ASSIGNED ON</small><b>1 Sept 2026</b></div>
+                                                    <div class="mock-task-col"><small>DUE DATE</small><b>1 Sept 2026</b></div>
+                                                </div>
                                             </div>
-                                            <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Finance Core</div>
-                                            <div class="mock-task-columns">
-                                                <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
-                                                <div class="mock-task-col"><small>ASSIGNED TO</small><b>Sarah, Marcus, Vance</b></div>
+                                            <div class="mock-task-card dt-task">
+                                                <div class="mock-task-header">
+                                                    <span class="mock-task-title">#131 update skuname, skutype &amp; skusize</span>
+                                                    <span class="priority-pill-sm" style="color:#b91c1c;background:#fee2e2;"><i class="fa-solid fa-flag"></i> Critical</span>
+                                                </div>
+                                                <div class="mock-task-project"><i class="fa-solid fa-folder"></i> FMEG</div>
+                                                <div class="mock-task-columns">
+                                                    <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                                    <div class="mock-task-col"><small>ASSIGNED TO</small><b>Chetan Koriya</b></div>
+                                                    <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
+                                                    <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
+                                                </div>
+                                            </div>
+                                            <div class="mock-task-card dt-task">
+                                                <div class="mock-task-header">
+                                                    <span class="mock-task-title">#129 tds entry mark as denied</span>
+                                                    <span class="priority-pill-sm"><i class="fa-solid fa-flag"></i> Medium</span>
+                                                </div>
+                                                <div class="mock-task-project"><i class="fa-solid fa-folder"></i> Million</div>
+                                                <div class="mock-task-columns">
+                                                    <div class="mock-task-col"><small>ASSIGNED BY</small><b>You</b></div>
+                                                    <div class="mock-task-col"><small>ASSIGNED TO</small><b>Chetan Koriya</b></div>
+                                                    <div class="mock-task-col"><small>ASSIGNED ON</small><b>31 Aug 2026</b></div>
+                                                    <div class="mock-task-col"><small>DUE DATE</small><b>31 Aug 2026</b></div>
+                                                </div>
                                             </div>
                                         </div>
+
+                                        <!-- Blue Wand FAB Button -->
+                                        <div class="dt-fab-btn"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
                                     </div>
                                 </div>
                             </div>
