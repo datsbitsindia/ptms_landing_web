@@ -21,11 +21,15 @@ let dbPool = null;
 async function getDbPool() {
     if (dbPool) return dbPool;
 
+    const rawHost = (process.env.DB_HOST || 'localhost').trim();
+    // Map 'localhost' to IPv4 loopback '127.0.0.1' to prevent Node 18 DNS lookup resolving 'localhost' to IPv6 ::1 (ECONNREFUSED ::1:3306)
+    const primaryHost = (rawHost === 'localhost' || !rawHost) ? '127.0.0.1' : rawHost;
+
     const candidateHosts = [
-        process.env.DB_HOST || 'localhost',
+        primaryHost,
         '127.0.0.1',
-        'localhost',
-        'host.docker.internal'
+        'host.docker.internal',
+        '172.17.0.1'
     ].filter(Boolean);
 
     const uniqueHosts = [...new Set(candidateHosts)];
@@ -49,7 +53,7 @@ async function getDbPool() {
             const connection = await testPool.getConnection();
             connection.release();
 
-            console.log(`[DATABASE] Successfully connected to MySQL on host "${host}"!`);
+            console.log(`[DATABASE] Successfully connected to MySQL on host "${host}" [Database: ${DB_NAME}]!`);
             dbPool = testPool;
             return dbPool;
         } catch (err) {
@@ -58,7 +62,7 @@ async function getDbPool() {
         }
     }
 
-    throw lastErr || new Error('Could not connect to MySQL database on any host.');
+    throw lastErr || new Error(`Could not connect to MySQL database "${DB_NAME}" on any host.`);
 }
 
 // Table name resolver helper
