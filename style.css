@@ -267,7 +267,7 @@ a {
 /* Hero Section */
 .hero {
     padding-top: 150px;
-    padding-bottom: 90px;
+    padding-bottom: 40px;
     text-align: center;
     position: relative;
 }
@@ -833,7 +833,7 @@ a {
 
 /* Stats Counter Section */
 .stats-section {
-    padding: 60px 0;
+    padding: 30px 0;
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
     background: #ffffff;
@@ -1746,8 +1746,8 @@ a {
 .feature-showcase-container {
     display: flex;
     flex-direction: column;
-    gap: 70px;
-    margin-top: 40px;
+    gap: 45px;
+    margin-top: 15px;
 }
 
 .feature-showcase-row {
