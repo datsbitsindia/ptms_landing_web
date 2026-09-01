@@ -860,13 +860,13 @@ a {
 
 /* Features Section */
 .features-section {
-    padding: 110px 0;
+    padding: 50px 0;
 }
 
 .section-header {
     text-align: center;
     max-width: 700px;
-    margin: 0 auto 70px;
+    margin: 0 auto 35px;
 }
 
 .section-title {
@@ -929,7 +929,7 @@ a {
 
 /* Download Section */
 .download-section {
-    padding: 100px 0;
+    padding: 50px 0;
     position: relative;
 }
 
@@ -991,7 +991,7 @@ a {
 
 /* Pricing Section */
 .pricing-section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .pricing-grid {
@@ -1075,7 +1075,7 @@ a {
 
 /* FAQ Section */
 .faq-section {
-    padding: 100px 0;
+    padding: 50px 0;
 }
 
 .faq-container {
@@ -1259,7 +1259,7 @@ a {
    AI SECTION STYLES
    ================================ */
 .ai-section {
-    padding: 110px 0;
+    padding: 50px 0;
     background: linear-gradient(180deg, #f4f8ff 0%, #eef4ff 50%, #f4f8ff 100%);
     position: relative;
     overflow: hidden;
@@ -1329,7 +1329,7 @@ a {
    ONBOARDING WORKFLOW SECTION STYLES
    ========================================= */
 .workflow-section {
-    padding: 100px 0;
+    padding: 50px 0;
     background: #ffffff;
     border-top: 1px solid #e2e8f0;
     border-bottom: 1px solid #e2e8f0;
@@ -1337,8 +1337,8 @@ a {
 
 .workflow-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
     margin-top: 50px;
 }
 
