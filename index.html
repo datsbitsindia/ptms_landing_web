@@ -24,6 +24,7 @@
             <ul class="nav-links">
                 <li><a href="#features">Features</a></li>
                 <li><a href="#preview">App Preview</a></li>
+                <li><a href="#ai" style="color:#6366f1;font-weight:700;"><i class="fa-solid fa-wand-magic-sparkles"></i> AI Assistant</a></li>
                 <li><a href="#downloads">Downloads (.EXE / .APK)</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#faq">FAQ</a></li>
@@ -375,6 +376,111 @@
             </div>
         </section>
 
+        <!-- AI SECTION -->
+        <section id="ai" class="ai-section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="badge ai-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> Gemini · Groq · OpenRouter · Whisper AI</div>
+                    <h2 class="section-title">Meet Your <span class="ai-gradient-text">AI Task Assistant</span></h2>
+                    <p class="section-desc">PTMS UNO has a built-in AI that reads your live database, creates tasks, reassigns work, and delivers real-time productivity reports. All with a single voice command or text message.</p>
+                </div>
+
+                <!-- How AI Works Flow -->
+                <div class="ai-flow-row">
+                    <div class="ai-flow-step">
+                        <div class="ai-flow-icon" style="background:linear-gradient(135deg,#6366f1,#8b5cf6);"><i class="fa-solid fa-microphone-lines"></i></div>
+                        <h4>You Speak or Type</h4>
+                        <p>Hindi / English voice input or text. E.g. "Create task for Alex — Financial Audit, due Friday, High priority"</p>
+                    </div>
+                    <div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="ai-flow-step">
+                        <div class="ai-flow-icon" style="background:linear-gradient(135deg,#2563eb,#4f46e5);"><i class="fa-solid fa-brain"></i></div>
+                        <h4>AI Understands Intent</h4>
+                        <p>Gemini / Groq LLM identifies the action (create / update / search / report) and validates against your real live MySQL data.</p>
+                    </div>
+                    <div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="ai-flow-step">
+                        <div class="ai-flow-icon" style="background:linear-gradient(135deg,#0ea5e9,#2563eb);"><i class="fa-solid fa-plug-circle-bolt"></i></div>
+                        <h4>MCP Tool Executes</h4>
+                        <p>AI calls Python FastMCP server which directly queries your MySQL database — no hallucination, only real data actions.</p>
+                    </div>
+                    <div class="ai-flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+                    <div class="ai-flow-step">
+                        <div class="ai-flow-icon" style="background:linear-gradient(135deg,#10b981,#059669);"><i class="fa-solid fa-reply"></i></div>
+                        <h4>Real Action Done</h4>
+                        <p>Task created in database. AI confirms in natural language and reads it aloud in Indian English voice.</p>
+                    </div>
+                </div>
+
+                <!-- AI Capabilities Grid -->
+                <div class="ai-caps-grid">
+                    <div class="ai-cap-card">
+                        <div class="ai-cap-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fa-solid fa-microphone"></i></div>
+                        <h3>Voice Input — Hindi + English</h3>
+                        <p>Powered by <strong>Groq Whisper Large v3 Turbo</strong> — world's fastest speech-to-text. Speak in Hinglish naturally. AI auto-corrects team member names and project names from your live database.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-quote-left"></i> "Bhavin ko ek task do — API bug fix, urgent"</div>
+                    </div>
+                    <div class="ai-cap-card">
+                        <div class="ai-cap-icon" style="background:#dbeafe;color:#1d4ed8;"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+                        <h3>Auto Task Lookup — No IDs Needed</h3>
+                        <p>Never ask for database IDs. AI fetches tasks by title automatically. Say "Forward Database Indexing to Marcus" — AI finds it, then reassigns in one shot.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-quote-left"></i> "Mark Financial Audit as completed"</div>
+                    </div>
+                    <div class="ai-cap-card">
+                        <div class="ai-cap-icon" style="background:#fef9c3;color:#b45309;"><i class="fa-solid fa-server"></i></div>
+                        <h3>Triple AI Model Failover</h3>
+                        <p>PTMS uses <strong>OpenRouter → Groq → Google Gemini</strong> in cascade. If one model is overloaded, it auto-switches to the next in milliseconds. Zero downtime AI 24/7.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-rotate"></i> OpenRouter → Groq → Gemini auto-fallback</div>
+                    </div>
+                    <div class="ai-cap-card">
+                        <div class="ai-cap-icon" style="background:#dcfce7;color:#15803d;"><i class="fa-solid fa-shield-halved"></i></div>
+                        <h3>Zero Hallucination — Live DB Context</h3>
+                        <p>AI is injected with your <strong>real active projects and team members from MySQL</strong> on every message. It cannot invent fake project names or assign tasks to non-existent users.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-database"></i> Live MySQL context injected per request</div>
+                    </div>
+                    <div class="ai-cap-card">
+                        <div class="ai-cap-icon" style="background:#fee2e2;color:#b91c1c;"><i class="fa-solid fa-chart-column"></i></div>
+                        <h3>AI Productivity Reports</h3>
+                        <p>Ask "What's my team's completion rate?" and get a <strong>live report</strong>: total assigned, completed, overdue count, completion percentage and performance score — instantly from your database.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-quote-left"></i> "Show me all overdue tasks this week"</div>
+                    </div>
+                    <div class="ai-cap-card">
+                        <div class="ai-cap-icon" style="background:#e0f2fe;color:#0369a1;"><i class="fa-solid fa-volume-high"></i></div>
+                        <h3>Text-to-Speech AI Replies</h3>
+                        <p>AI reads every response aloud in <strong>Indian accent English (en-IN)</strong>. Hands-free operation for field managers — no need to look at the screen to hear your task updates.</p>
+                        <div class="ai-example-chip"><i class="fa-solid fa-headphones"></i> Speaks replies aloud in Indian English</div>
+                    </div>
+                </div>
+
+                <!-- AI Demo Chat Window -->
+                <div class="ai-demo-window">
+                    <div class="ai-demo-header">
+                        <div style="display:flex;align-items:center;gap:12px;">
+                            <div class="ai-avatar"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                            <div>
+                                <div style="font-weight:700;color:#0f172a;font-size:14px;">PTMS AI Assistant</div>
+                                <div style="font-size:11px;color:#10b981;font-weight:600;display:flex;align-items:center;gap:4px;"><span style="width:6px;height:6px;background:#10b981;border-radius:50%;display:inline-block;"></span> Online &middot; Powered by Gemini + Groq</div>
+                            </div>
+                        </div>
+                        <div style="display:flex;gap:8px;">
+                            <div class="ai-demo-badge"><i class="fa-solid fa-microphone"></i> Voice</div>
+                            <div class="ai-demo-badge"><i class="fa-solid fa-volume-high"></i> TTS</div>
+                        </div>
+                    </div>
+                    <div class="ai-demo-body">
+                        <div class="ai-msg ai-msg-user">Create a High priority task for Financial Audit Review. Assign to Sarah Connor. Due 5th Sept.</div>
+                        <div class="ai-msg ai-msg-bot">&#x2705; <strong>Task #130 created successfully!</strong><br><br>&#x1F4CB; <strong>Financial Audit Review</strong><br>&#x1F464; Assigned To: <strong>Sarah Connor</strong><br>&#x1F6A8; Priority: <strong>High</strong><br>&#x1F4C5; Due Date: <strong>5 Sept 2026</strong><br>&#x1F4C1; Project: <strong>Finance Core</strong></div>
+                        <div class="ai-msg ai-msg-user">Show me all overdue tasks</div>
+                        <div class="ai-msg ai-msg-bot">&#x26A0;&#xFE0F; <strong>4 Overdue Tasks Found:</strong><br><br>1. <strong>#112 TDS Amount Not Returned</strong> &mdash; Due: 29 Aug 2026<br>2. <strong>#114 Hard Delete Issue</strong> &mdash; Due: 29 Aug 2026<br>3. <strong>#116 REST API Auth</strong> &mdash; Due: 1 Sep 2026<br>4. <strong>#128 Database Indexing</strong> &mdash; Due: 31 Aug 2026<br><br>&#x1F4A1; Say "Forward #112 to Marcus" to reassign it!</div>
+                    </div>
+                    <div class="ai-demo-input-row">
+                        <div class="ai-demo-input"><i class="fa-solid fa-keyboard" style="color:#94a3b8;margin-right:8px;"></i>Ask anything about your tasks...</div>
+                        <button class="ai-demo-mic"><i class="fa-solid fa-microphone"></i></button>
+                        <button class="ai-demo-send"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Pricing Section -->
         <section id="pricing" class="pricing-section">
             <div class="container">
@@ -542,5 +648,7 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+
 
 
