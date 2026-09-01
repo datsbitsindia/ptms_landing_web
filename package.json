@@ -1,0 +1,14 @@
+{
+  "name": "ptms-landing-web",
+  "version": "2.4.0",
+  "description": "PTMS UNO Landing Page Web Application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.9.7"
+  }
+}

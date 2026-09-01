@@ -1,4 +1,4 @@
-﻿// PTMS UNO SaaS Landing Page Script
+// PTMS UNO SaaS Landing Page Script
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Sticky Navbar Scroll Effect
@@ -100,10 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ORGANIZATION REGISTRATION MODAL LOGIC
 // =========================================
 
-// Track registered orgs/admins to perform real-time duplicate check
-const existingOrgs = ['acme', 'unotag', 'enterprise', 'acme', 'demo'];
-const existingAdmins = ['admin@acme', 'admin@unotag', 'chetan@gmail.com', 'admin@enterprise'];
-
 window.openOrgRegisterModal = function() {
     const modal = document.getElementById('org-register-modal');
     if (modal) {
@@ -179,8 +175,11 @@ window.updateAdminSuggestion = function() {
     }
 };
 
-window.handleOrgRegisterSubmit = function(event) {
+window.handleOrgRegisterSubmit = async function(event) {
     event.preventDefault();
+
+    const submitBtn = document.getElementById('btn-submit-org');
+    const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Register';
 
     const fname = document.getElementById('reg-fname').value.trim();
     const lname = document.getElementById('reg-lname').value.trim();
@@ -203,36 +202,64 @@ window.handleOrgRegisterSubmit = function(event) {
         return;
     }
 
-    // 2. Duplicate Organization Name Check
-    const cleanOrg = orgName.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (existingOrgs.includes(cleanOrg)) {
-        showCustomAlert('⚠️ Organization Name Unavailable', `The Organization Name "${orgName}" is already registered in PTMS UNO. Please choose a different unique Organization Name.`, true);
-        return;
+    // Disable button & show loading status
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Connecting to Database...';
     }
 
-    // 3. Duplicate Admin ID Check
-    if (existingAdmins.includes(adminId) || existingAdmins.includes(email.toLowerCase())) {
-        showCustomAlert('⚠️ Admin ID Unavailable', `The Admin ID / Email "${adminId}" is already in use by another organization admin. Please choose a unique Admin ID (e.g. ${adminId}123).`, true);
-        return;
+    try {
+        const response = await fetch('/api/register-org', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                fname,
+                lname,
+                email,
+                phone,
+                designation,
+                orgName,
+                adminId,
+                password
+            })
+        });
+
+        const data = await response.json();
+
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
+
+        if (!data.success) {
+            showCustomAlert('⚠️ Organization Registration Failed', data.error || 'Database check failed. Organization or Admin ID may already exist.', true);
+            return;
+        }
+
+        // Success! Show Success Modal
+        closeOrgRegisterModal();
+
+        document.getElementById('succ-org-name').textContent = data.orgName || orgName;
+        document.getElementById('succ-admin-id').textContent = data.adminId || adminId;
+
+        const successModal = document.getElementById('org-success-modal');
+        if (successModal) {
+            successModal.classList.add('open');
+        }
+
+        // Reset Form
+        document.getElementById('org-register-form').reset();
+
+    } catch (err) {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        }
+        console.error('Registration API Error:', err);
+        showCustomAlert('⚠️ Connection Error', 'Could not connect to the database server. Please check your network or try again.', true);
     }
-
-    // Register successfully & Save to memory list
-    existingOrgs.push(cleanOrg);
-    existingAdmins.push(adminId);
-
-    // Show Success Modal
-    closeOrgRegisterModal();
-
-    document.getElementById('succ-org-name').textContent = orgName;
-    document.getElementById('succ-admin-id').textContent = adminId;
-
-    const successModal = document.getElementById('org-success-modal');
-    if (successModal) {
-        successModal.classList.add('open');
-    }
-
-    // Reset Form
-    document.getElementById('org-register-form').reset();
 };
 
 window.closeOrgSuccessModal = function() {
@@ -275,4 +302,3 @@ window.closeCustomAlert = function() {
         modal.classList.remove('open');
     }
 };
-
