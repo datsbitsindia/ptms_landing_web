@@ -1815,9 +1815,12 @@ a {
     font-size: 14px;
     color: #334155;
     font-weight: 500;
-    text-align: justify !important;
-    text-justify: inter-word;
-    text-align-last: left;
+    text-align: left !important;
+}
+
+.showcase-feature-list li div {
+    flex: 1;
+    text-align: left !important;
 }
 
 .showcase-feature-list li i {
