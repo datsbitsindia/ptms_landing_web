@@ -1,0 +1,20 @@
+module.exports = {
+  apps: [
+    {
+      name: "ptms-landing-web",
+      script: "server.js",
+      cwd: "./",
+      watch: false,
+      env: {
+        NODE_ENV: "production",
+        PORT: 8090,
+        DB_HOST: "127.0.0.1",
+        DB_PORT: 3306,
+        DB_USER: "root",
+        DB_PASSWORD: "",
+        DB_NAME: "ptms_uno",
+        TABLE_PREFIX: "uno_"
+      }
+    }
+  ]
+};
