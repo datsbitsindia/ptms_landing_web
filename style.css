@@ -1585,6 +1585,7 @@ a {
     border-radius: 10px;
     font-size: 14px;
     color: #0f172a;
+    font-weight: 400 !important;
     font-family: inherit;
     transition: var(--transition);
 }
